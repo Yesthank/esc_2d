@@ -1,6 +1,6 @@
 .game-runner {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh; /* dvh = 모바일 주소창 고려한 높이 */
   display: flex;
   background: #1a1a2e;
   overflow: hidden;
@@ -11,11 +11,23 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  min-height: 0; /* flex shrink 허용 */
 }
 
-/* 모바일: 세로 배치 */
+/* 모바일: 세로 배치 (게임 영역 위, 인벤토리 아래) */
 @media (max-width: 768px) {
   .game-runner {
     flex-direction: column;
+  }
+
+  .game-runner__main {
+    flex: 1;
+  }
+}
+
+/* 데스크톱: 가로 배치 (게임 왼쪽, 인벤토리 오른쪽) */
+@media (min-width: 769px) {
+  .game-runner {
+    flex-direction: row;
   }
 }

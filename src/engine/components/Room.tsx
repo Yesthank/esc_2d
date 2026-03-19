@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Room as RoomType, GameState, Condition, HotspotAction } from '../types';
 import { checkCondition } from '../hooks/useGameState';
 import { assetUrl } from '../utils';
@@ -14,11 +14,13 @@ interface Props {
   selectedItem: string | null;
 }
 
+/** SVG 좌표 공간 (모든 배경 SVG가 이 크기) */
+const VB_W = 1280;
+const VB_H = 720;
+
 export function Room({ room, state, onHotspotClick, onShowMessage, onNavigate, onDialog, selectedItem }: Props) {
   const shownEntryRef = useRef<Set<string>>(new Set());
-  const viewportRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLImageElement>(null);
-  const [imgRect, setImgRect] = useState<{ left: number; top: number; width: number; height: number } | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const isVisible = (condition?: Condition) => {
     if (!condition) return true;
@@ -36,31 +38,6 @@ export function Room({ room, state, onHotspotClick, onShowMessage, onNavigate, o
     return assetUrl(room.background);
   })();
 
-  // 이미지 실제 렌더 영역 계산 (object-fit: contain 고려)
-  const updateImgRect = useCallback(() => {
-    const img = imgRef.current;
-    const viewport = viewportRef.current;
-    if (!img || !viewport) return;
-
-    const vw = viewport.clientWidth;
-    const vh = viewport.clientHeight;
-    const naturalW = img.naturalWidth || 1280;
-    const naturalH = img.naturalHeight || 720;
-    const scale = Math.min(vw / naturalW, vh / naturalH);
-    const renderedW = naturalW * scale;
-    const renderedH = naturalH * scale;
-    const offsetX = (vw - renderedW) / 2;
-    const offsetY = (vh - renderedH) / 2;
-
-    setImgRect({ left: offsetX, top: offsetY, width: renderedW, height: renderedH });
-  }, []);
-
-  useEffect(() => {
-    updateImgRect();
-    window.addEventListener('resize', updateImgRect);
-    return () => window.removeEventListener('resize', updateImgRect);
-  }, [updateImgRect, currentBg]);
-
   useEffect(() => {
     if (!shownEntryRef.current.has(room.id)) {
       shownEntryRef.current.add(room.id);
@@ -72,34 +49,43 @@ export function Room({ room, state, onHotspotClick, onShowMessage, onNavigate, o
     }
   }, [room.id]);
 
+  const visibleHotspots = room.hotspots.filter(hs => isVisible(hs.visibleWhen));
+
   return (
     <div className="room">
-      <div className="room__viewport" ref={viewportRef}>
+      <div className="room__viewport">
+        {/* 배경 이미지 */}
         <img
           key={currentBg}
-          ref={imgRef}
           src={currentBg}
           alt={room.name}
           className="room__bg"
           draggable={false}
-          onLoad={updateImgRect}
         />
 
-        {/* 핫스팟 - 이미지 실제 렌더 영역에 맞춰 배치 */}
-        {imgRect && room.hotspots
-          .filter(hs => isVisible(hs.visibleWhen))
-          .map(hotspot => {
+        {/* SVG 오버레이 - viewBox가 좌표를 자동 매핑하므로 모든 해상도에서 핫스팟 완벽 정렬 */}
+        <svg
+          className="room__svg-overlay"
+          viewBox={`0 0 ${VB_W} ${VB_H}`}
+          preserveAspectRatio="xMidYMid meet"
+        >
+
+          {/* 핫스팟 - SVG 좌표 공간에서 직접 배치 */}
+          {visibleHotspots.map(hotspot => {
             const isActive = isVisible(hotspot.activeWhen);
+            const [xPct, yPct, wPct, hPct] = hotspot.area;
+            const x = (xPct / 100) * VB_W;
+            const y = (yPct / 100) * VB_H;
+            const w = (wPct / 100) * VB_W;
+            const h = (hPct / 100) * VB_H;
+            const isHovered = hoveredId === hotspot.id;
+
             return (
-              <button
+              <g
                 key={hotspot.id}
-                className={`room__hotspot ${isActive ? 'room__hotspot--active' : 'room__hotspot--inactive'} ${selectedItem ? 'room__hotspot--using-item' : ''}`}
-                style={{
-                  left: imgRect.left + (hotspot.area[0] / 100) * imgRect.width,
-                  top: imgRect.top + (hotspot.area[1] / 100) * imgRect.height,
-                  width: (hotspot.area[2] / 100) * imgRect.width,
-                  height: (hotspot.area[3] / 100) * imgRect.height,
-                }}
+                className={`room__hotspot-g ${isActive ? 'room__hotspot-g--active' : ''}`}
+                onMouseEnter={() => setHoveredId(hotspot.id)}
+                onMouseLeave={() => setHoveredId(null)}
                 onClick={() => {
                   if (!isActive) {
                     if (hotspot.failMessage) onShowMessage(hotspot.failMessage);
@@ -107,14 +93,66 @@ export function Room({ room, state, onHotspotClick, onShowMessage, onNavigate, o
                   }
                   onHotspotClick(hotspot.action);
                 }}
-                title={hotspot.label}
+                style={{ cursor: isActive ? 'pointer' : 'not-allowed' }}
               >
-                {hotspot.label && <span className="room__hotspot-label">{hotspot.label}</span>}
-              </button>
+                {/* 투명 클릭 영역 */}
+                <rect x={x} y={y} width={w} height={h} fill="transparent" />
+
+                {/* 호버 시 하이라이트 */}
+                {isHovered && isActive && (
+                  <rect
+                    x={x} y={y} width={w} height={h}
+                    fill="rgba(255,220,150,0.15)"
+                    rx="4"
+                    style={{ pointerEvents: 'none' }}
+                  />
+                )}
+
+                {/* 반짝이 힌트 */}
+                {isActive && !isHovered && (
+                  <text
+                    x={x + w - 8}
+                    y={y + 16}
+                    fontSize="14"
+                    fill="#ffd700"
+                    style={{ pointerEvents: 'none' }}
+                    className="room__sparkle"
+                  >
+                    ✦
+                  </text>
+                )}
+
+                {/* 호버 라벨 */}
+                {isHovered && isActive && hotspot.label && (
+                  <g style={{ pointerEvents: 'none' }}>
+                    <rect
+                      x={x + w / 2 - hotspot.label.length * 7}
+                      y={y - 30}
+                      width={hotspot.label.length * 14 + 16}
+                      height="24"
+                      rx="12"
+                      fill="rgba(30,25,20,0.9)"
+                      stroke="rgba(212,168,71,0.4)"
+                      strokeWidth="1"
+                    />
+                    <text
+                      x={x + w / 2}
+                      y={y - 14}
+                      textAnchor="middle"
+                      fontSize="12"
+                      fill="#f0e6d3"
+                      fontFamily="'Noto Serif KR', serif"
+                    >
+                      {hotspot.label}
+                    </text>
+                  </g>
+                )}
+              </g>
             );
           })}
+        </svg>
 
-        {/* 방향 탐색 화살표 */}
+        {/* 방향 화살표 (HTML - 뷰포트 기준) */}
         {room.nav?.left && (
           <button className="room__nav room__nav--left" onClick={() => onNavigate(room.nav!.left!)} title="왼쪽 보기">
             <span className="room__nav-icon">‹</span>
