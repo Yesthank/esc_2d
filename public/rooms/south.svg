@@ -1,373 +1,362 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1280" width="720" height="1280">
   <defs>
-    <!-- Wall gradient -->
+    <!-- Wall gradient - dark warm brown -->
     <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#3d2b1a"/>
-      <stop offset="40%" stop-color="#4a3425"/>
-      <stop offset="100%" stop-color="#362618"/>
+      <stop offset="0%" stop-color="#3a2a1a"/>
+      <stop offset="50%" stop-color="#4a3828"/>
+      <stop offset="100%" stop-color="#3d2d1d"/>
     </linearGradient>
-    <!-- Floor gradient -->
+
+    <!-- Floor gradient - dark hardwood -->
     <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#2e1f12"/>
+      <stop offset="0%" stop-color="#2a1e14"/>
       <stop offset="100%" stop-color="#1a1008"/>
     </linearGradient>
-    <!-- Fireplace stone gradient -->
-    <linearGradient id="stoneGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#5a4a3a"/>
-      <stop offset="50%" stop-color="#4d3d2d"/>
-      <stop offset="100%" stop-color="#3a2a1a"/>
-    </linearGradient>
+
     <!-- Fireplace interior -->
-    <radialGradient id="fireplaceInner" cx="0.5" cy="0.7" r="0.6">
-      <stop offset="0%" stop-color="#1a1410"/>
-      <stop offset="100%" stop-color="#0d0a07"/>
+    <radialGradient id="fireInterior" cx="0.5" cy="0.8" r="0.7">
+      <stop offset="0%" stop-color="#1a1008"/>
+      <stop offset="60%" stop-color="#0f0a05"/>
+      <stop offset="100%" stop-color="#080503"/>
     </radialGradient>
+
+    <!-- Mantel wood -->
+    <linearGradient id="mantelWood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b4226"/>
+      <stop offset="50%" stop-color="#5a3620"/>
+      <stop offset="100%" stop-color="#4d2e18"/>
+    </linearGradient>
+
     <!-- Door wood gradient -->
-    <linearGradient id="doorWood" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#5c3a1e"/>
-      <stop offset="15%" stop-color="#6b4528"/>
-      <stop offset="50%" stop-color="#7a5030"/>
-      <stop offset="85%" stop-color="#6b4528"/>
-      <stop offset="100%" stop-color="#5c3a1e"/>
+    <linearGradient id="doorWood" x1="0" y1="0" x2="0.1" y2="1">
+      <stop offset="0%" stop-color="#5c3d20"/>
+      <stop offset="30%" stop-color="#4e3218"/>
+      <stop offset="60%" stop-color="#5a3a1e"/>
+      <stop offset="100%" stop-color="#3d2812"/>
     </linearGradient>
+
     <!-- Door panel inset -->
-    <linearGradient id="doorPanel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#4e3018"/>
-      <stop offset="50%" stop-color="#5a3a20"/>
-      <stop offset="100%" stop-color="#4a2c15"/>
+    <linearGradient id="doorPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d2812"/>
+      <stop offset="50%" stop-color="#4a3218"/>
+      <stop offset="100%" stop-color="#3a2510"/>
     </linearGradient>
+
     <!-- Gold metallic -->
-    <linearGradient id="goldMetal" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#d4a530"/>
-      <stop offset="30%" stop-color="#f0cc60"/>
-      <stop offset="60%" stop-color="#c89b28"/>
-      <stop offset="100%" stop-color="#a07818"/>
+    <linearGradient id="goldMetal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c84a"/>
+      <stop offset="40%" stop-color="#d4a830"/>
+      <stop offset="100%" stop-color="#b8922a"/>
     </linearGradient>
-    <!-- Vignette -->
-    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.7">
-      <stop offset="0%" stop-color="transparent"/>
-      <stop offset="70%" stop-color="rgba(0,0,0,0.15)"/>
-      <stop offset="100%" stop-color="rgba(0,0,0,0.6)"/>
-    </radialGradient>
-    <!-- Wall pattern (wainscoting) -->
-    <pattern id="wallPattern" x="0" y="0" width="80" height="200" patternUnits="userSpaceOnUse">
-      <rect width="80" height="200" fill="none"/>
-      <line x1="0" y1="0" x2="0" y2="200" stroke="#3a2515" stroke-width="1" opacity="0.3"/>
-      <line x1="40" y1="0" x2="40" y2="200" stroke="#3a2515" stroke-width="0.5" opacity="0.15"/>
-    </pattern>
-    <!-- Floor wood pattern -->
-    <pattern id="floorPattern" x="0" y="0" width="120" height="30" patternUnits="userSpaceOnUse">
-      <rect width="120" height="30" fill="none"/>
-      <line x1="0" y1="0" x2="120" y2="0" stroke="#251a0e" stroke-width="0.8" opacity="0.4"/>
-      <line x1="60" y1="0" x2="60" y2="30" stroke="#251a0e" stroke-width="0.5" opacity="0.2"/>
-    </pattern>
-    <!-- Ash gradient -->
-    <radialGradient id="ashGrad" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0%" stop-color="#8a8078"/>
-      <stop offset="100%" stop-color="#5a5248"/>
-    </radialGradient>
-    <!-- Mantel shadow -->
-    <linearGradient id="mantelShadow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#2a1c10"/>
-      <stop offset="100%" stop-color="transparent"/>
+
+    <!-- Rug gradient -->
+    <linearGradient id="rugGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b1a2a"/>
+      <stop offset="50%" stop-color="#5a1520"/>
+      <stop offset="100%" stop-color="#4d1018"/>
     </linearGradient>
+
     <!-- Coat fabric -->
-    <linearGradient id="coatGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2c2420"/>
-      <stop offset="50%" stop-color="#3a302a"/>
-      <stop offset="100%" stop-color="#252018"/>
+    <linearGradient id="tweedGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#6b6050"/>
+      <stop offset="50%" stop-color="#5a5040"/>
+      <stop offset="100%" stop-color="#4d4535"/>
     </linearGradient>
-    <!-- Lock device bg -->
-    <linearGradient id="lockBg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#2a2a2a"/>
+
+    <!-- Ambient shadow overlay -->
+    <radialGradient id="ambientShadow" cx="0.5" cy="0.35" r="0.75">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#000000" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.4"/>
+    </radialGradient>
+
+    <!-- Clock face -->
+    <radialGradient id="clockFace" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#f5f0e0"/>
+      <stop offset="85%" stop-color="#e8e0cc"/>
+      <stop offset="100%" stop-color="#c8b898"/>
+    </radialGradient>
+
+    <!-- Diamond inlay -->
+    <linearGradient id="diamondGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8ddd0"/>
+      <stop offset="30%" stop-color="#c8b898"/>
+      <stop offset="50%" stop-color="#f0e8d8"/>
+      <stop offset="70%" stop-color="#c0b090"/>
+      <stop offset="100%" stop-color="#d8cbb8"/>
+    </linearGradient>
+
+    <!-- Lock device gradient -->
+    <linearGradient id="lockDevice" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a3a3a"/>
+      <stop offset="50%" stop-color="#2a2a2a"/>
       <stop offset="100%" stop-color="#1a1a1a"/>
     </linearGradient>
-    <!-- Baseboard gradient -->
-    <linearGradient id="baseboardGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#3d2a18"/>
-      <stop offset="50%" stop-color="#4a3420"/>
-      <stop offset="100%" stop-color="#2e1e10"/>
-    </linearGradient>
-    <!-- Crown molding -->
-    <linearGradient id="crownGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#5a4530"/>
-      <stop offset="50%" stop-color="#6b5540"/>
-      <stop offset="100%" stop-color="#4a3520"/>
-    </linearGradient>
+
+    <!-- Floor plank pattern -->
+    <pattern id="floorPlanks" x="0" y="0" width="120" height="30" patternUnits="userSpaceOnUse">
+      <rect width="120" height="30" fill="#2a1e14"/>
+      <line x1="0" y1="0" x2="120" y2="0" stroke="#221810" stroke-width="1"/>
+      <line x1="60" y1="0" x2="60" y2="30" stroke="#221810" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+
+    <!-- Stone pattern for fireplace -->
+    <pattern id="stonePat" x="0" y="0" width="50" height="35" patternUnits="userSpaceOnUse">
+      <rect width="50" height="35" fill="#5a5348"/>
+      <rect x="1" y="1" width="23" height="15" rx="2" fill="#625a4e" opacity="0.6"/>
+      <rect x="26" y="1" width="23" height="15" rx="2" fill="#585048" opacity="0.6"/>
+      <rect x="13" y="18" width="23" height="15" rx="2" fill="#5e5648" opacity="0.6"/>
+      <rect x="0" y="18" width="12" height="15" rx="1" fill="#5c5448" opacity="0.5"/>
+      <rect x="37" y="18" width="13" height="15" rx="1" fill="#565048" opacity="0.5"/>
+    </pattern>
   </defs>
 
-  <!-- ===== BACKGROUND WALL ===== -->
-  <rect width="1280" height="720" fill="url(#wallGrad)"/>
-  <!-- Upper wall paneling -->
-  <rect x="0" y="0" width="1280" height="520" fill="url(#wallPattern)" opacity="0.5"/>
-  <!-- Wainscoting line -->
-  <rect x="0" y="340" width="1280" height="3" fill="#4a3520" opacity="0.6"/>
-  <!-- Lower wall darker -->
-  <rect x="0" y="343" width="1280" height="177" fill="#3a2818" opacity="0.4"/>
+  <!-- ======= BACKGROUND WALL ======= -->
+  <rect width="720" height="1280" fill="url(#wallGrad)"/>
 
-  <!-- Crown molding -->
-  <rect x="0" y="0" width="1280" height="18" fill="url(#crownGrad)"/>
-  <rect x="0" y="18" width="1280" height="4" fill="#2e1e10"/>
-  <rect x="0" y="14" width="1280" height="2" fill="#6b5540" opacity="0.5"/>
+  <!-- Wainscoting lower wall -->
+  <rect x="0" y="680" width="720" height="530" fill="#3a2a1a" opacity="0.3"/>
+  <line x1="0" y1="680" x2="720" y2="680" stroke="#4d3820" stroke-width="3"/>
 
-  <!-- ===== FLOOR ===== -->
-  <rect x="0" y="520" width="1280" height="200" fill="url(#floorGrad)"/>
-  <rect x="0" y="520" width="1280" height="200" fill="url(#floorPattern)" opacity="0.6"/>
-  <!-- Floor-wall junction -->
-  <rect x="0" y="516" width="1280" height="8" fill="url(#baseboardGrad)"/>
-  <rect x="0" y="514" width="1280" height="3" fill="#5a4530"/>
+  <!-- Crown molding top -->
+  <rect x="0" y="0" width="720" height="8" fill="#4d3820"/>
+  <rect x="0" y="8" width="720" height="4" fill="#3d2812"/>
 
-  <!-- ===== FIREPLACE ===== -->
-  <!-- Fireplace surround - outer stone frame -->
-  <rect x="60" y="160" width="420" height="380" rx="4" fill="url(#stoneGrad)" stroke="#2e1e10" stroke-width="2"/>
-  <!-- Stone texture details -->
-  <line x1="60" y1="220" x2="480" y2="220" stroke="#3a2a1a" stroke-width="1" opacity="0.4"/>
-  <line x1="60" y1="280" x2="140" y2="280" stroke="#3a2a1a" stroke-width="1" opacity="0.3"/>
-  <line x1="400" y1="280" x2="480" y2="280" stroke="#3a2a1a" stroke-width="1" opacity="0.3"/>
-  <line x1="60" y1="350" x2="130" y2="350" stroke="#3a2a1a" stroke-width="1" opacity="0.3"/>
-  <line x1="410" y1="350" x2="480" y2="350" stroke="#3a2a1a" stroke-width="1" opacity="0.3"/>
-  <line x1="60" y1="420" x2="150" y2="420" stroke="#3a2a1a" stroke-width="1" opacity="0.3"/>
-  <line x1="390" y1="420" x2="480" y2="420" stroke="#3a2a1a" stroke-width="1" opacity="0.3"/>
-  <!-- Vertical stone joints -->
-  <line x1="100" y1="160" x2="100" y2="220" stroke="#3a2a1a" stroke-width="0.8" opacity="0.3"/>
-  <line x1="440" y1="160" x2="440" y2="220" stroke="#3a2a1a" stroke-width="0.8" opacity="0.3"/>
-  <line x1="120" y1="220" x2="120" y2="280" stroke="#3a2a1a" stroke-width="0.8" opacity="0.3"/>
-  <line x1="420" y1="220" x2="420" y2="280" stroke="#3a2a1a" stroke-width="0.8" opacity="0.3"/>
+  <!-- ======= FIREPLACE STONE SURROUND ======= -->
+  <rect x="150" y="160" width="420" height="400" rx="5" fill="url(#stonePat)" stroke="#4a4338" stroke-width="2"/>
 
-  <!-- Mantel (top shelf) -->
-  <rect x="40" y="150" width="460" height="20" rx="3" fill="#5a4030" stroke="#3a2515" stroke-width="1.5"/>
-  <rect x="45" y="153" width="450" height="3" fill="#6b5540" opacity="0.4"/>
-  <!-- Mantel decorative edge -->
-  <rect x="40" y="168" width="460" height="4" fill="#4a3020"/>
-  <!-- Mantel shadow below -->
-  <rect x="60" y="172" width="420" height="15" fill="url(#mantelShadow)" opacity="0.5"/>
+  <!-- Stone arch top -->
+  <path d="M175 310 Q360 150 545 310" fill="url(#stonePat)" stroke="#4a4338" stroke-width="2.5"/>
+  <!-- Keystone -->
+  <path d="M345 190 L375 190 L380 225 L340 225 Z" fill="#6b6155" stroke="#4a4338" stroke-width="1"/>
 
-  <!-- Mantel decorations - small candlestick left -->
-  <rect x="90" y="130" width="6" height="20" rx="1" fill="#b8942e"/>
-  <ellipse cx="93" cy="128" rx="5" ry="3" fill="#c8a438"/>
-  <ellipse cx="93" cy="125" rx="2" ry="3" fill="#f0d060" opacity="0"/>
-  <!-- Small clock center -->
-  <rect x="245" y="118" width="50" height="35" rx="4" fill="#5a3a20" stroke="#8a6a40" stroke-width="1"/>
-  <circle cx="270" cy="135" r="12" fill="#f5f0e0" stroke="#8a6a40" stroke-width="1"/>
-  <line x1="270" y1="135" x2="270" y2="127" stroke="#2a1a0a" stroke-width="1.2"/>
-  <line x1="270" y1="135" x2="277" y2="135" stroke="#2a1a0a" stroke-width="1"/>
-  <!-- Small candlestick right -->
-  <rect x="444" y="130" width="6" height="20" rx="1" fill="#b8942e"/>
-  <ellipse cx="447" cy="128" rx="5" ry="3" fill="#c8a438"/>
+  <!-- Fireplace opening -->
+  <rect x="205" y="310" width="310" height="230" rx="3" fill="url(#fireInterior)"/>
+  <path d="M205 310 Q360 275 515 310 L515 310 L205 310 Z" fill="#0f0a05"/>
 
-  <!-- Fireplace opening (arch) -->
-  <path d="M140,540 L140,300 Q140,240 200,240 L340,240 Q400,240 400,300 L400,540 Z" fill="url(#fireplaceInner)" stroke="#2e1e10" stroke-width="3"/>
+  <!-- Soot stains inside -->
+  <rect x="210" y="318" width="300" height="6" fill="#111" opacity="0.4"/>
 
-  <!-- Inner back wall of fireplace -->
-  <rect x="150" y="260" width="240" height="270" fill="#0f0c08" opacity="0.5"/>
-  <!-- Soot staining on back wall -->
-  <ellipse cx="270" cy="280" rx="80" ry="40" fill="#0a0805" opacity="0.6"/>
+  <!-- Ash bed on firebox floor -->
+  <ellipse cx="360" cy="525" rx="120" ry="14" fill="#3a3530"/>
+  <ellipse cx="360" cy="528" rx="85" ry="9" fill="#4a4540" opacity="0.5"/>
 
-  <!-- Fire grate / andirons -->
-  <rect x="175" y="490" width="190" height="8" rx="2" fill="#3a3530" stroke="#252018" stroke-width="1"/>
-  <rect x="180" y="470" width="6" height="28" rx="2" fill="#3a3530"/>
-  <rect x="354" y="470" width="6" height="28" rx="2" fill="#3a3530"/>
-  <!-- Grate bars -->
-  <rect x="190" y="485" width="160" height="4" rx="1" fill="#2e2a25"/>
-  <rect x="190" y="478" width="160" height="4" rx="1" fill="#2e2a25"/>
-
-  <!-- Ashes pile -->
-  <ellipse cx="270" cy="505" rx="85" ry="20" fill="url(#ashGrad)" opacity="0.7"/>
-  <ellipse cx="260" cy="508" rx="60" ry="12" fill="#706860" opacity="0.5"/>
-  <!-- Scattered ash particles -->
-  <circle cx="230" cy="500" r="3" fill="#9a9088" opacity="0.4"/>
-  <circle cx="300" cy="502" r="2" fill="#8a8078" opacity="0.5"/>
-  <circle cx="250" cy="510" r="4" fill="#7a7068" opacity="0.3"/>
-  <circle cx="290" cy="498" r="2.5" fill="#8a8078" opacity="0.4"/>
-
-  <!-- Burned paper fragments in ashes -->
-  <!-- Fragment 1 - partially burned note -->
-  <g transform="translate(240, 490) rotate(-15)">
-    <path d="M0,0 L25,2 L28,18 L22,20 L8,22 L-2,15 Z" fill="#c8b890" opacity="0.7"/>
-    <!-- Burned edges -->
-    <path d="M0,0 L8,-1 L10,3 L5,5 Z" fill="#3a3028" opacity="0.8"/>
-    <path d="M22,20 L28,18 L30,22 L25,24 Z" fill="#2e2618" opacity="0.7"/>
-    <!-- Faint text remnants -->
-    <line x1="5" y1="6" x2="20" y2="7" stroke="#5a4a30" stroke-width="0.6" opacity="0.5"/>
-    <line x1="6" y1="10" x2="18" y2="11" stroke="#5a4a30" stroke-width="0.6" opacity="0.4"/>
-    <line x1="4" y1="14" x2="15" y2="15" stroke="#5a4a30" stroke-width="0.6" opacity="0.3"/>
-  </g>
-  <!-- Fragment 2 -->
-  <g transform="translate(280, 495) rotate(25)">
-    <path d="M0,0 L18,1 L20,12 L15,16 L2,14 Z" fill="#b8a880" opacity="0.6"/>
-    <path d="M15,16 L20,12 L22,16 L18,18 Z" fill="#2e2618" opacity="0.7"/>
-    <line x1="3" y1="4" x2="14" y2="5" stroke="#5a4a30" stroke-width="0.5" opacity="0.4"/>
-    <line x1="4" y1="8" x2="12" y2="9" stroke="#5a4a30" stroke-width="0.5" opacity="0.3"/>
-  </g>
-  <!-- Fragment 3 - small charred piece -->
-  <g transform="translate(255, 502) rotate(45)">
-    <path d="M0,0 L12,1 L10,10 L2,8 Z" fill="#4a4038" opacity="0.7"/>
-    <path d="M0,0 L4,-1 L5,2 Z" fill="#1a1410" opacity="0.8"/>
+  <!-- Burned paper fragments -->
+  <g opacity="0.7">
+    <path d="M300 515 L325 509 L330 526 L308 530 Z" fill="#5a5040" transform="rotate(-8 315 520)"/>
+    <path d="M345 510 L372 505 L378 522 L350 525 Z" fill="#4a4030" transform="rotate(5 360 515)"/>
+    <path d="M385 516 L408 511 L405 530 L387 533 Z" fill="#5e5545" transform="rotate(-4 396 522)"/>
+    <!-- Charred edges -->
+    <path d="M300 515 L312 512 L309 518 Z" fill="#1a1510"/>
+    <path d="M372 505 L378 508 L374 513 Z" fill="#1a1510"/>
+    <path d="M405 511 L408 516 L403 519 Z" fill="#1a1510"/>
   </g>
 
-  <!-- Fireplace hearth (stone floor extension) -->
-  <path d="M100,540 L440,540 L470,570 L70,570 Z" fill="#4d3d2d" stroke="#3a2a1a" stroke-width="1.5"/>
-  <rect x="70" y="570" width="400" height="12" fill="#5a4a3a" stroke="#3a2a1a" stroke-width="1"/>
+  <!-- Log remnants -->
+  <ellipse cx="325" cy="530" rx="28" ry="7" fill="#2a2018" transform="rotate(-12 325 530)"/>
+  <ellipse cx="395" cy="530" rx="22" ry="6" fill="#2a2018" transform="rotate(8 395 530)"/>
 
-  <!-- Fireplace tools (poker, shovel) on right side -->
-  <g transform="translate(465, 340)">
-    <!-- Stand -->
-    <rect x="0" y="150" width="30" height="8" rx="2" fill="#3a3530"/>
-    <rect x="13" y="0" width="4" height="158" fill="#3a3530"/>
-    <!-- Cross bar -->
-    <rect x="2" y="20" width="26" height="4" rx="1" fill="#3a3530"/>
+  <!-- ======= HEARTH STONE BASE ======= -->
+  <rect x="130" y="555" width="460" height="28" rx="3" fill="#5a5348" stroke="#4a4338" stroke-width="1.5"/>
+
+  <!-- ======= MANTEL SHELF ======= -->
+  <rect x="125" y="148" width="470" height="24" rx="3" fill="url(#mantelWood)" stroke="#3d2812" stroke-width="1.5"/>
+  <rect x="130" y="170" width="460" height="6" rx="1" fill="#4d2e18"/>
+  <line x1="130" y1="150" x2="590" y2="150" stroke="#7a5535" stroke-width="1" opacity="0.5"/>
+  <!-- Mantel brackets -->
+  <path d="M165 172 L165 195 L188 195 Q165 195 165 172" fill="#5a3620" stroke="#3d2812" stroke-width="1"/>
+  <path d="M555 172 L555 195 L532 195 Q555 195 555 172" fill="#5a3620" stroke="#3d2812" stroke-width="1"/>
+
+  <!-- ======= CLOCK ON MANTEL ======= -->
+  <g transform="translate(360, 95)">
+    <rect x="-32" y="0" width="64" height="58" rx="5" fill="#5c3d20" stroke="#3d2812" stroke-width="1.5"/>
+    <path d="M-27 5 Q0 -22 27 5" fill="#5c3d20" stroke="#3d2812" stroke-width="1.5"/>
+    <circle cx="0" cy="26" r="20" fill="url(#clockFace)" stroke="#8a7a5a" stroke-width="1.5"/>
+    <text x="0" y="12" text-anchor="middle" font-size="6" fill="#4a3a2a" font-family="serif">12</text>
+    <text x="16" y="28" text-anchor="middle" font-size="6" fill="#4a3a2a" font-family="serif">3</text>
+    <text x="0" y="44" text-anchor="middle" font-size="6" fill="#4a3a2a" font-family="serif">6</text>
+    <text x="-16" y="28" text-anchor="middle" font-size="6" fill="#4a3a2a" font-family="serif">9</text>
+    <line x1="0" y1="26" x2="0" y2="12" stroke="#2a1a0a" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="0" y1="26" x2="10" y2="21" stroke="#2a1a0a" stroke-width="1" stroke-linecap="round"/>
+    <circle cx="0" cy="26" r="1.5" fill="#2a1a0a"/>
+    <ellipse cx="-20" cy="58" rx="6" ry="3" fill="#4d2e18"/>
+    <ellipse cx="20" cy="58" rx="6" ry="3" fill="#4d2e18"/>
+  </g>
+
+  <!-- ======= LEFT CANDLESTICK ======= -->
+  <g transform="translate(225, 95)">
+    <rect x="-5" y="30" width="10" height="6" rx="1" fill="url(#goldMetal)"/>
+    <rect x="-7" y="34" width="14" height="5" rx="2" fill="url(#goldMetal)"/>
+    <rect x="-2.5" y="6" width="5" height="27" fill="url(#goldMetal)"/>
+    <rect x="-3.5" y="16" width="7" height="4" rx="1" fill="#d4a830"/>
+    <rect x="-3" y="-16" width="6" height="24" rx="1" fill="#e8e0d0"/>
+    <line x1="0" y1="-18" x2="0" y2="-16" stroke="#3a3020" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- ======= RIGHT CANDLESTICK ======= -->
+  <g transform="translate(495, 95)">
+    <rect x="-5" y="30" width="10" height="6" rx="1" fill="url(#goldMetal)"/>
+    <rect x="-7" y="34" width="14" height="5" rx="2" fill="url(#goldMetal)"/>
+    <rect x="-2.5" y="6" width="5" height="27" fill="url(#goldMetal)"/>
+    <rect x="-3.5" y="16" width="7" height="4" rx="1" fill="#d4a830"/>
+    <rect x="-3" y="-16" width="6" height="24" rx="1" fill="#e8e0d0"/>
+    <line x1="0" y1="-18" x2="0" y2="-16" stroke="#3a3020" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- ======= FIREPLACE TOOLS (right of fireplace) ======= -->
+  <g transform="translate(600, 310)">
+    <ellipse cx="0" cy="225" rx="20" ry="6" fill="#3a3a3a"/>
+    <rect x="-2" y="0" width="4" height="225" fill="#4a4a4a"/>
+    <circle cx="0" cy="0" r="5" fill="#555"/>
     <!-- Poker -->
-    <line x1="8" y1="24" x2="8" y2="-30" stroke="#4a4540" stroke-width="3" stroke-linecap="round"/>
-    <path d="M6,-30 L8,-40 L10,-30" stroke="#4a4540" stroke-width="2" fill="none"/>
+    <line x1="-14" y1="30" x2="-14" y2="210" stroke="#4a4a4a" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-14 210 L-20 222 L-14 216 Z" fill="#4a4a4a"/>
+    <circle cx="-14" cy="30" r="3" fill="none" stroke="#555" stroke-width="1.5"/>
     <!-- Shovel -->
-    <line x1="22" y1="24" x2="22" y2="-25" stroke="#4a4540" stroke-width="3" stroke-linecap="round"/>
-    <ellipse cx="22" cy="-30" rx="6" ry="10" fill="#4a4540"/>
+    <line x1="0" y1="40" x2="0" y2="200" stroke="#4a4a4a" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="0" cy="212" rx="9" ry="14" fill="#3a3a3a" stroke="#4a4a4a" stroke-width="1"/>
+    <circle cx="0" cy="40" r="3" fill="none" stroke="#555" stroke-width="1.5"/>
+    <!-- Brush -->
+    <line x1="14" y1="35" x2="14" y2="195" stroke="#4a4a4a" stroke-width="3" stroke-linecap="round"/>
+    <rect x="8" y="195" width="12" height="20" rx="2" fill="#3a3530"/>
+    <circle cx="14" cy="35" r="3" fill="none" stroke="#555" stroke-width="1.5"/>
   </g>
 
-  <!-- ===== EXIT DOOR ===== -->
-  <!-- Door frame -->
-  <rect x="680" y="120" width="280" height="420" rx="3" fill="#3d2510" stroke="#2a1808" stroke-width="3"/>
-  <!-- Door frame inner border -->
-  <rect x="685" y="125" width="270" height="410" rx="2" fill="none" stroke="#5a3a20" stroke-width="1.5"/>
+  <!-- ======= EXIT DOOR ======= -->
+  <g transform="translate(130, 620)">
+    <!-- Door frame outer -->
+    <rect x="-15" y="-15" width="340" height="530" rx="3" fill="#3d2812" stroke="#2a1a0a" stroke-width="2"/>
+    <!-- Door frame inner molding -->
+    <rect x="-8" y="-8" width="326" height="516" rx="2" fill="#4d3218"/>
 
-  <!-- Door body -->
-  <rect x="695" y="132" width="250" height="398" rx="2" fill="url(#doorWood)" stroke="#3d2510" stroke-width="2"/>
+    <!-- Door surface -->
+    <rect x="0" y="0" width="310" height="500" rx="2" fill="url(#doorWood)" stroke="#3d2812" stroke-width="2"/>
 
-  <!-- Wood grain lines -->
-  <line x1="730" y1="132" x2="730" y2="530" stroke="#5a3820" stroke-width="0.5" opacity="0.3"/>
-  <line x1="770" y1="132" x2="770" y2="530" stroke="#5a3820" stroke-width="0.5" opacity="0.2"/>
-  <line x1="820" y1="132" x2="820" y2="530" stroke="#5a3820" stroke-width="0.5" opacity="0.25"/>
-  <line x1="870" y1="132" x2="870" y2="530" stroke="#5a3820" stroke-width="0.5" opacity="0.2"/>
-  <line x1="910" y1="132" x2="910" y2="530" stroke="#5a3820" stroke-width="0.5" opacity="0.3"/>
+    <!-- Horizontal rail lines -->
+    <line x1="18" y1="58" x2="292" y2="58" stroke="#3a2510" stroke-width="1.5"/>
+    <line x1="18" y1="260" x2="292" y2="260" stroke="#3a2510" stroke-width="1.5"/>
+    <line x1="18" y1="440" x2="292" y2="440" stroke="#3a2510" stroke-width="1.5"/>
 
-  <!-- Upper ornate panel -->
-  <rect x="720" y="155" width="200" height="140" rx="4" fill="url(#doorPanel)" stroke="#4a2c15" stroke-width="2"/>
-  <rect x="725" y="160" width="190" height="130" rx="3" fill="none" stroke="#6b4528" stroke-width="1" opacity="0.5"/>
-  <!-- Panel inner decoration -->
-  <rect x="735" y="170" width="170" height="110" rx="2" fill="none" stroke="#5a3a20" stroke-width="0.8" opacity="0.4"/>
-  <!-- Diamond pattern in upper panel -->
-  <path d="M820,180 L860,225 L820,270 L780,225 Z" fill="none" stroke="#6b4528" stroke-width="1" opacity="0.3"/>
+    <!-- Upper panel with diamond inlay -->
+    <rect x="30" y="72" width="250" height="175" rx="3" fill="url(#doorPanel)" stroke="#3a2510" stroke-width="1.5"/>
+    <polygon points="155,90 240,160 155,230 70,160" fill="none" stroke="url(#diamondGrad)" stroke-width="3"/>
+    <polygon points="155,106 225,160 155,214 85,160" fill="none" stroke="#c8b898" stroke-width="1" opacity="0.4"/>
+    <circle cx="155" cy="160" r="9" fill="none" stroke="url(#diamondGrad)" stroke-width="2"/>
+    <circle cx="155" cy="160" r="3.5" fill="#c8b898" opacity="0.5"/>
 
-  <!-- Lower ornate panel -->
-  <rect x="720" y="330" width="200" height="170" rx="4" fill="url(#doorPanel)" stroke="#4a2c15" stroke-width="2"/>
-  <rect x="725" y="335" width="190" height="160" rx="3" fill="none" stroke="#6b4528" stroke-width="1" opacity="0.5"/>
-  <rect x="735" y="345" width="170" height="140" rx="2" fill="none" stroke="#5a3a20" stroke-width="0.8" opacity="0.4"/>
-  <path d="M820,355 L865,415 L820,475 L775,415 Z" fill="none" stroke="#6b4528" stroke-width="1" opacity="0.3"/>
+    <!-- Lower panel with diamond inlay -->
+    <rect x="30" y="275" width="250" height="150" rx="3" fill="url(#doorPanel)" stroke="#3a2510" stroke-width="1.5"/>
+    <polygon points="155,292 230,350 155,408 80,350" fill="none" stroke="url(#diamondGrad)" stroke-width="3"/>
+    <polygon points="155,305 218,350 155,395 92,350" fill="none" stroke="#c8b898" stroke-width="1" opacity="0.4"/>
+    <circle cx="155" cy="350" r="7" fill="none" stroke="url(#diamondGrad)" stroke-width="1.5"/>
 
-  <!-- Golden doorknob -->
-  <g transform="translate(910, 350)">
-    <!-- Escutcheon plate -->
-    <ellipse cx="0" cy="0" rx="14" ry="22" fill="url(#goldMetal)" stroke="#8a6a20" stroke-width="1.5"/>
-    <!-- Keyhole -->
-    <circle cx="0" cy="8" r="3" fill="#1a1008"/>
-    <rect x="-1.5" y="8" width="3" height="8" fill="#1a1008"/>
-    <!-- Knob -->
-    <circle cx="0" cy="-5" r="11" fill="url(#goldMetal)" stroke="#a07818" stroke-width="1"/>
-    <circle cx="-2" cy="-7" r="3" fill="#f0d870" opacity="0.4"/>
-  </g>
+    <!-- Door hinges left -->
+    <rect x="-2" y="80" width="9" height="28" rx="2" fill="#8a7a5a" stroke="#6a5a3a" stroke-width="0.5"/>
+    <rect x="-2" y="380" width="9" height="28" rx="2" fill="#8a7a5a" stroke="#6a5a3a" stroke-width="0.5"/>
 
-  <!-- ===== COMBINATION LOCK DEVICE ===== -->
-  <g transform="translate(775, 300)">
-    <!-- Lock housing -->
-    <rect x="0" y="0" width="70" height="30" rx="4" fill="url(#lockBg)" stroke="#444" stroke-width="1.5"/>
-    <!-- Screen area -->
-    <rect x="5" y="5" width="50" height="20" rx="2" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
-    <!-- Letter display slots -->
-    <rect x="8" y="8" width="10" height="14" rx="1" fill="#111" stroke="#2a2a2a" stroke-width="0.5"/>
-    <rect x="20" y="8" width="10" height="14" rx="1" fill="#111" stroke="#2a2a2a" stroke-width="0.5"/>
-    <rect x="32" y="8" width="10" height="14" rx="1" fill="#111" stroke="#2a2a2a" stroke-width="0.5"/>
-    <rect x="44" y="8" width="10" height="14" rx="1" fill="#111" stroke="#2a2a2a" stroke-width="0.5"/>
-    <!-- Blank dashes (no code entered) -->
-    <text x="13" y="19" font-family="monospace" font-size="10" fill="#3a3a3a" text-anchor="middle">_</text>
-    <text x="25" y="19" font-family="monospace" font-size="10" fill="#3a3a3a" text-anchor="middle">_</text>
-    <text x="37" y="19" font-family="monospace" font-size="10" fill="#3a3a3a" text-anchor="middle">_</text>
-    <text x="49" y="19" font-family="monospace" font-size="10" fill="#3a3a3a" text-anchor="middle">_</text>
-    <!-- Status LED (red = locked) -->
-    <circle cx="62" cy="15" r="4" fill="#8b0000"/>
-    <circle cx="62" cy="15" r="2.5" fill="#cc2020" opacity="0.7"/>
-    <circle cx="61" cy="14" r="1" fill="#ff4040" opacity="0.5"/>
-  </g>
+    <!-- Golden doorknob right side -->
+    <g transform="translate(275, 260)">
+      <ellipse cx="0" cy="0" rx="13" ry="22" fill="url(#goldMetal)" stroke="#8a7020" stroke-width="1"/>
+      <ellipse cx="0" cy="12" rx="3" ry="5" fill="#1a1008"/>
+      <circle cx="0" cy="7" r="3.5" fill="#1a1008"/>
+      <circle cx="0" cy="-6" r="11" fill="url(#goldMetal)" stroke="#b8922a" stroke-width="1"/>
+      <circle cx="-2" cy="-8" r="3.5" fill="#e8d870" opacity="0.4"/>
+    </g>
 
-  <!-- Door frame top decorative arch -->
-  <path d="M680,120 L680,115 Q820,95 960,115 L960,120" fill="#4a3020" stroke="#3a2010" stroke-width="1.5"/>
-  <path d="M690,120 Q820,105 950,120" fill="none" stroke="#6b5030" stroke-width="1" opacity="0.5"/>
-
-  <!-- ===== COAT RACK ===== -->
-  <g transform="translate(620, 200)">
-    <!-- Pole -->
-    <rect x="-4" y="0" width="8" height="340" rx="3" fill="#4a3520" stroke="#3a2515" stroke-width="1"/>
-    <!-- Base -->
-    <path d="M-25,340 L25,340 L20,335 L-20,335 Z" fill="#4a3520" stroke="#3a2515" stroke-width="1"/>
-    <path d="M-30,340 L-15,330 L-4,335" fill="none" stroke="#4a3520" stroke-width="3" stroke-linecap="round"/>
-    <path d="M30,340 L15,330 L4,335" fill="none" stroke="#4a3520" stroke-width="3" stroke-linecap="round"/>
-    <!-- Hooks -->
-    <path d="M-4,20 L-22,15 L-25,22" fill="none" stroke="#6b5030" stroke-width="3" stroke-linecap="round"/>
-    <path d="M4,20 L22,15 L25,22" fill="none" stroke="#6b5030" stroke-width="3" stroke-linecap="round"/>
-    <path d="M-4,40 L-18,35 L-20,42" fill="none" stroke="#6b5030" stroke-width="3" stroke-linecap="round"/>
-
-    <!-- Professor's coat hanging on left hook -->
-    <g transform="translate(-22, 22)">
-      <!-- Coat body -->
-      <path d="M-5,0 Q-2,-5 5,-2 L10,0 Q15,5 18,30 L22,100 Q20,130 10,140 L-15,140 Q-25,130 -28,100 L-24,30 Q-20,5 -5,0 Z" fill="url(#coatGrad)" stroke="#1a1610" stroke-width="1"/>
-      <!-- Collar -->
-      <path d="M-5,0 Q0,-8 5,-2 Q2,5 -1,8 Q-5,5 -5,0 Z" fill="#3a302a" stroke="#1a1610" stroke-width="0.8"/>
-      <!-- Lapel left -->
-      <path d="M-5,0 L-10,20 L-4,25 L-1,8 Z" fill="#352a24" stroke="#1a1610" stroke-width="0.5"/>
-      <!-- Lapel right -->
-      <path d="M5,-2 L12,18 L6,22 L-1,8 Z" fill="#352a24" stroke="#1a1610" stroke-width="0.5"/>
-      <!-- Buttons -->
-      <circle cx="0" cy="40" r="2.5" fill="#5a5040" stroke="#3a3028" stroke-width="0.5"/>
-      <circle cx="0" cy="65" r="2.5" fill="#5a5040" stroke="#3a3028" stroke-width="0.5"/>
-      <circle cx="0" cy="90" r="2.5" fill="#5a5040" stroke="#3a3028" stroke-width="0.5"/>
-      <!-- Pocket -->
-      <path d="M-12,55 L-5,55 L-5,70 L-14,70 Z" fill="none" stroke="#2a2218" stroke-width="0.8"/>
-      <!-- Coat shadow/fold lines -->
-      <line x1="-15" y1="40" x2="-18" y2="120" stroke="#1a1610" stroke-width="0.5" opacity="0.4"/>
-      <line x1="10" y1="35" x2="14" y2="115" stroke="#1a1610" stroke-width="0.5" opacity="0.4"/>
-      <!-- Elbow patch (professor detail) -->
-      <ellipse cx="-20" cy="70" rx="6" ry="10" fill="#4a4035" stroke="#2a2218" stroke-width="0.5" opacity="0.7"/>
+    <!-- ======= COMBINATION LOCK DEVICE ======= -->
+    <g transform="translate(155, 455)">
+      <rect x="-55" y="-20" width="110" height="40" rx="5" fill="url(#lockDevice)" stroke="#555" stroke-width="1"/>
+      <rect x="-44" y="-13" width="88" height="22" rx="2" fill="#0a0a0a" stroke="#333" stroke-width="0.5"/>
+      <!-- Dashes for empty code -->
+      <text x="0" y="5" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" fill="#888" font-weight="bold" letter-spacing="8">----</text>
+      <!-- Red LED -->
+      <circle cx="42" cy="-9" r="3.5" fill="#cc2222"/>
+      <circle cx="42" cy="-9" r="2.5" fill="#ff3333" opacity="0.8"/>
+      <circle cx="42" cy="-9" r="6" fill="#ff0000" opacity="0.15"/>
+      <!-- Screws -->
+      <circle cx="-49" cy="-15" r="1.5" fill="#555" stroke="#666" stroke-width="0.3"/>
+      <circle cx="49" cy="-15" r="1.5" fill="#555" stroke="#666" stroke-width="0.3"/>
+      <circle cx="-49" cy="15" r="1.5" fill="#555" stroke="#666" stroke-width="0.3"/>
+      <circle cx="49" cy="15" r="1.5" fill="#555" stroke="#666" stroke-width="0.3"/>
     </g>
   </g>
 
-  <!-- ===== WALL DECORATIONS ===== -->
-  <!-- Small framed picture between fireplace and door -->
-  <g transform="translate(530, 200)">
-    <rect x="0" y="0" width="70" height="55" rx="2" fill="#3a2515" stroke="#5a4020" stroke-width="2"/>
-    <rect x="5" y="5" width="60" height="45" fill="#2a3025"/>
-    <!-- Abstract landscape suggestion -->
-    <rect x="5" y="35" width="60" height="15" fill="#3a4530"/>
-    <circle cx="50" cy="18" r="6" fill="#5a5040" opacity="0.5"/>
+  <!-- ======= COAT RACK (right of door) ======= -->
+  <g transform="translate(600, 670)">
+    <!-- Base -->
+    <ellipse cx="0" cy="440" rx="24" ry="7" fill="#3d2812"/>
+    <path d="M-20 435 L20 435 L15 430 L-15 430 Z" fill="#4a3828" stroke="#3d2812" stroke-width="1"/>
+    <!-- Pole -->
+    <rect x="-4" y="10" width="8" height="430" fill="#5a3a20" stroke="#3d2812" stroke-width="0.5"/>
+    <!-- Top knob -->
+    <circle cx="0" cy="10" r="9" fill="#5a3a20" stroke="#3d2812" stroke-width="1"/>
+    <!-- Hooks -->
+    <path d="M-4 40 L-28 28 L-32 38 Q-28 46 -22 40" fill="none" stroke="#8a7a5a" stroke-width="3" stroke-linecap="round"/>
+    <path d="M4 40 L28 28 L32 38 Q28 46 22 40" fill="none" stroke="#8a7a5a" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-4 72 L-24 64 L-27 72 Q-24 78 -19 73" fill="none" stroke="#8a7a5a" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Professor's tweed coat -->
+    <g transform="translate(-18, 35)">
+      <path d="M-5 0 L-38 18 L-44 140 L-18 150 L-12 35 Z" fill="url(#tweedGrad)" stroke="#3d3528" stroke-width="0.5"/>
+      <path d="M18 0 L50 18 L56 140 L30 150 L24 35 Z" fill="url(#tweedGrad)" stroke="#3d3528" stroke-width="0.5"/>
+      <path d="M-12 35 L-12 210 Q7 222 28 210 L28 35 Z" fill="#5a5040" stroke="#3d3528" stroke-width="0.5"/>
+      <!-- Collar -->
+      <path d="M-5 0 L-12 18 L6 24 L18 0 L12 18 L6 24 Z" fill="#6b6050" stroke="#4d4535" stroke-width="0.5"/>
+      <!-- Lapels -->
+      <line x1="-5" y1="24" x2="-9" y2="80" stroke="#4d4535" stroke-width="0.8"/>
+      <line x1="18" y1="24" x2="22" y2="80" stroke="#4d4535" stroke-width="0.8"/>
+      <!-- Elbow patches -->
+      <ellipse cx="-35" cy="85" rx="9" ry="14" fill="#6b5840" opacity="0.5" transform="rotate(-8 -35 85)"/>
+      <ellipse cx="48" cy="85" rx="9" ry="14" fill="#6b5840" opacity="0.5" transform="rotate(8 48 85)"/>
+      <!-- Buttons -->
+      <circle cx="8" cy="60" r="2.5" fill="#4a4030" stroke="#3a3020" stroke-width="0.5"/>
+      <circle cx="8" cy="90" r="2.5" fill="#4a4030" stroke="#3a3020" stroke-width="0.5"/>
+      <circle cx="8" cy="120" r="2.5" fill="#4a4030" stroke="#3a3020" stroke-width="0.5"/>
+    </g>
   </g>
 
-  <!-- Wall sconce right of door -->
-  <g transform="translate(1010, 250)">
-    <rect x="-3" y="0" width="6" height="30" rx="2" fill="#8a6a30"/>
-    <path d="M-10,0 Q-3,-10 0,-12 Q3,-10 10,0 Z" fill="#b8942e" stroke="#8a6a20" stroke-width="1"/>
-    <ellipse cx="0" cy="-8" rx="4" ry="3" fill="#f0d060" opacity="0"/>
+  <!-- ======= WALL SCONCES (dim) ======= -->
+  <g transform="translate(55, 380)">
+    <path d="M-9 0 L9 0 L14 -28 L-14 -28 Z" fill="#8a7a5a" opacity="0.6"/>
+    <rect x="-3" y="-34" width="6" height="8" fill="#e8e0d0" opacity="0.3"/>
+  </g>
+  <g transform="translate(665, 380)">
+    <path d="M-9 0 L9 0 L14 -28 L-14 -28 Z" fill="#8a7a5a" opacity="0.6"/>
+    <rect x="-3" y="-34" width="6" height="8" fill="#e8e0d0" opacity="0.3"/>
   </g>
 
-  <!-- Small side table near coat rack -->
-  <g transform="translate(580, 480)">
-    <rect x="0" y="0" width="50" height="5" rx="1" fill="#4a3520"/>
-    <rect x="5" y="5" width="4" height="40" fill="#4a3520"/>
-    <rect x="41" y="5" width="4" height="40" fill="#4a3520"/>
-    <rect x="0" y="43" width="50" height="3" fill="#4a3520"/>
+  <!-- ======= FLOOR ======= -->
+  <rect x="0" y="1140" width="720" height="140" fill="url(#floorPlanks)"/>
+  <rect x="0" y="1140" width="720" height="140" fill="url(#floorGrad)" opacity="0.45"/>
+  <line x1="0" y1="1170" x2="720" y2="1170" stroke="#1a1008" stroke-width="0.8" opacity="0.4"/>
+  <line x1="0" y1="1200" x2="720" y2="1200" stroke="#1a1008" stroke-width="0.8" opacity="0.4"/>
+  <line x1="0" y1="1230" x2="720" y2="1230" stroke="#1a1008" stroke-width="0.8" opacity="0.4"/>
+  <line x1="0" y1="1260" x2="720" y2="1260" stroke="#1a1008" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Baseboard -->
+  <rect x="0" y="1133" width="720" height="10" fill="#3d2812" stroke="#2a1a0a" stroke-width="0.5"/>
+
+  <!-- ======= BURGUNDY RUG ======= -->
+  <rect x="90" y="1152" width="540" height="110" rx="5" fill="url(#rugGrad)" stroke="#3a0a10" stroke-width="2"/>
+  <rect x="100" y="1162" width="520" height="90" rx="3" fill="none" stroke="#8a4a30" stroke-width="1.5"/>
+  <rect x="108" y="1170" width="504" height="74" rx="2" fill="none" stroke="#7a3a28" stroke-width="0.8"/>
+  <ellipse cx="360" cy="1207" rx="45" ry="14" fill="none" stroke="#8a5a3a" stroke-width="1" opacity="0.5"/>
+  <!-- Corner ornaments -->
+  <path d="M120 1178 Q136 1190 120 1200" fill="none" stroke="#8a5a3a" stroke-width="0.8" opacity="0.4"/>
+  <path d="M600 1178 Q584 1190 600 1200" fill="none" stroke="#8a5a3a" stroke-width="0.8" opacity="0.4"/>
+  <!-- Fringe -->
+  <g opacity="0.3">
+    <line x1="100" y1="1262" x2="100" y2="1272" stroke="#5a1520" stroke-width="1"/>
+    <line x1="108" y1="1262" x2="108" y2="1274" stroke="#5a1520" stroke-width="1"/>
+    <line x1="116" y1="1262" x2="116" y2="1272" stroke="#5a1520" stroke-width="1"/>
+    <line x1="124" y1="1262" x2="124" y2="1273" stroke="#5a1520" stroke-width="1"/>
+    <line x1="596" y1="1262" x2="596" y2="1272" stroke="#5a1520" stroke-width="1"/>
+    <line x1="604" y1="1262" x2="604" y2="1274" stroke="#5a1520" stroke-width="1"/>
+    <line x1="612" y1="1262" x2="612" y2="1272" stroke="#5a1520" stroke-width="1"/>
+    <line x1="620" y1="1262" x2="620" y2="1273" stroke="#5a1520" stroke-width="1"/>
   </g>
 
-  <!-- ===== RUG ON FLOOR ===== -->
-  <g transform="translate(550, 560)">
-    <ellipse cx="120" cy="30" rx="140" ry="35" fill="#4a2020" opacity="0.5" stroke="#5a2828" stroke-width="1.5"/>
-    <ellipse cx="120" cy="30" rx="110" ry="25" fill="none" stroke="#6a3030" stroke-width="1" opacity="0.4"/>
-    <ellipse cx="120" cy="30" rx="80" ry="16" fill="none" stroke="#6a3030" stroke-width="0.8" opacity="0.3"/>
-  </g>
-
-  <!-- ===== AMBIENT LIGHTING EFFECTS ===== -->
-  <!-- Subtle warm glow from unseen light source above -->
-  <ellipse cx="640" cy="100" rx="400" ry="150" fill="#f0d060" opacity="0.03"/>
-
-  <!-- ===== VIGNETTE OVERLAY ===== -->
-  <rect width="1280" height="720" fill="url(#vignette)"/>
-
-  <!-- Subtle noise/grain texture -->
-  <rect width="1280" height="720" fill="#000" opacity="0.05"/>
+  <!-- ======= AMBIENT OVERLAY ======= -->
+  <rect width="720" height="1280" fill="url(#ambientShadow)"/>
+  <rect width="720" height="1280" fill="none" stroke="#000" stroke-width="80" opacity="0.12" rx="20"/>
 </svg>

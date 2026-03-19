@@ -15,8 +15,9 @@ interface Props {
 }
 
 /** SVG 좌표 공간 (모든 배경 SVG가 이 크기) */
-const VB_W = 1280;
-const VB_H = 720;
+/** SVG 좌표 공간 - 세로(모바일 우선) */
+const VB_W = 720;
+const VB_H = 1280;
 
 export function Room({ room, state, onHotspotClick, onShowMessage, onNavigate, onDialog, selectedItem }: Props) {
   const shownEntryRef = useRef<Set<string>>(new Set());
