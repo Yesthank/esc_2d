@@ -63,12 +63,12 @@ export function Room({ room, state, onHotspotClick, onShowMessage, onNavigate, o
           viewBox={`0 0 ${VB_W} ${VB_H}`}
           preserveAspectRatio="xMidYMid meet"
         >
-          {/* 배경을 SVG <image>로 임베드 — <img>와 별도 스케일 문제 원천 제거 */}
+          {/* 배경을 SVG <image>로 임베드 — 핫스팟과 동일한 좌표계로 배치 */}
           <image
             href={currentBg}
             x="0" y="0"
             width={VB_W} height={VB_H}
-            preserveAspectRatio="xMidYMid slice"
+            preserveAspectRatio="xMidYMid meet"
           />
 
           {/* 핫스팟 - SVG 좌표 공간에서 직접 배치 */}
