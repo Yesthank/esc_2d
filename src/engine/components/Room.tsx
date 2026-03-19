@@ -55,21 +55,21 @@ export function Room({ room, state, onHotspotClick, onShowMessage, onNavigate, o
   return (
     <div className="room">
       <div className="room__viewport">
-        {/* 배경 이미지 */}
-        <img
-          key={currentBg}
-          src={currentBg}
-          alt={room.name}
-          className="room__bg"
-          draggable={false}
-        />
-
-        {/* SVG 오버레이 - viewBox가 좌표를 자동 매핑하므로 모든 해상도에서 핫스팟 완벽 정렬 */}
+        {/* 단일 SVG: 배경 + 핫스팟 모두 동일 viewBox(0 0 720 1280)에 배치
+            → preserveAspectRatio가 이미지와 핫스팟을 한 번에 스케일하므로
+              어떤 화면 비율에서도 완벽 정렬 */}
         <svg
           className="room__svg-overlay"
           viewBox={`0 0 ${VB_W} ${VB_H}`}
           preserveAspectRatio="xMidYMid meet"
         >
+          {/* 배경을 SVG <image>로 임베드 — <img>와 별도 스케일 문제 원천 제거 */}
+          <image
+            href={currentBg}
+            x="0" y="0"
+            width={VB_W} height={VB_H}
+            preserveAspectRatio="xMidYMid slice"
+          />
 
           {/* 핫스팟 - SVG 좌표 공간에서 직접 배치 */}
           {visibleHotspots.map(hotspot => {
@@ -96,18 +96,12 @@ export function Room({ room, state, onHotspotClick, onShowMessage, onNavigate, o
                 }}
                 style={{ cursor: isActive ? 'pointer' : 'not-allowed' }}
               >
-                {/* 투명 클릭 영역 */}
-                <rect x={x} y={y} width={w} height={h} fill="transparent" />
-
-                {/* 호버 시 하이라이트 */}
-                {isHovered && isActive && (
-                  <rect
-                    x={x} y={y} width={w} height={h}
-                    fill="rgba(255,220,150,0.15)"
-                    rx="4"
-                    style={{ pointerEvents: 'none' }}
-                  />
-                )}
+                {/* 클릭 영역 - 모바일: 반투명 표시 / 데스크톱: 호버 시만 */}
+                <rect
+                  x={x} y={y} width={w} height={h}
+                  rx="6"
+                  className={`room__hotspot-rect ${isActive ? 'room__hotspot-rect--active' : ''} ${isHovered ? 'room__hotspot-rect--hover' : ''}`}
+                />
 
                 {/* 반짝이 힌트 */}
                 {isActive && !isHovered && (

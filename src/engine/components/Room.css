@@ -19,24 +19,42 @@
   justify-content: center;
 }
 
-/* ========== 배경 이미지 ========== */
-.room__bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  user-select: none;
-  pointer-events: none;
-}
-
-/* SVG 오버레이 - 배경과 동일한 비율로 겹쳐서 핫스팟 좌표 자동 정렬 */
+/* 단일 SVG가 배경+핫스팟 모두 담당 — viewBox 하나로 스케일 통일 */
 .room__svg-overlay {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+/* ========== 핫스팟 영역 ========== */
+.room__hotspot-rect {
+  fill: transparent;
+  stroke: none;
+  transition: fill 0.2s, stroke 0.2s;
+}
+
+/* 데스크톱: 호버 시만 하이라이트 */
+.room__hotspot-rect--hover.room__hotspot-rect--active {
+  fill: rgba(255, 220, 150, 0.18);
+  stroke: rgba(255, 200, 100, 0.3);
+  stroke-width: 2;
+}
+
+/* 모바일(터치): 항상 반투명 표시 — 탭할 곳을 알려줌 */
+@media (hover: none) and (pointer: coarse) {
+  .room__hotspot-rect--active {
+    fill: rgba(255, 220, 150, 0.08);
+    stroke: rgba(255, 200, 100, 0.15);
+    stroke-width: 1.5;
+    stroke-dasharray: 6 3;
+    animation: mobileHotspotPulse 3s ease-in-out infinite;
+  }
+}
+
+@keyframes mobileHotspotPulse {
+  0%, 100% { fill: rgba(255, 220, 150, 0.05); stroke-opacity: 0.1; }
+  50% { fill: rgba(255, 220, 150, 0.12); stroke-opacity: 0.25; }
 }
 
 /* ========== 반짝이 애니메이션 (SVG) ========== */
@@ -130,4 +148,3 @@
     font-size: 1.4rem;
   }
 }
-
