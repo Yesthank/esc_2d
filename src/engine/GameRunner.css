@@ -1,0 +1,21 @@
+.game-runner {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: #1a1a2e;
+  overflow: hidden;
+}
+
+.game-runner__main {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 모바일: 세로 배치 */
+@media (max-width: 768px) {
+  .game-runner {
+    flex-direction: column;
+  }
+}

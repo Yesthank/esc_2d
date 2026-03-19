@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <!-- 벽지 패턴 -->
+    <pattern id="wallpaper" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#6b5142"/>
+      <path d="M30 0 Q35 15 30 30 Q25 15 30 0Z" fill="#7a6052" opacity="0.3"/>
+      <path d="M0 30 Q15 35 30 30 Q15 25 0 30Z" fill="#7a6052" opacity="0.2"/>
+      <circle cx="30" cy="30" r="2" fill="#7a6052" opacity="0.15"/>
+    </pattern>
+    <!-- 바닥 패턴 -->
+    <pattern id="floor" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="#4a3828"/>
+      <rect width="50" height="50" fill="#3e2f20"/>
+      <rect x="50" y="50" width="50" height="50" fill="#3e2f20"/>
+    </pattern>
+    <!-- 램프 빛 -->
+    <radialGradient id="lampGlow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.25"/>
+      <stop offset="40%" stop-color="#ffa500" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffa500" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 비네팅 -->
+    <radialGradient id="vignette" cx="40%" cy="45%">
+      <stop offset="40%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#0a0705" stop-opacity="0.6"/>
+    </radialGradient>
+    <!-- 나무결 -->
+    <filter id="woodGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04 0.2" numOctaves="4" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feBlend mode="overlay" in="SourceGraphic" in2="gray"/>
+    </filter>
+  </defs>
+
+  <!-- ====== 벽 ====== -->
+  <rect width="1280" height="520" fill="#6b5142"/>
+  <rect width="1280" height="520" fill="url(#wallpaper)"/>
+  <!-- 벽 아래 몰딩 -->
+  <rect y="505" width="1280" height="15" fill="#4a3525" rx="2"/>
+  <rect y="505" width="1280" height="3" fill="#8b6b4a" opacity="0.4"/>
+
+  <!-- ====== 바닥 ====== -->
+  <rect y="520" width="1280" height="200" fill="url(#floor)"/>
+  <!-- 바닥 반사 -->
+  <rect y="520" width="1280" height="30" fill="#5a4a38" opacity="0.3"/>
+
+  <!-- ====== 책장 (왼쪽, 5~18%) ====== -->
+  <g>
+    <!-- 책장 본체 -->
+    <rect x="60" y="80" width="200" height="440" rx="5" fill="#3a2515" stroke="#2a1a0e" stroke-width="3"/>
+    <!-- 상단 장식 -->
+    <path d="M60 85 Q160 70 260 85" fill="none" stroke="#5a4020" stroke-width="2"/>
+
+    <!-- 선반 1 -->
+    <rect x="70" y="100" width="180" height="8" fill="#4a3020"/>
+    <!-- 책들 -->
+    <rect x="75" y="110" width="22" height="75" rx="2" fill="#c0392b"/>
+    <rect x="100" y="115" width="18" height="70" rx="2" fill="#2980b9"/>
+    <rect x="121" y="108" width="24" height="77" rx="2" fill="#27ae60"/>
+    <rect x="148" y="112" width="16" height="73" rx="2" fill="#8e44ad"/>
+    <rect x="167" y="108" width="20" height="77" rx="2" fill="#d35400"/>
+    <rect x="190" y="115" width="22" height="70" rx="2" fill="#c0a050"/>
+    <rect x="215" y="110" width="18" height="75" rx="2" fill="#e74c3c"/>
+    <!-- 책 제목선 -->
+    <line x1="87" y1="130" x2="87" y2="170" stroke="#e8c0c0" stroke-width="1" opacity="0.5"/>
+    <line x1="133" y1="125" x2="133" y2="165" stroke="#b0d0b0" stroke-width="1" opacity="0.5"/>
+
+    <!-- 선반 2 -->
+    <rect x="70" y="190" width="180" height="8" fill="#4a3020"/>
+    <rect x="75" y="200" width="26" height="70" rx="2" fill="#e67e22"/>
+    <rect x="104" y="205" width="20" height="65" rx="2" fill="#1abc9c"/>
+    <rect x="127" y="198" width="24" height="72" rx="2" fill="#9b59b6"/>
+    <rect x="154" y="203" width="18" height="67" rx="2" fill="#3498db"/>
+    <rect x="175" y="200" width="22" height="70" rx="2" fill="#e74c3c"/>
+    <!-- 작은 장식 (지구본) -->
+    <circle cx="215" cy="250" r="14" fill="#4a7a6a" stroke="#2c4a3e" stroke-width="1.5"/>
+    <ellipse cx="215" cy="250" rx="14" ry="3" fill="none" stroke="#2c4a3e" stroke-width="0.8"/>
+    <line x1="215" y1="236" x2="215" y2="264" stroke="#2c4a3e" stroke-width="0.8"/>
+
+    <!-- 선반 3 -->
+    <rect x="70" y="280" width="180" height="8" fill="#4a3020"/>
+    <rect x="75" y="290" width="20" height="65" rx="2" fill="#f39c12"/>
+    <rect x="98" y="295" width="24" height="60" rx="2" fill="#2c3e50"/>
+    <rect x="125" y="288" width="18" height="67" rx="2" fill="#16a085"/>
+    <!-- 누워있는 책 -->
+    <rect x="150" y="340" width="50" height="8" rx="1" fill="#8b6914"/>
+    <rect x="152" y="332" width="46" height="8" rx="1" fill="#a0522d"/>
+    <!-- 촛대 -->
+    <rect x="220" y="310" width="6" height="35" fill="#d4a847"/>
+    <ellipse cx="223" cy="308" rx="5" ry="8" fill="#ff9500" opacity="0.9"/>
+    <ellipse cx="223" cy="305" rx="3" ry="5" fill="#ffdd00" opacity="0.7"/>
+
+    <!-- 선반 4 (하단) -->
+    <rect x="70" y="370" width="180" height="8" fill="#4a3020"/>
+    <!-- 서랍 -->
+    <rect x="75" y="385" width="84" height="125" rx="3" fill="#3a2818"/>
+    <rect x="80" y="390" width="74" height="55" rx="2" fill="#2d1f14" stroke="#5a4020" stroke-width="1"/>
+    <circle cx="117" cy="418" r="4" fill="#8b6914"/>
+    <rect x="80" y="450" width="74" height="55" rx="2" fill="#2d1f14" stroke="#5a4020" stroke-width="1"/>
+    <circle cx="117" cy="478" r="4" fill="#8b6914"/>
+    <!-- 오른쪽에 큰 책 -->
+    <rect x="170" y="383" width="30" height="125" rx="2" fill="#2c3e50"/>
+    <rect x="203" y="388" width="25" height="120" rx="2" fill="#7f1d1d"/>
+    <rect x="231" y="385" width="15" height="123" rx="2" fill="#4a6741"/>
+  </g>
+
+  <!-- ====== 책상 (22~48%) ====== -->
+  <g>
+    <!-- 책상 상판 -->
+    <rect x="280" y="370" width="340" height="18" rx="4" fill="#6b4a28" stroke="#4a3018" stroke-width="2"/>
+    <!-- 상판 광택 -->
+    <rect x="285" y="372" width="330" height="4" rx="2" fill="#8b6a38" opacity="0.3"/>
+    <!-- 다리 -->
+    <rect x="295" y="388" width="14" height="132" fill="#5a3d20" rx="2"/>
+    <rect x="595" y="388" width="14" height="132" fill="#5a3d20" rx="2"/>
+    <!-- 가로대 -->
+    <rect x="295" y="460" width="314" height="8" fill="#4a3018" rx="2"/>
+    <!-- 서랍 (앞면) -->
+    <rect x="380" y="390" width="120" height="35" rx="3" fill="#5a3d20" stroke="#4a3018" stroke-width="1.5"/>
+    <circle cx="440" cy="407" r="4" fill="#8b6914" stroke="#d4a847" stroke-width="0.5"/>
+
+    <!-- ====== 책상 위 쪽지 (핫스팟 대상!) ====== -->
+    <!-- 쪽지를 크고 눈에 띄게 -->
+    <g transform="rotate(-8 350 340)">
+      <rect x="300" y="315" width="85" height="55" rx="3" fill="#faf0d8" stroke="#d4c4a0" stroke-width="1"/>
+      <!-- 쪽지 접힌 모서리 -->
+      <path d="M370 315 L385 315 L385 330 Z" fill="#e8d8b8"/>
+      <path d="M370 315 L385 330" fill="none" stroke="#c4b498" stroke-width="0.5"/>
+      <!-- 쪽지 위 글씨 (핵심 단서감!) -->
+      <text x="315" y="335" font-size="8" fill="#5c3d1e" font-family="serif" opacity="0.7">PIN → PEN</text>
+      <text x="315" y="347" font-size="8" fill="#5c3d1e" font-family="serif" opacity="0.7">HILL → ???</text>
+      <line x1="310" y1="355" x2="370" y2="355" stroke="#5c3d1e" stroke-width="0.5" opacity="0.3"/>
+      <!-- 물음표 강조 -->
+      <text x="340" y="365" font-size="12" fill="#c0392b" font-family="serif" font-weight="bold" opacity="0.8">?</text>
+    </g>
+
+    <!-- ====== 책상 램프 ====== -->
+    <g>
+      <!-- 램프 받침 -->
+      <ellipse cx="480" cy="370" rx="22" ry="6" fill="#8b6914"/>
+      <!-- 기둥 -->
+      <rect x="476" y="310" width="8" height="60" fill="#a67c00"/>
+      <!-- 갓 -->
+      <path d="M445 310 Q480 280 515 310 L510 315 Q480 290 450 315 Z" fill="#d4a847"/>
+      <path d="M450 312 Q480 288 510 312" fill="#f5e6c8" opacity="0.8"/>
+      <!-- 빛 -->
+      <ellipse cx="480" cy="310" rx="8" ry="5" fill="#fff8dc" opacity="0.9"/>
+    </g>
+
+    <!-- 램프 빛 효과 (넓게) -->
+    <ellipse cx="480" cy="360" rx="220" ry="200" fill="url(#lampGlow)"/>
+  </g>
+
+  <!-- ====== 벽 액자 (35~55%) ====== -->
+  <g>
+    <!-- 액자 1 - 풍경화 -->
+    <rect x="470" y="90" width="110" height="150" rx="4" fill="#2d1f14" stroke="#d4a847" stroke-width="3"/>
+    <rect x="483" y="103" width="84" height="124" fill="#1a1208"/>
+    <!-- 그림 내용: 달밤 풍경 -->
+    <rect x="486" y="106" width="78" height="118" fill="#1a2a3a"/>
+    <circle cx="540" cy="135" r="15" fill="#f0e6d3" opacity="0.8"/>
+    <path d="M486 190 Q510 165 530 185 Q545 170 560 190 L564 224 L486 224 Z" fill="#2d4a2a" opacity="0.7"/>
+    <path d="M500 200 Q525 180 550 200 L564 224 L486 224 Z" fill="#1a3a1a" opacity="0.6"/>
+    <!-- 액자 고리 -->
+    <circle cx="525" cy="88" r="4" fill="none" stroke="#8b6914" stroke-width="1.5"/>
+
+    <!-- 액자 2 - 초상화 (비어있지만 의미심장) -->
+    <rect x="630" y="120" width="80" height="105" rx="3" fill="#2d1f14" stroke="#8b6914" stroke-width="2"/>
+    <rect x="640" y="130" width="60" height="85" fill="#1a1208"/>
+    <!-- 어두운 실루엣 -->
+    <ellipse cx="670" cy="160" rx="15" ry="18" fill="#2a2015"/>
+    <rect x="650" y="178" width="40" height="30" rx="8" fill="#2a2015"/>
+  </g>
+
+  <!-- ====== 창문 (45~57%) ====== -->
+  <g>
+    <rect x="760" y="40" width="130" height="170" rx="4" fill="#0a0f1a" stroke="#8b6914" stroke-width="4"/>
+    <!-- 창틀 -->
+    <line x1="825" y1="44" x2="825" y2="206" stroke="#8b6914" stroke-width="3"/>
+    <line x1="764" y1="125" x2="886" y2="125" stroke="#8b6914" stroke-width="3"/>
+    <!-- 밤하늘 -->
+    <rect x="764" y="44" width="61" height="81" fill="#0d1526"/>
+    <rect x="825" y="44" width="61" height="81" fill="#0d1526"/>
+    <rect x="764" y="125" width="61" height="81" fill="#111d33"/>
+    <rect x="825" y="125" width="61" height="81" fill="#111d33"/>
+    <!-- 별들 -->
+    <circle cx="785" cy="65" r="2" fill="#f0e6d3" opacity="0.9"/>
+    <circle cx="810" cy="80" r="1" fill="#f0e6d3" opacity="0.6"/>
+    <circle cx="845" cy="55" r="1.5" fill="#f0e6d3" opacity="0.8"/>
+    <circle cx="870" cy="75" r="1" fill="#f0e6d3" opacity="0.5"/>
+    <circle cx="860" cy="100" r="2" fill="#f0e6d3" opacity="0.7"/>
+    <circle cx="790" cy="105" r="1" fill="#f0e6d3" opacity="0.4"/>
+    <!-- 달 -->
+    <circle cx="855" cy="60" r="12" fill="#f5e6c8" opacity="0.9"/>
+    <circle cx="860" cy="57" r="10" fill="#0d1526"/>
+    <!-- 커튼 -->
+    <path d="M756 35 Q745 125 756 215" fill="#5c3d2a" opacity="0.5" stroke="#4a2d1a" stroke-width="1"/>
+    <path d="M894 35 Q905 125 894 215" fill="#5c3d2a" opacity="0.5" stroke="#4a2d1a" stroke-width="1"/>
+    <!-- 창문 반사광 -->
+    <rect x="764" y="44" width="15" height="81" fill="#ffffff" opacity="0.03"/>
+  </g>
+
+  <!-- ====== 잠긴 캐비닛 (65~85%) ====== -->
+  <g>
+    <rect x="880" y="200" width="190" height="320" rx="6" fill="#3d2b1f" stroke="#2d1f14" stroke-width="4"/>
+    <!-- 상단 장식 -->
+    <rect x="885" y="200" width="180" height="12" rx="3" fill="#5a3d20"/>
+    <!-- 상단 칸 -->
+    <rect x="895" y="220" width="160" height="135" rx="4" fill="#2d1f14" stroke="#4a3018" stroke-width="1.5"/>
+    <!-- 유리문 느낌 -->
+    <rect x="905" y="230" width="140" height="115" rx="3" fill="#1a1510" opacity="0.8"/>
+    <!-- 안에 뭔가 보이는 느낌 -->
+    <rect x="920" y="250" width="20" height="60" rx="1" fill="#8b4513" opacity="0.3"/>
+    <rect x="945" y="255" width="15" height="55" rx="1" fill="#2980b9" opacity="0.3"/>
+    <rect x="965" y="248" width="18" height="62" rx="1" fill="#27ae60" opacity="0.3"/>
+    <!-- 손잡이 -->
+    <circle cx="970" cy="290" r="7" fill="#8b6914" stroke="#d4a847" stroke-width="1.5"/>
+    <circle cx="970" cy="290" r="2.5" fill="#5a4010"/>
+
+    <!-- 구분선 -->
+    <rect x="895" y="358" width="160" height="3" fill="#5a3d20"/>
+
+    <!-- 하단 칸 - 서랍 2개 -->
+    <rect x="895" y="365" width="160" height="68" rx="3" fill="#2d1f14" stroke="#4a3018" stroke-width="1.5"/>
+    <circle cx="970" cy="400" r="6" fill="#8b6914" stroke="#d4a847" stroke-width="1"/>
+    <rect x="895" y="440" width="160" height="68" rx="3" fill="#2d1f14" stroke="#4a3018" stroke-width="1.5"/>
+    <circle cx="970" cy="475" r="6" fill="#8b6914" stroke="#d4a847" stroke-width="1"/>
+    <!-- 자물쇠! (눈에 띄게) -->
+    <g transform="translate(1020, 395)">
+      <rect x="-8" y="0" width="16" height="14" rx="2" fill="#8b6914" stroke="#d4a847" stroke-width="1"/>
+      <path d="M-5 0 Q0 -10 5 0" fill="none" stroke="#8b6914" stroke-width="2.5"/>
+      <circle cx="0" cy="7" r="2" fill="#1a1208"/>
+    </g>
+  </g>
+
+  <!-- ====== 출구 문 (82~97%) ====== -->
+  <g>
+    <!-- 문틀 -->
+    <rect x="1090" y="70" width="170" height="450" rx="3" fill="#4a3525"/>
+    <!-- 문 -->
+    <rect x="1098" y="78" width="154" height="434" rx="3" fill="#3d2b1f" stroke="#2d1f14" stroke-width="2"/>
+    <!-- 상단 패널 -->
+    <rect x="1113" y="95" width="124" height="185" rx="3" fill="#352518"/>
+    <!-- 대각선 장식 -->
+    <line x1="1113" y1="95" x2="1237" y2="280" stroke="#4a3525" stroke-width="0.5" opacity="0.3"/>
+    <line x1="1237" y1="95" x2="1113" y2="280" stroke="#4a3525" stroke-width="0.5" opacity="0.3"/>
+    <!-- 하단 패널 -->
+    <rect x="1113" y="300" width="124" height="195" rx="3" fill="#352518"/>
+    <!-- 문 손잡이 -->
+    <circle cx="1215" cy="310" r="12" fill="#8b6914" stroke="#d4a847" stroke-width="2"/>
+    <circle cx="1215" cy="310" r="4" fill="#3a2810"/>
+    <!-- 열쇠 구멍 -->
+    <rect x="1212" y="330" width="6" height="10" rx="1" fill="#3a2810" stroke="#8b6914" stroke-width="0.5"/>
+    <circle cx="1215" cy="329" r="3.5" fill="#3a2810" stroke="#8b6914" stroke-width="0.5"/>
+    <!-- 문 위 "EXIT" 표시 (희미하게) -->
+    <text x="1175" y="85" font-size="10" fill="#8b6914" font-family="serif" letter-spacing="3" opacity="0.4">EXIT</text>
+  </g>
+
+  <!-- ====== 바닥 러그 ====== -->
+  <ellipse cx="640" cy="600" rx="300" ry="60" fill="#5c3028" opacity="0.4"/>
+  <ellipse cx="640" cy="600" rx="280" ry="50" fill="#7a4030" opacity="0.25"/>
+  <ellipse cx="640" cy="600" rx="250" ry="35" fill="#8b5040" opacity="0.15"/>
+
+  <!-- ====== 분위기 효과 ====== -->
+  <!-- 비네팅 -->
+  <rect width="1280" height="720" fill="url(#vignette)"/>
+  <!-- 미세한 먼지 입자 -->
+  <circle cx="350" cy="250" r="1" fill="#ffd700" opacity="0.15"/>
+  <circle cx="500" cy="180" r="0.8" fill="#ffd700" opacity="0.1"/>
+  <circle cx="420" cy="300" r="1.2" fill="#ffd700" opacity="0.12"/>
+  <circle cx="550" cy="350" r="0.7" fill="#ffd700" opacity="0.08"/>
+</svg>

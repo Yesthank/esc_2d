@@ -1,0 +1,400 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <!-- Wall gradient -->
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d2b1a"/>
+      <stop offset="40%" stop-color="#4a3425"/>
+      <stop offset="100%" stop-color="#362618"/>
+    </linearGradient>
+    <!-- Floor gradient -->
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e1f12"/>
+      <stop offset="100%" stop-color="#1a1008"/>
+    </linearGradient>
+    <!-- Fireplace stone gradient -->
+    <linearGradient id="stoneGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4a3a"/>
+      <stop offset="50%" stop-color="#4d3d2d"/>
+      <stop offset="100%" stop-color="#3a2a1a"/>
+    </linearGradient>
+    <!-- Fireplace interior -->
+    <radialGradient id="fireplaceInner" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0%" stop-color="#1a1410"/>
+      <stop offset="100%" stop-color="#0d0a07"/>
+    </radialGradient>
+    <!-- Door wood gradient -->
+    <linearGradient id="doorWood" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5c3a1e"/>
+      <stop offset="15%" stop-color="#6b4528"/>
+      <stop offset="50%" stop-color="#7a5030"/>
+      <stop offset="85%" stop-color="#6b4528"/>
+      <stop offset="100%" stop-color="#5c3a1e"/>
+    </linearGradient>
+    <!-- Door panel inset -->
+    <linearGradient id="doorPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4e3018"/>
+      <stop offset="50%" stop-color="#5a3a20"/>
+      <stop offset="100%" stop-color="#4a2c15"/>
+    </linearGradient>
+    <!-- Gold metallic -->
+    <linearGradient id="goldMetal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d4a530"/>
+      <stop offset="30%" stop-color="#f0cc60"/>
+      <stop offset="60%" stop-color="#c89b28"/>
+      <stop offset="100%" stop-color="#a07818"/>
+    </linearGradient>
+    <!-- Vignette - slightly less dark for the solved/lit state -->
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="70%" stop-color="rgba(0,0,0,0.10)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.5)"/>
+    </radialGradient>
+    <!-- Wall pattern -->
+    <pattern id="wallPattern" x="0" y="0" width="80" height="200" patternUnits="userSpaceOnUse">
+      <rect width="80" height="200" fill="none"/>
+      <line x1="0" y1="0" x2="0" y2="200" stroke="#3a2515" stroke-width="1" opacity="0.3"/>
+      <line x1="40" y1="0" x2="40" y2="200" stroke="#3a2515" stroke-width="0.5" opacity="0.15"/>
+    </pattern>
+    <!-- Floor wood pattern -->
+    <pattern id="floorPattern" x="0" y="0" width="120" height="30" patternUnits="userSpaceOnUse">
+      <rect width="120" height="30" fill="none"/>
+      <line x1="0" y1="0" x2="120" y2="0" stroke="#251a0e" stroke-width="0.8" opacity="0.4"/>
+      <line x1="60" y1="0" x2="60" y2="30" stroke="#251a0e" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+    <!-- Ash gradient -->
+    <radialGradient id="ashGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#8a8078"/>
+      <stop offset="100%" stop-color="#5a5248"/>
+    </radialGradient>
+    <!-- Mantel shadow -->
+    <linearGradient id="mantelShadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a1c10"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <!-- Coat fabric -->
+    <linearGradient id="coatGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2c2420"/>
+      <stop offset="50%" stop-color="#3a302a"/>
+      <stop offset="100%" stop-color="#252018"/>
+    </linearGradient>
+    <!-- Lock device bg -->
+    <linearGradient id="lockBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+    <!-- Baseboard gradient -->
+    <linearGradient id="baseboardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d2a18"/>
+      <stop offset="50%" stop-color="#4a3420"/>
+      <stop offset="100%" stop-color="#2e1e10"/>
+    </linearGradient>
+    <!-- Crown molding -->
+    <linearGradient id="crownGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4530"/>
+      <stop offset="50%" stop-color="#6b5540"/>
+      <stop offset="100%" stop-color="#4a3520"/>
+    </linearGradient>
+    <!-- Door gap light -->
+    <linearGradient id="doorLight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff8e0"/>
+      <stop offset="40%" stop-color="#f0e0a0"/>
+      <stop offset="100%" stop-color="#e0c878"/>
+    </linearGradient>
+    <!-- Light streaming through gap -->
+    <radialGradient id="lightStream" cx="0.0" cy="0.5" r="0.9" fx="0.0" fy="0.5">
+      <stop offset="0%" stop-color="#fff8e0" stop-opacity="0.5"/>
+      <stop offset="30%" stop-color="#f0d870" stop-opacity="0.2"/>
+      <stop offset="70%" stop-color="#f0d060" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#f0d060" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Green glow for unlocked status -->
+    <radialGradient id="greenGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#40ff40" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#20aa20" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Reconstructed note paper -->
+    <linearGradient id="noteGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8d8b0"/>
+      <stop offset="100%" stop-color="#d4c498"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== BACKGROUND WALL ===== -->
+  <rect width="1280" height="720" fill="url(#wallGrad)"/>
+  <rect x="0" y="0" width="1280" height="520" fill="url(#wallPattern)" opacity="0.5"/>
+  <rect x="0" y="340" width="1280" height="3" fill="#4a3520" opacity="0.6"/>
+  <rect x="0" y="343" width="1280" height="177" fill="#3a2818" opacity="0.4"/>
+
+  <!-- Crown molding -->
+  <rect x="0" y="0" width="1280" height="18" fill="url(#crownGrad)"/>
+  <rect x="0" y="18" width="1280" height="4" fill="#2e1e10"/>
+  <rect x="0" y="14" width="1280" height="2" fill="#6b5540" opacity="0.5"/>
+
+  <!-- ===== FLOOR ===== -->
+  <rect x="0" y="520" width="1280" height="200" fill="url(#floorGrad)"/>
+  <rect x="0" y="520" width="1280" height="200" fill="url(#floorPattern)" opacity="0.6"/>
+  <rect x="0" y="516" width="1280" height="8" fill="url(#baseboardGrad)"/>
+  <rect x="0" y="514" width="1280" height="3" fill="#5a4530"/>
+
+  <!-- ===== LIGHT STREAMING FROM DOOR GAP - painted on floor/wall ===== -->
+  <!-- Light cone on floor from ajar door -->
+  <path d="M695,530 L650,700 L850,700 L810,530 Z" fill="#f0d870" opacity="0.08"/>
+  <path d="M698,530 L670,680 L830,680 L805,530 Z" fill="#fff8e0" opacity="0.05"/>
+  <!-- Light on wall near door gap -->
+  <rect x="690" y="130" width="12" height="400" fill="#fff8e0" opacity="0.06"/>
+
+  <!-- ===== FIREPLACE ===== -->
+  <!-- Fireplace surround -->
+  <rect x="60" y="160" width="420" height="380" rx="4" fill="url(#stoneGrad)" stroke="#2e1e10" stroke-width="2"/>
+  <!-- Stone texture details -->
+  <line x1="60" y1="220" x2="480" y2="220" stroke="#3a2a1a" stroke-width="1" opacity="0.4"/>
+  <line x1="60" y1="280" x2="140" y2="280" stroke="#3a2a1a" stroke-width="1" opacity="0.3"/>
+  <line x1="400" y1="280" x2="480" y2="280" stroke="#3a2a1a" stroke-width="1" opacity="0.3"/>
+  <line x1="60" y1="350" x2="130" y2="350" stroke="#3a2a1a" stroke-width="1" opacity="0.3"/>
+  <line x1="410" y1="350" x2="480" y2="350" stroke="#3a2a1a" stroke-width="1" opacity="0.3"/>
+  <line x1="60" y1="420" x2="150" y2="420" stroke="#3a2a1a" stroke-width="1" opacity="0.3"/>
+  <line x1="390" y1="420" x2="480" y2="420" stroke="#3a2a1a" stroke-width="1" opacity="0.3"/>
+  <line x1="100" y1="160" x2="100" y2="220" stroke="#3a2a1a" stroke-width="0.8" opacity="0.3"/>
+  <line x1="440" y1="160" x2="440" y2="220" stroke="#3a2a1a" stroke-width="0.8" opacity="0.3"/>
+  <line x1="120" y1="220" x2="120" y2="280" stroke="#3a2a1a" stroke-width="0.8" opacity="0.3"/>
+  <line x1="420" y1="220" x2="420" y2="280" stroke="#3a2a1a" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- Mantel -->
+  <rect x="40" y="150" width="460" height="20" rx="3" fill="#5a4030" stroke="#3a2515" stroke-width="1.5"/>
+  <rect x="45" y="153" width="450" height="3" fill="#6b5540" opacity="0.4"/>
+  <rect x="40" y="168" width="460" height="4" fill="#4a3020"/>
+  <rect x="60" y="172" width="420" height="15" fill="url(#mantelShadow)" opacity="0.5"/>
+
+  <!-- Mantel decorations -->
+  <rect x="90" y="130" width="6" height="20" rx="1" fill="#b8942e"/>
+  <ellipse cx="93" cy="128" rx="5" ry="3" fill="#c8a438"/>
+  <rect x="245" y="118" width="50" height="35" rx="4" fill="#5a3a20" stroke="#8a6a40" stroke-width="1"/>
+  <circle cx="270" cy="135" r="12" fill="#f5f0e0" stroke="#8a6a40" stroke-width="1"/>
+  <line x1="270" y1="135" x2="270" y2="127" stroke="#2a1a0a" stroke-width="1.2"/>
+  <line x1="270" y1="135" x2="277" y2="135" stroke="#2a1a0a" stroke-width="1"/>
+  <rect x="444" y="130" width="6" height="20" rx="1" fill="#b8942e"/>
+  <ellipse cx="447" cy="128" rx="5" ry="3" fill="#c8a438"/>
+
+  <!-- Fireplace opening -->
+  <path d="M140,540 L140,300 Q140,240 200,240 L340,240 Q400,240 400,300 L400,540 Z" fill="url(#fireplaceInner)" stroke="#2e1e10" stroke-width="3"/>
+  <rect x="150" y="260" width="240" height="270" fill="#0f0c08" opacity="0.5"/>
+  <ellipse cx="270" cy="280" rx="80" ry="40" fill="#0a0805" opacity="0.6"/>
+
+  <!-- Fire grate -->
+  <rect x="175" y="490" width="190" height="8" rx="2" fill="#3a3530" stroke="#252018" stroke-width="1"/>
+  <rect x="180" y="470" width="6" height="28" rx="2" fill="#3a3530"/>
+  <rect x="354" y="470" width="6" height="28" rx="2" fill="#3a3530"/>
+  <rect x="190" y="485" width="160" height="4" rx="1" fill="#2e2a25"/>
+  <rect x="190" y="478" width="160" height="4" rx="1" fill="#2e2a25"/>
+
+  <!-- Ashes pile -->
+  <ellipse cx="270" cy="505" rx="85" ry="20" fill="url(#ashGrad)" opacity="0.7"/>
+  <ellipse cx="260" cy="508" rx="60" ry="12" fill="#706860" opacity="0.5"/>
+  <circle cx="230" cy="500" r="3" fill="#9a9088" opacity="0.4"/>
+  <circle cx="300" cy="502" r="2" fill="#8a8078" opacity="0.5"/>
+  <circle cx="250" cy="510" r="4" fill="#7a7068" opacity="0.3"/>
+  <circle cx="290" cy="498" r="2.5" fill="#8a8078" opacity="0.4"/>
+
+  <!-- ===== RECONSTRUCTED NOTE - more visible, pulled from ashes ===== -->
+  <!-- The note is now sitting propped up on the hearth, partially reconstructed -->
+  <g transform="translate(215, 440) rotate(-5)">
+    <!-- Note paper background -->
+    <rect x="0" y="0" width="80" height="55" rx="2" fill="url(#noteGrad)" stroke="#b8a878" stroke-width="0.8" opacity="0.9"/>
+    <!-- Burned/torn edges -->
+    <path d="M0,0 L5,-2 L8,1 L3,3 Z" fill="#4a3828" opacity="0.8"/>
+    <path d="M75,0 L80,-1 L82,3 L78,4 Z" fill="#4a3828" opacity="0.7"/>
+    <path d="M78,50 L82,48 L83,55 L78,56 Z" fill="#3a2818" opacity="0.8"/>
+    <path d="M0,50 L-1,48 L2,45 L4,50 Z" fill="#3a2818" opacity="0.7"/>
+    <!-- Burn discoloration around edges -->
+    <rect x="0" y="0" width="80" height="55" rx="2" fill="none" stroke="#8a7050" stroke-width="3" opacity="0.3"/>
+    <!-- Visible handwritten text -->
+    <text x="8" y="14" font-family="Georgia, serif" font-size="6.5" fill="#3a2a18" font-style="italic" opacity="0.8">The answer lies</text>
+    <text x="8" y="23" font-family="Georgia, serif" font-size="6.5" fill="#3a2a18" font-style="italic" opacity="0.8">in warmth itself.</text>
+    <text x="8" y="32" font-family="Georgia, serif" font-size="6.5" fill="#3a2a18" font-style="italic" opacity="0.7">What the fire</text>
+    <text x="8" y="41" font-family="Georgia, serif" font-size="6.5" fill="#3a2a18" font-style="italic" opacity="0.6">gives us:</text>
+    <text x="12" y="50" font-family="Georgia, serif" font-size="8" fill="#5a2a10" font-weight="bold" font-style="italic" opacity="0.9">H E A T</text>
+    <!-- Smudge/soot marks -->
+    <ellipse cx="60" cy="20" rx="12" ry="8" fill="#4a4038" opacity="0.15"/>
+    <ellipse cx="15" cy="45" rx="8" ry="5" fill="#4a4038" opacity="0.1"/>
+  </g>
+
+  <!-- Remaining small burned fragments still in ashes -->
+  <g transform="translate(280, 495) rotate(25)">
+    <path d="M0,0 L12,1 L14,8 L10,12 L2,10 Z" fill="#4a4038" opacity="0.5"/>
+  </g>
+  <g transform="translate(310, 500) rotate(60)">
+    <path d="M0,0 L8,1 L7,6 L1,5 Z" fill="#3a3028" opacity="0.5"/>
+  </g>
+
+  <!-- Fireplace hearth -->
+  <path d="M100,540 L440,540 L470,570 L70,570 Z" fill="#4d3d2d" stroke="#3a2a1a" stroke-width="1.5"/>
+  <rect x="70" y="570" width="400" height="12" fill="#5a4a3a" stroke="#3a2a1a" stroke-width="1"/>
+
+  <!-- Fireplace tools -->
+  <g transform="translate(465, 340)">
+    <rect x="0" y="150" width="30" height="8" rx="2" fill="#3a3530"/>
+    <rect x="13" y="0" width="4" height="158" fill="#3a3530"/>
+    <rect x="2" y="20" width="26" height="4" rx="1" fill="#3a3530"/>
+    <line x1="8" y1="24" x2="8" y2="-30" stroke="#4a4540" stroke-width="3" stroke-linecap="round"/>
+    <path d="M6,-30 L8,-40 L10,-30" stroke="#4a4540" stroke-width="2" fill="none"/>
+    <line x1="22" y1="24" x2="22" y2="-25" stroke="#4a4540" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="22" cy="-30" rx="6" ry="10" fill="#4a4540"/>
+  </g>
+
+  <!-- ===== EXIT DOOR - SLIGHTLY AJAR ===== -->
+  <!-- Door frame -->
+  <rect x="680" y="120" width="280" height="420" rx="3" fill="#3d2510" stroke="#2a1808" stroke-width="3"/>
+  <rect x="685" y="125" width="270" height="410" rx="2" fill="none" stroke="#5a3a20" stroke-width="1.5"/>
+
+  <!-- Bright light visible through the gap behind the door -->
+  <rect x="693" y="130" width="18" height="402" fill="url(#doorLight)" opacity="0.9"/>
+  <!-- Brighter center strip -->
+  <rect x="696" y="135" width="10" height="395" fill="#fffde8" opacity="0.6"/>
+  <!-- Light rays streaming through gap -->
+  <g opacity="0.25">
+    <path d="M705,150 L660,130 L650,140 L700,160 Z" fill="#fff8d0"/>
+    <path d="M705,250 L640,220 L635,235 L700,260 Z" fill="#fff8d0"/>
+    <path d="M705,350 L630,310 L625,325 L700,360 Z" fill="#fff8d0"/>
+    <path d="M705,450 L620,400 L615,415 L700,460 Z" fill="#fff8d0"/>
+  </g>
+  <!-- Wider light glow on wall near gap -->
+  <ellipse cx="700" cy="330" rx="60" ry="200" fill="#fff8d0" opacity="0.06"/>
+
+  <!-- Door body - slightly rotated/offset to show it's ajar -->
+  <g transform="translate(710, 132)">
+    <!-- Door perspective (slightly angled to show it's open) -->
+    <path d="M0,0 L240,8 L240,390 L0,398 Z" fill="url(#doorWood)" stroke="#3d2510" stroke-width="2"/>
+
+    <!-- Wood grain -->
+    <line x1="30" y1="0" x2="30" y2="398" stroke="#5a3820" stroke-width="0.5" opacity="0.3"/>
+    <line x1="70" y1="1" x2="70" y2="397" stroke="#5a3820" stroke-width="0.5" opacity="0.2"/>
+    <line x1="120" y1="3" x2="120" y2="396" stroke="#5a3820" stroke-width="0.5" opacity="0.25"/>
+    <line x1="170" y1="5" x2="170" y2="394" stroke="#5a3820" stroke-width="0.5" opacity="0.2"/>
+    <line x1="210" y1="6" x2="210" y2="393" stroke="#5a3820" stroke-width="0.5" opacity="0.3"/>
+
+    <!-- Upper panel -->
+    <path d="M20,25 L192,32 L192,162 L20,155 Z" fill="url(#doorPanel)" stroke="#4a2c15" stroke-width="2"/>
+    <path d="M25,30 L187,36 L187,157 L25,150 Z" fill="none" stroke="#6b4528" stroke-width="1" opacity="0.5"/>
+    <path d="M35,40 L177,46 L177,147 L35,141 Z" fill="none" stroke="#5a3a20" stroke-width="0.8" opacity="0.4"/>
+    <!-- Diamond in upper panel -->
+    <path d="M106,48 L146,92 L106,135 L66,92 Z" fill="none" stroke="#6b4528" stroke-width="1" opacity="0.3"/>
+
+    <!-- Lower panel -->
+    <path d="M20,200 L192,206 L192,368 L20,362 Z" fill="url(#doorPanel)" stroke="#4a2c15" stroke-width="2"/>
+    <path d="M25,205 L187,210 L187,363 L25,357 Z" fill="none" stroke="#6b4528" stroke-width="1" opacity="0.5"/>
+    <path d="M35,215 L177,220 L177,353 L35,348 Z" fill="none" stroke="#5a3a20" stroke-width="0.8" opacity="0.4"/>
+    <path d="M106,225 L151,285 L106,345 L61,285 Z" fill="none" stroke="#6b4528" stroke-width="1" opacity="0.3"/>
+
+    <!-- Golden doorknob -->
+    <g transform="translate(205, 225)">
+      <ellipse cx="0" cy="0" rx="14" ry="22" fill="url(#goldMetal)" stroke="#8a6a20" stroke-width="1.5"/>
+      <circle cx="0" cy="8" r="3" fill="#1a1008"/>
+      <rect x="-1.5" y="8" width="3" height="8" fill="#1a1008"/>
+      <circle cx="0" cy="-5" r="11" fill="url(#goldMetal)" stroke="#a07818" stroke-width="1"/>
+      <circle cx="-2" cy="-7" r="3" fill="#f0d870" opacity="0.4"/>
+    </g>
+
+    <!-- ===== COMBINATION LOCK - SOLVED with "HEAT" ===== -->
+    <g transform="translate(68, 170)">
+      <!-- Lock housing -->
+      <rect x="0" y="0" width="74" height="32" rx="4" fill="url(#lockBg)" stroke="#444" stroke-width="1.5"/>
+      <!-- Screen area -->
+      <rect x="5" y="5" width="52" height="22" rx="2" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+      <!-- Letter display slots - illuminated green -->
+      <rect x="8" y="8" width="10" height="16" rx="1" fill="#0a1a0a" stroke="#1a4a1a" stroke-width="0.5"/>
+      <rect x="20" y="8" width="10" height="16" rx="1" fill="#0a1a0a" stroke="#1a4a1a" stroke-width="0.5"/>
+      <rect x="32" y="8" width="10" height="16" rx="1" fill="#0a1a0a" stroke="#1a4a1a" stroke-width="0.5"/>
+      <rect x="44" y="8" width="10" height="16" rx="1" fill="#0a1a0a" stroke="#1a4a1a" stroke-width="0.5"/>
+      <!-- Letters: H E A T in green -->
+      <text x="13" y="21" font-family="monospace" font-size="11" fill="#40dd40" text-anchor="middle" font-weight="bold">H</text>
+      <text x="25" y="21" font-family="monospace" font-size="11" fill="#40dd40" text-anchor="middle" font-weight="bold">E</text>
+      <text x="37" y="21" font-family="monospace" font-size="11" fill="#40dd40" text-anchor="middle" font-weight="bold">A</text>
+      <text x="49" y="21" font-family="monospace" font-size="11" fill="#40dd40" text-anchor="middle" font-weight="bold">T</text>
+      <!-- Green glow on screen -->
+      <rect x="5" y="5" width="52" height="22" rx="2" fill="#40ff40" opacity="0.06"/>
+      <!-- Status LED (GREEN = unlocked) -->
+      <circle cx="64" cy="16" r="5" fill="#0a5a0a"/>
+      <circle cx="64" cy="16" r="4" fill="#20bb20" opacity="0.9"/>
+      <circle cx="64" cy="16" r="6" fill="url(#greenGlow)" opacity="0.5"/>
+      <circle cx="63" cy="15" r="1.5" fill="#60ff60" opacity="0.6"/>
+      <!-- "UNLOCKED" tiny text below -->
+      <text x="37" y="29" font-family="monospace" font-size="4" fill="#30aa30" text-anchor="middle" opacity="0.8">UNLOCKED</text>
+    </g>
+  </g>
+
+  <!-- Door gap shadow edge -->
+  <line x1="710" y1="130" x2="710" y2="530" stroke="#1a1008" stroke-width="2" opacity="0.5"/>
+
+  <!-- Door frame top decorative arch -->
+  <path d="M680,120 L680,115 Q820,95 960,115 L960,120" fill="#4a3020" stroke="#3a2010" stroke-width="1.5"/>
+  <path d="M690,120 Q820,105 950,120" fill="none" stroke="#6b5030" stroke-width="1" opacity="0.5"/>
+
+  <!-- ===== COAT RACK ===== -->
+  <g transform="translate(620, 200)">
+    <rect x="-4" y="0" width="8" height="340" rx="3" fill="#4a3520" stroke="#3a2515" stroke-width="1"/>
+    <path d="M-25,340 L25,340 L20,335 L-20,335 Z" fill="#4a3520" stroke="#3a2515" stroke-width="1"/>
+    <path d="M-30,340 L-15,330 L-4,335" fill="none" stroke="#4a3520" stroke-width="3" stroke-linecap="round"/>
+    <path d="M30,340 L15,330 L4,335" fill="none" stroke="#4a3520" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-4,20 L-22,15 L-25,22" fill="none" stroke="#6b5030" stroke-width="3" stroke-linecap="round"/>
+    <path d="M4,20 L22,15 L25,22" fill="none" stroke="#6b5030" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-4,40 L-18,35 L-20,42" fill="none" stroke="#6b5030" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Professor's coat -->
+    <g transform="translate(-22, 22)">
+      <path d="M-5,0 Q-2,-5 5,-2 L10,0 Q15,5 18,30 L22,100 Q20,130 10,140 L-15,140 Q-25,130 -28,100 L-24,30 Q-20,5 -5,0 Z" fill="url(#coatGrad)" stroke="#1a1610" stroke-width="1"/>
+      <path d="M-5,0 Q0,-8 5,-2 Q2,5 -1,8 Q-5,5 -5,0 Z" fill="#3a302a" stroke="#1a1610" stroke-width="0.8"/>
+      <path d="M-5,0 L-10,20 L-4,25 L-1,8 Z" fill="#352a24" stroke="#1a1610" stroke-width="0.5"/>
+      <path d="M5,-2 L12,18 L6,22 L-1,8 Z" fill="#352a24" stroke="#1a1610" stroke-width="0.5"/>
+      <circle cx="0" cy="40" r="2.5" fill="#5a5040" stroke="#3a3028" stroke-width="0.5"/>
+      <circle cx="0" cy="65" r="2.5" fill="#5a5040" stroke="#3a3028" stroke-width="0.5"/>
+      <circle cx="0" cy="90" r="2.5" fill="#5a5040" stroke="#3a3028" stroke-width="0.5"/>
+      <path d="M-12,55 L-5,55 L-5,70 L-14,70 Z" fill="none" stroke="#2a2218" stroke-width="0.8"/>
+      <line x1="-15" y1="40" x2="-18" y2="120" stroke="#1a1610" stroke-width="0.5" opacity="0.4"/>
+      <line x1="10" y1="35" x2="14" y2="115" stroke="#1a1610" stroke-width="0.5" opacity="0.4"/>
+      <ellipse cx="-20" cy="70" rx="6" ry="10" fill="#4a4035" stroke="#2a2218" stroke-width="0.5" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- ===== WALL DECORATIONS ===== -->
+  <g transform="translate(530, 200)">
+    <rect x="0" y="0" width="70" height="55" rx="2" fill="#3a2515" stroke="#5a4020" stroke-width="2"/>
+    <rect x="5" y="5" width="60" height="45" fill="#2a3025"/>
+    <rect x="5" y="35" width="60" height="15" fill="#3a4530"/>
+    <circle cx="50" cy="18" r="6" fill="#5a5040" opacity="0.5"/>
+  </g>
+
+  <!-- Wall sconce -->
+  <g transform="translate(1010, 250)">
+    <rect x="-3" y="0" width="6" height="30" rx="2" fill="#8a6a30"/>
+    <path d="M-10,0 Q-3,-10 0,-12 Q3,-10 10,0 Z" fill="#b8942e" stroke="#8a6a20" stroke-width="1"/>
+  </g>
+
+  <!-- Small side table -->
+  <g transform="translate(580, 480)">
+    <rect x="0" y="0" width="50" height="5" rx="1" fill="#4a3520"/>
+    <rect x="5" y="5" width="4" height="40" fill="#4a3520"/>
+    <rect x="41" y="5" width="4" height="40" fill="#4a3520"/>
+    <rect x="0" y="43" width="50" height="3" fill="#4a3520"/>
+  </g>
+
+  <!-- ===== RUG ===== -->
+  <g transform="translate(550, 560)">
+    <ellipse cx="120" cy="30" rx="140" ry="35" fill="#4a2020" opacity="0.5" stroke="#5a2828" stroke-width="1.5"/>
+    <ellipse cx="120" cy="30" rx="110" ry="25" fill="none" stroke="#6a3030" stroke-width="1" opacity="0.4"/>
+    <ellipse cx="120" cy="30" rx="80" ry="16" fill="none" stroke="#6a3030" stroke-width="0.8" opacity="0.3"/>
+  </g>
+
+  <!-- ===== AMBIENT LIGHTING - warmer due to door light ===== -->
+  <ellipse cx="640" cy="100" rx="400" ry="150" fill="#f0d060" opacity="0.03"/>
+  <!-- Extra warm light from door -->
+  <ellipse cx="750" cy="400" rx="200" ry="250" fill="#f0d870" opacity="0.04"/>
+
+  <!-- Light casting on floor from door -->
+  <path d="M700,520 L650,720 L900,720 L850,520 Z" fill="#f8e880" opacity="0.04"/>
+
+  <!-- ===== VIGNETTE OVERLAY ===== -->
+  <rect width="1280" height="720" fill="url(#vignette)"/>
+
+  <!-- Subtle noise -->
+  <rect width="1280" height="720" fill="#000" opacity="0.04"/>
+</svg>

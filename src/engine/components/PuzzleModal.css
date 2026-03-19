@@ -1,0 +1,246 @@
+/* ========== 모달 공통 ========== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.2s;
+}
+
+.modal {
+  background: linear-gradient(135deg, #f5e6c8, #e8d5b0);
+  border: 3px solid #8b6914;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 440px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  font-family: 'Noto Serif KR', serif;
+  color: #2a1d14;
+}
+
+.modal__close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #8b6914;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.modal__close:hover {
+  color: #d4a847;
+}
+
+/* ========== 퍼즐 모달 ========== */
+.puzzle-modal__title {
+  text-align: center;
+  color: #5c3d1e;
+  font-size: 1rem;
+  margin: 0 0 16px;
+  font-weight: 600;
+}
+
+/* ========== 키패드 ========== */
+.keypad__display {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: #2a2a2a;
+  border-radius: 8px;
+  border: 2px solid #555;
+}
+
+.keypad__display--shake {
+  animation: shake 0.4s;
+}
+
+.keypad__digit {
+  width: 36px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4ade80;
+  background: #1a1a1a;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.keypad__buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.keypad__btn {
+  padding: 12px;
+  font-size: 1.2rem;
+  border: 1px solid #8b6914;
+  background: rgba(139, 105, 20, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  color: #2a1d14;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.keypad__btn:hover:not(:disabled) {
+  background: rgba(139, 105, 20, 0.25);
+}
+
+.keypad__btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.keypad__btn--empty {
+  visibility: hidden;
+}
+
+/* ========== 텍스트 입력 퍼즐 ========== */
+.text-input-puzzle {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.text-input-puzzle__image {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 2px solid #8b6914;
+}
+
+.text-input-puzzle__prompt {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  color: #3d2b1f;
+}
+
+.text-input-puzzle__prompt strong {
+  color: #b8860b;
+}
+
+.text-input-puzzle__field {
+  display: flex;
+  gap: 8px;
+}
+
+.text-input-puzzle__field--shake {
+  animation: shake 0.4s;
+}
+
+.text-input-puzzle__field input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #8b6914;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  color: #2a1d14;
+  font-family: 'Noto Serif KR', serif;
+  outline: none;
+}
+
+.text-input-puzzle__field input:focus {
+  border-color: #d4a847;
+  box-shadow: 0 0 8px rgba(212, 168, 71, 0.3);
+}
+
+.text-input-puzzle__submit {
+  padding: 10px 20px;
+  background: #8b6914;
+  color: #f5e6c8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.text-input-puzzle__submit:hover {
+  background: #a67c00;
+}
+
+/* ========== 순서 맞추기 ========== */
+.sequence-puzzle--shake {
+  animation: shake 0.4s;
+}
+
+.sequence-puzzle__selected {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-height: 36px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.sequence-puzzle__tag {
+  background: #8b6914;
+  color: #f5e6c8;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.sequence-puzzle__hint {
+  color: #999;
+  font-size: 0.8rem;
+  align-self: center;
+}
+
+.sequence-puzzle__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sequence-puzzle__option {
+  padding: 8px 16px;
+  border: 1px solid #8b6914;
+  background: rgba(139, 105, 20, 0.08);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Noto Serif KR', serif;
+  color: #2a1d14;
+  transition: all 0.15s;
+}
+
+.sequence-puzzle__option:hover:not(:disabled) {
+  background: rgba(139, 105, 20, 0.2);
+}
+
+.sequence-puzzle__option--used {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ========== 애니메이션 ========== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-4px); }
+}

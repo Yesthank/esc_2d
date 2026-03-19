@@ -1,0 +1,395 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <!-- Wall pattern -->
+    <pattern id="wallpaper" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#6b5142"/>
+      <path d="M30 0 Q35 15 30 30 Q25 15 30 0Z" fill="#7a6052" opacity="0.3"/>
+      <path d="M0 30 Q15 35 30 30 Q15 25 0 30Z" fill="#7a6052" opacity="0.2"/>
+      <circle cx="30" cy="30" r="2" fill="#7a6052" opacity="0.15"/>
+    </pattern>
+    <!-- Floor pattern -->
+    <pattern id="floor" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="#4a3828"/>
+      <rect width="50" height="50" fill="#3e2f20"/>
+      <rect x="50" y="50" width="50" height="50" fill="#3e2f20"/>
+    </pattern>
+    <!-- Moonlight glow -->
+    <radialGradient id="moonGlow" cx="50%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#c8d8f0" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#8090b0" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#405070" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Moonlight beam on floor -->
+    <linearGradient id="moonBeam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c8d8f0" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#405070" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Vignette -->
+    <radialGradient id="vignette" cx="38%" cy="42%">
+      <stop offset="35%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#0a0705" stop-opacity="0.65"/>
+    </radialGradient>
+    <!-- Night sky gradient -->
+    <linearGradient id="nightSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#060d1f"/>
+      <stop offset="40%" stop-color="#0d1a35"/>
+      <stop offset="100%" stop-color="#15253f"/>
+    </linearGradient>
+    <!-- Curtain fabric gradient left -->
+    <linearGradient id="curtainL" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5c2e1e"/>
+      <stop offset="30%" stop-color="#7a3d28"/>
+      <stop offset="60%" stop-color="#5c2e1e"/>
+      <stop offset="100%" stop-color="#4a2418"/>
+    </linearGradient>
+    <!-- Curtain fabric gradient right -->
+    <linearGradient id="curtainR" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4a2418"/>
+      <stop offset="40%" stop-color="#5c2e1e"/>
+      <stop offset="70%" stop-color="#7a3d28"/>
+      <stop offset="100%" stop-color="#5c2e1e"/>
+    </linearGradient>
+    <!-- Wood grain filter -->
+    <filter id="woodGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04 0.2" numOctaves="4" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feBlend mode="overlay" in="SourceGraphic" in2="gray"/>
+    </filter>
+    <!-- Cabinet wood gradient -->
+    <linearGradient id="cabinetWood" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3d2b1f"/>
+      <stop offset="50%" stop-color="#4a3525"/>
+      <stop offset="100%" stop-color="#3a2818"/>
+    </linearGradient>
+    <!-- Glass reflection -->
+    <linearGradient id="glassReflect" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.04"/>
+    </linearGradient>
+    <!-- Notebook glow -->
+    <radialGradient id="notebookGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#ffa500" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ff8c00" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Cabinet interior light -->
+    <linearGradient id="cabinetInterior" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a2818"/>
+      <stop offset="100%" stop-color="#2a1c10"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ====== Wall ====== -->
+  <rect width="1280" height="520" fill="#6b5142"/>
+  <rect width="1280" height="520" fill="url(#wallpaper)"/>
+  <!-- Baseboard molding -->
+  <rect y="505" width="1280" height="15" fill="#4a3525" rx="2"/>
+  <rect y="505" width="1280" height="3" fill="#8b6b4a" opacity="0.4"/>
+
+  <!-- ====== Floor ====== -->
+  <rect y="520" width="1280" height="200" fill="url(#floor)"/>
+  <!-- Floor reflection -->
+  <rect y="520" width="1280" height="30" fill="#5a4a38" opacity="0.3"/>
+
+  <!-- ====== Large Window (center-left, 15~60%) ====== -->
+  <g>
+    <!-- Window frame outer -->
+    <rect x="190" y="40" width="500" height="420" rx="6" fill="#5a3d20" stroke="#4a3018" stroke-width="4"/>
+    <!-- Window frame inner -->
+    <rect x="205" y="55" width="470" height="390" rx="3" fill="#0a0f1a"/>
+
+    <!-- Night sky -->
+    <rect x="208" y="58" width="464" height="384" rx="2" fill="url(#nightSky)"/>
+
+    <!-- Stars -->
+    <circle cx="260" cy="90" r="2" fill="#f0e6d3" opacity="0.9"/>
+    <circle cx="310" cy="120" r="1.2" fill="#f0e6d3" opacity="0.6"/>
+    <circle cx="350" cy="75" r="1.5" fill="#f0e6d3" opacity="0.8"/>
+    <circle cx="400" cy="140" r="1" fill="#f0e6d3" opacity="0.5"/>
+    <circle cx="450" cy="85" r="1.8" fill="#f0e6d3" opacity="0.7"/>
+    <circle cx="500" cy="110" r="1" fill="#f0e6d3" opacity="0.4"/>
+    <circle cx="540" cy="70" r="1.5" fill="#f0e6d3" opacity="0.75"/>
+    <circle cx="580" cy="130" r="1.2" fill="#f0e6d3" opacity="0.55"/>
+    <circle cx="620" cy="80" r="1" fill="#f0e6d3" opacity="0.65"/>
+    <circle cx="290" cy="160" r="0.8" fill="#f0e6d3" opacity="0.45"/>
+    <circle cx="470" cy="170" r="1.3" fill="#f0e6d3" opacity="0.5"/>
+    <circle cx="380" cy="200" r="0.9" fill="#f0e6d3" opacity="0.35"/>
+    <circle cx="550" cy="180" r="1.1" fill="#f0e6d3" opacity="0.4"/>
+    <circle cx="240" cy="130" r="0.7" fill="#f0e6d3" opacity="0.3"/>
+    <circle cx="630" cy="150" r="1.4" fill="#f0e6d3" opacity="0.6"/>
+    <!-- Twinkling stars -->
+    <circle cx="340" cy="95" r="2.5" fill="#ffffff" opacity="0.15"/>
+    <circle cx="340" cy="95" r="1.2" fill="#f5f0e0" opacity="0.95"/>
+    <circle cx="520" cy="100" r="2.2" fill="#ffffff" opacity="0.12"/>
+    <circle cx="520" cy="100" r="1" fill="#f5f0e0" opacity="0.9"/>
+
+    <!-- Crescent Moon -->
+    <circle cx="580" cy="120" r="28" fill="#f5e6c8" opacity="0.95"/>
+    <circle cx="590" cy="113" r="24" fill="#0d1a35"/>
+    <circle cx="580" cy="120" r="40" fill="#f5e6c8" opacity="0.06"/>
+    <circle cx="580" cy="120" r="55" fill="#c8d8f0" opacity="0.03"/>
+
+    <!-- Distant treeline silhouette -->
+    <path d="M208 380 Q230 340 250 370 Q260 335 280 365 Q295 330 315 360 Q325 325 345 355 Q360 320 380 350 Q395 315 415 345 Q430 310 450 340 Q460 305 480 335 Q495 300 515 330 Q530 305 550 335 Q565 310 585 340 Q600 315 620 345 Q635 320 650 350 Q660 340 672 442 L208 442 Z" fill="#0a1520" opacity="0.7"/>
+    <path d="M208 400 Q240 370 270 390 Q300 360 330 385 Q360 355 390 380 Q420 350 450 375 Q480 345 510 370 Q540 345 570 370 Q600 350 630 375 Q650 365 672 442 L208 442 Z" fill="#0d1a2a" opacity="0.5"/>
+
+    <!-- Window mullions -->
+    <line x1="440" y1="58" x2="440" y2="442" stroke="#5a3d20" stroke-width="6"/>
+    <line x1="208" y1="248" x2="672" y2="248" stroke="#5a3d20" stroke-width="6"/>
+    <line x1="324" y1="58" x2="324" y2="248" stroke="#5a3d20" stroke-width="3"/>
+    <line x1="556" y1="58" x2="556" y2="248" stroke="#5a3d20" stroke-width="3"/>
+    <line x1="324" y1="248" x2="324" y2="442" stroke="#5a3d20" stroke-width="3"/>
+    <line x1="556" y1="248" x2="556" y2="442" stroke="#5a3d20" stroke-width="3"/>
+
+    <!-- Glass reflection streaks -->
+    <rect x="215" y="62" width="8" height="180" rx="2" fill="#ffffff" opacity="0.025"/>
+    <rect x="448" y="62" width="6" height="180" rx="2" fill="#ffffff" opacity="0.02"/>
+    <rect x="215" y="255" width="6" height="180" rx="2" fill="#ffffff" opacity="0.018"/>
+
+    <!-- Window sill -->
+    <rect x="180" y="445" width="520" height="18" rx="3" fill="#5a3d20" stroke="#4a3018" stroke-width="2"/>
+    <rect x="185" y="447" width="510" height="4" fill="#8b6a38" opacity="0.3"/>
+  </g>
+
+  <!-- ====== Curtains ====== -->
+  <g>
+    <!-- Left curtain -->
+    <path d="M140 25 Q155 25 175 30 L175 480 Q165 485 145 485 Q130 485 120 480 L120 35 Q130 25 140 25Z" fill="url(#curtainL)"/>
+    <path d="M130 30 Q135 250 128 480" fill="none" stroke="#3a1a10" stroke-width="1.5" opacity="0.5"/>
+    <path d="M145 28 Q150 250 143 483" fill="none" stroke="#8a4a30" stroke-width="1" opacity="0.3"/>
+    <path d="M160 30 Q163 250 158 480" fill="none" stroke="#3a1a10" stroke-width="1.2" opacity="0.4"/>
+    <ellipse cx="155" cy="250" rx="18" ry="8" fill="#8b6914" opacity="0.7" transform="rotate(-15 155 250)"/>
+    <path d="M140 242 Q155 250 170 242" fill="none" stroke="#d4a847" stroke-width="1.5"/>
+    <path d="M175 30 Q195 130 185 250 Q200 300 195 480 L175 480 Z" fill="url(#curtainL)" opacity="0.85"/>
+    <path d="M182 35 Q198 140 188 255 Q202 310 198 478" fill="none" stroke="#3a1a10" stroke-width="1" opacity="0.4"/>
+
+    <!-- Right curtain -->
+    <path d="M740 25 Q725 25 705 30 L705 480 Q715 485 735 485 Q750 485 760 480 L760 35 Q750 25 740 25Z" fill="url(#curtainR)"/>
+    <path d="M750 30 Q745 250 752 480" fill="none" stroke="#3a1a10" stroke-width="1.5" opacity="0.5"/>
+    <path d="M735 28 Q730 250 737 483" fill="none" stroke="#8a4a30" stroke-width="1" opacity="0.3"/>
+    <path d="M720 30 Q717 250 722 480" fill="none" stroke="#3a1a10" stroke-width="1.2" opacity="0.4"/>
+    <ellipse cx="725" cy="250" rx="18" ry="8" fill="#8b6914" opacity="0.7" transform="rotate(15 725 250)"/>
+    <path d="M710 242 Q725 250 740 242" fill="none" stroke="#d4a847" stroke-width="1.5"/>
+    <path d="M705 30 Q685 130 695 250 Q680 300 685 480 L705 480 Z" fill="url(#curtainR)" opacity="0.85"/>
+    <path d="M698 35 Q682 140 692 255 Q678 310 682 478" fill="none" stroke="#3a1a10" stroke-width="1" opacity="0.4"/>
+
+    <!-- Curtain rod -->
+    <rect x="100" y="18" width="680" height="8" rx="4" fill="#8b6914" stroke="#d4a847" stroke-width="1"/>
+    <circle cx="100" cy="22" r="10" fill="#8b6914" stroke="#d4a847" stroke-width="1.5"/>
+    <circle cx="780" cy="22" r="10" fill="#8b6914" stroke="#d4a847" stroke-width="1.5"/>
+  </g>
+
+  <!-- ====== Moonlight beam on floor ====== -->
+  <path d="M250 520 L320 463 L560 463 L630 520 L680 720 L200 720 Z" fill="url(#moonBeam)" opacity="0.5"/>
+  <rect x="250" y="520" width="380" height="200" fill="url(#moonGlow)" opacity="0.4"/>
+
+  <!-- ====== Small side table near window (left) ====== -->
+  <g>
+    <rect x="30" y="410" width="80" height="10" rx="3" fill="#5a3d20" stroke="#4a3018" stroke-width="1.5"/>
+    <rect x="40" y="420" width="8" height="100" fill="#4a3018" rx="2"/>
+    <rect x="92" y="420" width="8" height="100" fill="#4a3018" rx="2"/>
+    <line x1="44" y1="480" x2="96" y2="480" stroke="#3a2515" stroke-width="4"/>
+    <rect x="50" y="385" width="35" height="28" rx="3" fill="#6b4a28" stroke="#5a3d20" stroke-width="1.5"/>
+    <rect x="48" y="383" width="39" height="5" rx="2" fill="#7a5a35"/>
+    <path d="M68 383 Q60 360 55 350 Q65 345 68 360" fill="#2d5a2a" stroke="#1a3a18" stroke-width="0.5"/>
+    <path d="M68 383 Q75 355 80 345 Q85 355 68 375" fill="#3a6a35" stroke="#1a3a18" stroke-width="0.5"/>
+    <path d="M68 383 Q58 365 48 358 Q55 350 65 370" fill="#2a5028" stroke="#1a3a18" stroke-width="0.5"/>
+    <path d="M68 383 Q78 360 88 355 Q82 365 70 378" fill="#357030" stroke="#1a3a18" stroke-width="0.5"/>
+    <path d="M68 383 Q68 350 72 340 Q74 355 68 378" fill="#306530" stroke="#1a3a18" stroke-width="0.5"/>
+  </g>
+
+  <!-- ====== OPEN Cabinet (right side, 62~95%) ====== -->
+  <g>
+    <!-- Cabinet body -->
+    <rect x="800" y="140" width="260" height="380" rx="6" fill="url(#cabinetWood)" stroke="#2d1f14" stroke-width="4"/>
+    <!-- Top crown molding -->
+    <rect x="793" y="132" width="274" height="14" rx="4" fill="#5a3d20" stroke="#4a3018" stroke-width="1.5"/>
+    <rect x="796" y="134" width="268" height="4" rx="2" fill="#8b6a38" opacity="0.35"/>
+    <path d="M800 146 Q930 138 1060 146" fill="none" stroke="#5a4020" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- Upper section: OPEN cabinet interior -->
+    <!-- Interior background -->
+    <rect x="810" y="155" width="240" height="180" rx="3" fill="url(#cabinetInterior)"/>
+    <!-- Back panel -->
+    <rect x="812" y="157" width="236" height="176" fill="#251a10" opacity="0.9"/>
+
+    <!-- Interior shelves -->
+    <rect x="812" y="240" width="236" height="4" fill="#3a2818"/>
+    <rect x="812" y="240" width="236" height="1.5" fill="#5a3d20" opacity="0.5"/>
+
+    <!-- ====== Books and items on upper shelf ====== -->
+    <rect x="822" y="168" width="18" height="68" rx="1" fill="#8b4513"/>
+    <line x1="831" y1="178" x2="831" y2="225" stroke="#a8633a" stroke-width="0.8" opacity="0.5"/>
+    <rect x="844" y="172" width="14" height="64" rx="1" fill="#2c5a80"/>
+    <rect x="862" y="165" width="20" height="71" rx="1" fill="#5a2d28"/>
+    <line x1="872" y1="175" x2="872" y2="225" stroke="#7a4540" stroke-width="0.8" opacity="0.5"/>
+    <rect x="886" y="170" width="12" height="66" rx="1" fill="#2a6a3a"/>
+    <rect x="902" y="168" width="16" height="68" rx="1" fill="#6a4a20"/>
+    <!-- Rolled paper/scroll -->
+    <ellipse cx="930" cy="230" rx="6" ry="3" fill="#e8d8b8"/>
+    <rect x="924" y="195" width="12" height="35" rx="3" fill="#e8d8b8" opacity="0.8"/>
+    <!-- Small decorative box -->
+    <rect x="950" y="215" width="25" height="18" rx="2" fill="#5a3d20" stroke="#8b6914" stroke-width="1"/>
+    <rect x="955" y="218" width="15" height="5" rx="1" fill="#8b6914" opacity="0.4"/>
+    <!-- Stack of papers -->
+    <rect x="985" y="220" width="30" height="4" rx="1" fill="#e8dcc8" transform="rotate(-3 1000 222)"/>
+    <rect x="983" y="216" width="32" height="4" rx="1" fill="#f0e4d0" transform="rotate(2 999 218)"/>
+    <rect x="986" y="212" width="28" height="4" rx="1" fill="#e8dcc8" transform="rotate(-1 1000 214)"/>
+
+    <!-- ====== Books and items on lower shelf ====== -->
+    <rect x="822" y="250" width="22" height="78" rx="1" fill="#4a2a50"/>
+    <rect x="848" y="255" width="16" height="73" rx="1" fill="#8b6914"/>
+    <line x1="856" y1="265" x2="856" y2="315" stroke="#a88030" stroke-width="0.8" opacity="0.5"/>
+    <rect x="868" y="248" width="18" height="80" rx="1" fill="#3a5a3a"/>
+    <rect x="890" y="253" width="14" height="75" rx="1" fill="#5a3018"/>
+
+    <!-- ====== RESEARCH NOTEBOOK (highlighted/glowing!) ====== -->
+    <g>
+      <!-- Glow effect behind notebook -->
+      <ellipse cx="960" cy="295" rx="50" ry="45" fill="url(#notebookGlow)"/>
+      <!-- Notebook body -->
+      <rect x="920" y="255" width="45" height="65" rx="3" fill="#2a4a6a" stroke="#4a7a9a" stroke-width="1.5"/>
+      <!-- Notebook spine -->
+      <rect x="918" y="255" width="6" height="65" rx="1" fill="#1a3a5a"/>
+      <!-- Notebook cover details -->
+      <rect x="928" y="262" width="30" height="3" rx="1" fill="#6a9aba" opacity="0.6"/>
+      <rect x="928" y="270" width="25" height="2" rx="1" fill="#6a9aba" opacity="0.4"/>
+      <rect x="928" y="277" width="28" height="2" rx="1" fill="#6a9aba" opacity="0.4"/>
+      <!-- Star/emblem on cover -->
+      <circle cx="943" cy="298" r="8" fill="none" stroke="#8ab0d0" stroke-width="1" opacity="0.6"/>
+      <circle cx="943" cy="298" r="4" fill="#8ab0d0" opacity="0.3"/>
+      <!-- Bookmark ribbon -->
+      <path d="M955 255 L958 245 L961 255" fill="#c0392b" stroke="#a02020" stroke-width="0.5"/>
+      <!-- Pulsing glow ring -->
+      <ellipse cx="943" cy="290" rx="35" ry="42" fill="none" stroke="#ffd700" stroke-width="1" opacity="0.2"/>
+    </g>
+
+    <!-- More items on lower shelf after notebook -->
+    <rect x="975" y="252" width="14" height="76" rx="1" fill="#7a3a30"/>
+    <rect x="993" y="258" width="18" height="70" rx="1" fill="#3a3a5a"/>
+    <!-- Magnifying glass leaning -->
+    <circle cx="1025" cy="310" r="10" fill="none" stroke="#8b6914" stroke-width="2"/>
+    <line x1="1032" y1="317" x2="1040" y2="328" stroke="#8b6914" stroke-width="2.5"/>
+    <circle cx="1025" cy="310" r="8" fill="#ffffff" opacity="0.03"/>
+
+    <!-- ====== OPEN left door (swung open to the left) ====== -->
+    <g transform="translate(815, 160)">
+      <g transform="skewY(3)">
+        <rect x="-90" y="0" width="95" height="170" rx="3" fill="#2d1f14" stroke="#4a3018" stroke-width="2"/>
+        <!-- Glass pane on open door -->
+        <rect x="-82" y="10" width="80" height="148" rx="2" fill="#1a1510" opacity="0.6"/>
+        <rect x="-82" y="10" width="80" height="148" rx="2" fill="url(#glassReflect)"/>
+        <!-- Door handle (now on outside edge) -->
+        <rect x="-78" y="75" width="6" height="20" rx="3" fill="#8b6914" stroke="#d4a847" stroke-width="1"/>
+        <!-- Edge shadow of open door -->
+        <rect x="0" y="0" width="5" height="170" fill="#1a1208" opacity="0.4"/>
+      </g>
+    </g>
+
+    <!-- ====== OPEN right door (swung open to the right) ====== -->
+    <g transform="translate(1045, 160)">
+      <g transform="skewY(-3)">
+        <rect x="0" y="0" width="95" height="170" rx="3" fill="#2d1f14" stroke="#4a3018" stroke-width="2"/>
+        <!-- Glass pane on open door -->
+        <rect x="8" y="10" width="80" height="148" rx="2" fill="#1a1510" opacity="0.6"/>
+        <rect x="8" y="10" width="80" height="148" rx="2" fill="url(#glassReflect)"/>
+        <!-- Door handle -->
+        <rect x="78" y="75" width="6" height="20" rx="3" fill="#8b6914" stroke="#d4a847" stroke-width="1"/>
+        <!-- Edge shadow -->
+        <rect x="-5" y="0" width="5" height="170" fill="#1a1208" opacity="0.4"/>
+      </g>
+    </g>
+
+    <!-- Middle shelf/divider -->
+    <rect x="808" y="335" width="244" height="10" rx="2" fill="#5a3d20"/>
+    <rect x="808" y="335" width="244" height="3" fill="#8b6a38" opacity="0.3"/>
+
+    <!-- Lower section: two drawers (unchanged) -->
+    <!-- Upper drawer -->
+    <rect x="815" y="352" width="230" height="75" rx="4" fill="#2d1f14" stroke="#4a3018" stroke-width="2"/>
+    <rect x="830" y="362" width="200" height="55" rx="3" fill="#251a10" stroke="#3a2818" stroke-width="1"/>
+    <rect x="905" y="382" width="50" height="8" rx="4" fill="#8b6914" stroke="#d4a847" stroke-width="1"/>
+    <circle cx="918" cy="386" r="3" fill="#5a4010"/>
+    <circle cx="942" cy="386" r="3" fill="#5a4010"/>
+
+    <!-- Lower drawer -->
+    <rect x="815" y="432" width="230" height="75" rx="4" fill="#2d1f14" stroke="#4a3018" stroke-width="2"/>
+    <rect x="830" y="442" width="200" height="55" rx="3" fill="#251a10" stroke="#3a2818" stroke-width="1"/>
+    <rect x="905" y="462" width="50" height="8" rx="4" fill="#8b6914" stroke="#d4a847" stroke-width="1"/>
+    <circle cx="918" cy="466" r="3" fill="#5a4010"/>
+    <circle cx="942" cy="466" r="3" fill="#5a4010"/>
+
+    <!-- BROKEN LOCK (hanging open, on floor nearby) -->
+    <g transform="translate(930, 300)">
+      <!-- Lock body (tilted, broken) -->
+      <g transform="rotate(25 0 0)">
+        <rect x="-12" y="0" width="24" height="20" rx="3" fill="#7a5a10" stroke="#a08020" stroke-width="1"/>
+        <!-- Broken shackle (open) -->
+        <path d="M-7 0 Q-7 -14 0 -14" fill="none" stroke="#8b6914" stroke-width="3" stroke-linecap="round"/>
+        <path d="M7 0 Q7 -8 4 -10" fill="none" stroke="#8b6914" stroke-width="3" stroke-linecap="round"/>
+        <!-- Keyhole (key still inserted) -->
+        <circle cx="0" cy="8" r="3" fill="#1a1208"/>
+        <rect x="-1" y="8" width="2" height="7" fill="#1a1208"/>
+        <!-- Key protruding -->
+        <rect x="-1" y="15" width="2" height="12" rx="1" fill="#8b6914"/>
+        <rect x="-3" y="25" width="6" height="2" rx="1" fill="#8b6914"/>
+      </g>
+    </g>
+
+    <!-- Cabinet feet -->
+    <rect x="808" y="512" width="20" height="10" rx="3" fill="#3a2515"/>
+    <rect x="1032" y="512" width="20" height="10" rx="3" fill="#3a2515"/>
+    <rect x="915" y="515" width="30" height="7" rx="2" fill="#3a2515"/>
+  </g>
+
+  <!-- ====== Small decorative elements ====== -->
+  <!-- Wall sconce (left of window) -->
+  <g>
+    <rect x="55" y="180" width="10" height="30" rx="2" fill="#8b6914"/>
+    <path d="M45 180 Q60 165 75 180" fill="#d4a847" stroke="#8b6914" stroke-width="1"/>
+    <ellipse cx="60" cy="178" rx="4" ry="3" fill="#ffd060" opacity="0.5"/>
+    <circle cx="60" cy="178" r="25" fill="#ffd060" opacity="0.04"/>
+  </g>
+
+  <!-- Wall sconce (right of cabinet) -->
+  <g>
+    <rect x="1095" y="200" width="10" height="30" rx="2" fill="#8b6914"/>
+    <path d="M1085 200 Q1100 185 1115 200" fill="#d4a847" stroke="#8b6914" stroke-width="1"/>
+    <ellipse cx="1100" cy="198" rx="4" ry="3" fill="#ffd060" opacity="0.5"/>
+    <circle cx="1100" cy="198" r="25" fill="#ffd060" opacity="0.04"/>
+  </g>
+
+  <!-- Small framed picture above cabinet -->
+  <g>
+    <rect x="1100" y="140" width="70" height="50" rx="3" fill="#2d1f14" stroke="#8b6914" stroke-width="2"/>
+    <rect x="1108" y="148" width="54" height="34" fill="#1a1510"/>
+    <rect x="1110" y="150" width="50" height="30" fill="#1a2535"/>
+    <path d="M1110 172 Q1125 162 1140 168 Q1150 158 1160 172 L1160 180 L1110 180 Z" fill="#2a3a25" opacity="0.6"/>
+    <circle cx="1145" cy="158" r="5" fill="#f5e6c8" opacity="0.5"/>
+  </g>
+
+  <!-- ====== Floor rug ====== -->
+  <ellipse cx="500" cy="610" rx="280" ry="55" fill="#5c3028" opacity="0.35"/>
+  <ellipse cx="500" cy="610" rx="260" ry="45" fill="#7a4030" opacity="0.2"/>
+  <ellipse cx="500" cy="610" rx="230" ry="30" fill="#8b5040" opacity="0.12"/>
+
+  <!-- ====== Atmosphere effects ====== -->
+  <!-- Vignette -->
+  <rect width="1280" height="720" fill="url(#vignette)"/>
+  <!-- Dust particles in moonlight -->
+  <circle cx="350" cy="280" r="1" fill="#c8d8f0" opacity="0.12"/>
+  <circle cx="420" cy="320" r="0.8" fill="#c8d8f0" opacity="0.08"/>
+  <circle cx="480" cy="250" r="1.2" fill="#c8d8f0" opacity="0.1"/>
+  <circle cx="380" cy="400" r="0.7" fill="#c8d8f0" opacity="0.06"/>
+  <circle cx="520" cy="350" r="0.9" fill="#c8d8f0" opacity="0.09"/>
+  <circle cx="300" cy="380" r="1.1" fill="#c8d8f0" opacity="0.07"/>
+  <!-- Warm dust near sconces -->
+  <circle cx="70" cy="200" r="0.6" fill="#ffd060" opacity="0.08"/>
+  <circle cx="1110" cy="215" r="0.7" fill="#ffd060" opacity="0.07"/>
+  <!-- Extra golden dust near open cabinet (discovery atmosphere) -->
+  <circle cx="920" cy="260" r="0.8" fill="#ffd700" opacity="0.12"/>
+  <circle cx="950" cy="275" r="1" fill="#ffd700" opacity="0.1"/>
+  <circle cx="970" cy="250" r="0.6" fill="#ffd700" opacity="0.08"/>
+  <circle cx="935" cy="240" r="0.9" fill="#ffd700" opacity="0.09"/>
+</svg>

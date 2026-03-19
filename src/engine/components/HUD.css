@@ -1,0 +1,61 @@
+.hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: linear-gradient(180deg, rgba(30, 25, 20, 0.8), transparent);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hud > * {
+  pointer-events: auto;
+}
+
+.hud__room-name {
+  font-family: 'Noto Serif KR', serif;
+  color: #d4a847;
+  font-size: 0.85rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hud__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hud__timer {
+  font-family: 'Courier New', monospace;
+  color: #f0e6d3;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(212, 168, 71, 0.3);
+}
+
+.hud__hint-btn {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(212, 168, 71, 0.3);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+}
+
+.hud__hint-btn:hover {
+  background: rgba(212, 168, 71, 0.2);
+  border-color: #d4a847;
+}

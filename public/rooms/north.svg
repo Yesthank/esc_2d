@@ -1,0 +1,395 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <!-- Wall gradient -->
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2a1a"/>
+      <stop offset="60%" stop-color="#4a3828"/>
+      <stop offset="100%" stop-color="#3d2d1d"/>
+    </linearGradient>
+
+    <!-- Floor gradient -->
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a1e14"/>
+      <stop offset="100%" stop-color="#1a1008"/>
+    </linearGradient>
+
+    <!-- Lamp glow -->
+    <radialGradient id="lampGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffdd88" stop-opacity="0.45"/>
+      <stop offset="40%" stop-color="#ffcc66" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ffcc66" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Lamp shade glow -->
+    <radialGradient id="shadeGlow" cx="0.5" cy="1" r="0.8">
+      <stop offset="0%" stop-color="#ffe8a0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ddaa44" stop-opacity="0.6"/>
+    </radialGradient>
+
+    <!-- Bookshelf wood -->
+    <linearGradient id="shelfWood" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5c3d1e"/>
+      <stop offset="50%" stop-color="#6b4a2a"/>
+      <stop offset="100%" stop-color="#543618"/>
+    </linearGradient>
+
+    <!-- Desk wood -->
+    <linearGradient id="deskWood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b4226"/>
+      <stop offset="100%" stop-color="#4d2e18"/>
+    </linearGradient>
+
+    <!-- Desk top surface -->
+    <linearGradient id="deskTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7a5030"/>
+      <stop offset="100%" stop-color="#6b4226"/>
+    </linearGradient>
+
+    <!-- Note paper -->
+    <linearGradient id="noteGrad" x1="0" y1="0" x2="0.1" y2="1">
+      <stop offset="0%" stop-color="#fef8e0"/>
+      <stop offset="100%" stop-color="#f0e4c0"/>
+    </linearGradient>
+
+    <!-- Note glow -->
+    <filter id="noteGlowFilter">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Vignette -->
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0%" stop-color="black" stop-opacity="0"/>
+      <stop offset="70%" stop-color="black" stop-opacity="0"/>
+      <stop offset="100%" stop-color="black" stop-opacity="0.65"/>
+    </radialGradient>
+
+    <!-- Wall pattern -->
+    <pattern id="wallPat" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="none"/>
+      <path d="M0,30 Q15,25 30,30 Q45,35 60,30" stroke="#4a3828" stroke-width="0.5" fill="none" opacity="0.3"/>
+      <path d="M0,0 Q15,-5 30,0 Q45,5 60,0" stroke="#4a3828" stroke-width="0.5" fill="none" opacity="0.3" transform="translate(0,60)"/>
+    </pattern>
+
+    <!-- Floor tile pattern -->
+    <pattern id="floorTile" x="0" y="0" width="80" height="40" patternUnits="userSpaceOnUse">
+      <rect width="80" height="40" fill="none"/>
+      <rect x="0" y="0" width="80" height="40" stroke="#3a2a18" stroke-width="0.8" fill="none" opacity="0.3"/>
+      <rect x="40" y="20" width="80" height="40" stroke="#3a2a18" stroke-width="0.8" fill="none" opacity="0.2"/>
+    </pattern>
+
+    <!-- Painting frame gradient -->
+    <linearGradient id="frameGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c9a84c"/>
+      <stop offset="50%" stop-color="#d4b65e"/>
+      <stop offset="100%" stop-color="#a88a3a"/>
+    </linearGradient>
+
+    <!-- Painting 1 content -->
+    <linearGradient id="paint1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a3355"/>
+      <stop offset="40%" stop-color="#2a5577"/>
+      <stop offset="60%" stop-color="#3a7744"/>
+      <stop offset="100%" stop-color="#2a5533"/>
+    </linearGradient>
+
+    <!-- Painting 2 content -->
+    <linearGradient id="paint2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#882222"/>
+      <stop offset="50%" stop-color="#aa4433"/>
+      <stop offset="100%" stop-color="#663322"/>
+    </linearGradient>
+
+    <!-- Shadow filter -->
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Soft shadow -->
+    <filter id="softShadow">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Book spine gradients -->
+    <linearGradient id="book1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8b2020"/>
+      <stop offset="50%" stop-color="#a03030"/>
+      <stop offset="100%" stop-color="#7a1818"/>
+    </linearGradient>
+    <linearGradient id="book2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a4488"/>
+      <stop offset="50%" stop-color="#2255aa"/>
+      <stop offset="100%" stop-color="#163a77"/>
+    </linearGradient>
+    <linearGradient id="book3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2a7a2a"/>
+      <stop offset="50%" stop-color="#339933"/>
+      <stop offset="100%" stop-color="#226622"/>
+    </linearGradient>
+    <linearGradient id="book4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8a6a20"/>
+      <stop offset="50%" stop-color="#aa8833"/>
+      <stop offset="100%" stop-color="#776018"/>
+    </linearGradient>
+    <linearGradient id="book5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6a2a6a"/>
+      <stop offset="50%" stop-color="#884488"/>
+      <stop offset="100%" stop-color="#5a2058"/>
+    </linearGradient>
+    <linearGradient id="book6" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#cc6622"/>
+      <stop offset="50%" stop-color="#dd7733"/>
+      <stop offset="100%" stop-color="#bb5518"/>
+    </linearGradient>
+    <linearGradient id="book7" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#336688"/>
+      <stop offset="50%" stop-color="#447799"/>
+      <stop offset="100%" stop-color="#2a5577"/>
+    </linearGradient>
+    <linearGradient id="book8" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#994444"/>
+      <stop offset="50%" stop-color="#bb5555"/>
+      <stop offset="100%" stop-color="#883333"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ============ BACKGROUND WALL ============ -->
+  <rect width="1280" height="720" fill="url(#wallGrad)"/>
+  <rect width="1280" height="720" fill="url(#wallPat)"/>
+
+  <!-- Wall molding top -->
+  <rect x="0" y="0" width="1280" height="8" fill="#2a1a0e"/>
+  <rect x="0" y="8" width="1280" height="3" fill="#5a4030"/>
+  <rect x="0" y="11" width="1280" height="2" fill="#2a1a0e"/>
+
+  <!-- Wall molding mid (chair rail) -->
+  <rect x="0" y="380" width="1280" height="4" fill="#5a4030" opacity="0.5"/>
+
+  <!-- Wainscoting below chair rail -->
+  <rect x="0" y="384" width="1280" height="136" fill="#352518" opacity="0.4"/>
+  <line x1="80" y1="384" x2="80" y2="520" stroke="#4a3525" stroke-width="1" opacity="0.3"/>
+  <line x1="200" y1="384" x2="200" y2="520" stroke="#4a3525" stroke-width="1" opacity="0.3"/>
+  <line x1="320" y1="384" x2="320" y2="520" stroke="#4a3525" stroke-width="1" opacity="0.3"/>
+  <line x1="960" y1="384" x2="960" y2="520" stroke="#4a3525" stroke-width="1" opacity="0.3"/>
+  <line x1="1080" y1="384" x2="1080" y2="520" stroke="#4a3525" stroke-width="1" opacity="0.3"/>
+  <line x1="1200" y1="384" x2="1200" y2="520" stroke="#4a3525" stroke-width="1" opacity="0.3"/>
+
+  <!-- ============ FLOOR ============ -->
+  <rect x="0" y="520" width="1280" height="200" fill="url(#floorGrad)"/>
+  <rect x="0" y="520" width="1280" height="200" fill="url(#floorTile)" opacity="0.4"/>
+  <!-- Baseboard -->
+  <rect x="0" y="516" width="1280" height="8" fill="#2a1a0e"/>
+
+  <!-- ============ BOOKSHELF (LEFT) ============ -->
+  <g filter="url(#shadow)">
+    <!-- Bookshelf main body -->
+    <rect x="40" y="80" width="340" height="440" rx="3" fill="url(#shelfWood)"/>
+    <!-- Bookshelf inner -->
+    <rect x="52" y="92" width="316" height="416" fill="#2a1a0e"/>
+
+    <!-- Shelf dividers -->
+    <rect x="48" y="80" width="328" height="10" rx="2" fill="#6b4a2a"/>
+    <rect x="48" y="195" width="328" height="10" rx="1" fill="#6b4a2a"/>
+    <rect x="48" y="310" width="328" height="10" rx="1" fill="#6b4a2a"/>
+    <rect x="48" y="410" width="328" height="10" rx="1" fill="#6b4a2a"/>
+    <rect x="48" y="510" width="328" height="12" rx="2" fill="#6b4a2a"/>
+
+    <!-- Side panels -->
+    <rect x="40" y="80" width="14" height="442" fill="#5c3d1e"/>
+    <rect x="366" y="80" width="14" height="442" fill="#4d3218"/>
+
+    <!-- === SHELF 1 (top: y=92 to y=195) books === -->
+    <!-- Row of books -->
+    <rect x="60" y="100" width="28" height="93" rx="2" fill="url(#book1)" opacity="0.95"/>
+    <rect x="62" y="105" width="24" height="1" fill="#ffddaa" opacity="0.3"/>
+    <rect x="62" y="115" width="24" height="1" fill="#ffddaa" opacity="0.2"/>
+
+    <rect x="92" y="105" width="22" height="88" rx="2" fill="url(#book2)" opacity="0.95"/>
+    <rect x="94" y="110" width="18" height="1" fill="#aaddff" opacity="0.3"/>
+
+    <rect x="118" y="98" width="30" height="95" rx="2" fill="url(#book3)" opacity="0.95"/>
+    <rect x="120" y="103" width="26" height="1" fill="#aaffaa" opacity="0.3"/>
+    <rect x="120" y="113" width="26" height="1" fill="#aaffaa" opacity="0.2"/>
+    <rect x="120" y="123" width="26" height="1" fill="#aaffaa" opacity="0.15"/>
+
+    <rect x="152" y="108" width="20" height="85" rx="2" fill="url(#book4)" opacity="0.95"/>
+
+    <rect x="176" y="96" width="26" height="97" rx="2" fill="url(#book5)" opacity="0.95"/>
+    <rect x="178" y="101" width="22" height="1" fill="#ddaaff" opacity="0.3"/>
+
+    <rect x="206" y="102" width="32" height="91" rx="2" fill="url(#book6)" opacity="0.95"/>
+    <rect x="208" y="107" width="28" height="1.5" fill="#ffddaa" opacity="0.35"/>
+    <rect x="208" y="117" width="28" height="1" fill="#ffddaa" opacity="0.2"/>
+
+    <rect x="242" y="100" width="18" height="93" rx="2" fill="url(#book7)" opacity="0.95"/>
+
+    <rect x="264" y="94" width="28" height="99" rx="2" fill="url(#book8)" opacity="0.95"/>
+    <rect x="266" y="99" width="24" height="1" fill="#ffaaaa" opacity="0.3"/>
+
+    <rect x="296" y="104" width="24" height="89" rx="2" fill="url(#book1)" opacity="0.85"/>
+    <rect x="324" y="98" width="26" height="95" rx="2" fill="url(#book2)" opacity="0.85"/>
+    <rect x="354" y="102" width="12" height="91" rx="2" fill="url(#book4)" opacity="0.9"/>
+
+    <!-- === SHELF 2 (y=207 to y=310) books === -->
+    <rect x="60" y="212" width="25" height="96" rx="2" fill="url(#book5)" opacity="0.95"/>
+    <rect x="89" y="216" width="30" height="92" rx="2" fill="url(#book7)" opacity="0.95"/>
+    <rect x="123" y="210" width="22" height="98" rx="2" fill="url(#book1)" opacity="0.9"/>
+    <rect x="149" y="218" width="28" height="90" rx="2" fill="url(#book3)" opacity="0.95"/>
+    <rect x="181" y="208" width="20" height="100" rx="2" fill="url(#book6)" opacity="0.95"/>
+    <rect x="205" y="214" width="34" height="94" rx="2" fill="url(#book8)" opacity="0.95"/>
+    <rect x="205" y="219" width="30" height="1" fill="#ffcccc" opacity="0.3"/>
+    <rect x="243" y="212" width="18" height="96" rx="2" fill="url(#book4)" opacity="0.9"/>
+    <rect x="265" y="220" width="26" height="88" rx="2" fill="url(#book2)" opacity="0.95"/>
+    <rect x="295" y="210" width="22" height="98" rx="2" fill="url(#book5)" opacity="0.9"/>
+    <rect x="321" y="216" width="30" height="92" rx="2" fill="url(#book6)" opacity="0.9"/>
+    <rect x="355" y="214" width="12" height="94" rx="2" fill="url(#book3)" opacity="0.85"/>
+
+    <!-- Small decorative object on shelf 2 (globe) -->
+    <!-- (kept empty for cleanliness) -->
+
+    <!-- === SHELF 3 (y=322 to y=410) books === -->
+    <rect x="60" y="326" width="30" height="82" rx="2" fill="url(#book8)" opacity="0.95"/>
+    <rect x="94" y="330" width="24" height="78" rx="2" fill="url(#book3)" opacity="0.95"/>
+    <rect x="122" y="324" width="28" height="84" rx="2" fill="url(#book7)" opacity="0.9"/>
+    <rect x="154" y="332" width="20" height="76" rx="2" fill="url(#book1)" opacity="0.95"/>
+    <rect x="178" y="326" width="32" height="82" rx="2" fill="url(#book4)" opacity="0.95"/>
+    <rect x="214" y="330" width="22" height="78" rx="2" fill="url(#book6)" opacity="0.9"/>
+    <rect x="240" y="324" width="26" height="84" rx="2" fill="url(#book2)" opacity="0.95"/>
+    <rect x="270" y="328" width="18" height="80" rx="2" fill="url(#book5)" opacity="0.95"/>
+    <rect x="292" y="332" width="30" height="76" rx="2" fill="url(#book8)" opacity="0.9"/>
+    <rect x="326" y="326" width="24" height="82" rx="2" fill="url(#book3)" opacity="0.9"/>
+    <rect x="354" y="330" width="12" height="78" rx="2" fill="url(#book1)" opacity="0.85"/>
+
+    <!-- === SHELF 4 (bottom: y=422 to y=510) books === -->
+    <rect x="60" y="426" width="34" height="82" rx="2" fill="url(#book6)" opacity="0.95"/>
+    <rect x="98" y="430" width="22" height="78" rx="2" fill="url(#book2)" opacity="0.95"/>
+    <rect x="124" y="424" width="28" height="84" rx="2" fill="url(#book5)" opacity="0.9"/>
+    <rect x="156" y="432" width="20" height="76" rx="2" fill="url(#book4)" opacity="0.95"/>
+    <rect x="180" y="426" width="26" height="82" rx="2" fill="url(#book7)" opacity="0.95"/>
+    <!-- Gap for visual interest -->
+    <rect x="220" y="430" width="30" height="78" rx="2" fill="url(#book1)" opacity="0.9"/>
+    <rect x="254" y="424" width="24" height="84" rx="2" fill="url(#book3)" opacity="0.95"/>
+    <rect x="282" y="432" width="20" height="76" rx="2" fill="url(#book8)" opacity="0.9"/>
+    <rect x="306" y="426" width="28" height="82" rx="2" fill="url(#book6)" opacity="0.9"/>
+    <rect x="338" y="430" width="28" height="78" rx="2" fill="url(#book2)" opacity="0.85"/>
+  </g>
+
+  <!-- ============ PAINTINGS ON WALL ============ -->
+  <!-- Painting 1 (above desk, left) -->
+  <g filter="url(#softShadow)">
+    <rect x="520" y="60" width="160" height="120" rx="2" fill="url(#frameGold)" stroke="#8a6a2a" stroke-width="2"/>
+    <rect x="530" y="70" width="140" height="100" fill="url(#paint1)"/>
+    <!-- Landscape details -->
+    <circle cx="640" cy="90" r="12" fill="#ffe880" opacity="0.8"/>
+    <path d="M530,140 Q570,110 600,130 Q630,105 660,125 Q670,120 670,170 L530,170Z" fill="#2a6633" opacity="0.7"/>
+    <path d="M540,150 Q580,130 620,150 Q650,135 670,148 L670,170 L530,170Z" fill="#1a4422" opacity="0.6"/>
+  </g>
+
+  <!-- Painting 2 (above desk, right) -->
+  <g filter="url(#softShadow)">
+    <rect x="780" y="50" width="130" height="100" rx="2" fill="url(#frameGold)" stroke="#8a6a2a" stroke-width="2"/>
+    <rect x="790" y="60" width="110" height="80" fill="url(#paint2)"/>
+    <!-- Abstract portrait hint -->
+    <ellipse cx="845" cy="90" rx="20" ry="25" fill="#cc9977" opacity="0.5"/>
+    <rect x="830" y="115" width="30" height="20" rx="3" fill="#553322" opacity="0.4"/>
+  </g>
+
+  <!-- Small painting 3 (far right wall) -->
+  <g filter="url(#softShadow)">
+    <rect x="1050" y="120" width="90" height="70" rx="2" fill="url(#frameGold)" stroke="#8a6a2a" stroke-width="1.5"/>
+    <rect x="1058" y="128" width="74" height="54" fill="#1a2a4a"/>
+    <path d="M1058,165 Q1080,150 1095,160 Q1110,145 1132,155 L1132,182 L1058,182Z" fill="#2a5533" opacity="0.6"/>
+  </g>
+
+  <!-- ============ DESK ============ -->
+  <g filter="url(#shadow)">
+    <!-- Desk top surface (3D perspective) -->
+    <path d="M420,430 L880,430 L900,450 L400,450 Z" fill="url(#deskTop)"/>
+    <!-- Desk top thickness -->
+    <rect x="400" y="450" width="500" height="12" rx="1" fill="url(#deskWood)"/>
+
+    <!-- Desk front panel -->
+    <rect x="410" y="462" width="480" height="100" fill="#4d2e18"/>
+    <rect x="420" y="470" width="460" height="84" rx="2" fill="#3d2414" stroke="#5a3a20" stroke-width="1"/>
+
+    <!-- Desk legs -->
+    <rect x="410" y="560" width="16" height="80" fill="#4d2e18"/>
+    <rect x="874" y="560" width="16" height="80" fill="#4d2e18"/>
+
+    <!-- Drawer handle -->
+    <rect x="620" y="505" width="60" height="6" rx="3" fill="#8a7040" stroke="#6a5530" stroke-width="0.5"/>
+  </g>
+
+  <!-- ============ NOTE ON DESK ============ -->
+  <g filter="url(#noteGlowFilter)" transform="translate(580, 390) rotate(-5)">
+    <!-- Note glow behind -->
+    <rect x="-8" y="-8" width="176" height="66" rx="4" fill="#ffee88" opacity="0.2"/>
+
+    <!-- Note paper -->
+    <rect x="0" y="0" width="160" height="50" rx="2" fill="url(#noteGrad)" stroke="#c8b888" stroke-width="1"/>
+    <!-- Corner fold -->
+    <path d="M140,0 L160,0 L160,15 Z" fill="#e8d8b0"/>
+    <path d="M140,0 L160,15 L140,15 Z" fill="#d8c898" stroke="#c8b888" stroke-width="0.5"/>
+
+    <!-- Note text -->
+    <text x="14" y="18" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#2a1a0a">PIN &#x2192; PEN</text>
+    <text x="14" y="34" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#2a1a0a">HILL &#x2192; ???</text>
+    <!-- Underline for emphasis -->
+    <line x1="80" y1="36" x2="120" y2="36" stroke="#aa3333" stroke-width="1.5" opacity="0.7"/>
+    <!-- Decorative line on note -->
+    <line x1="10" y1="44" x2="80" y2="44" stroke="#c8b888" stroke-width="0.5" opacity="0.5"/>
+  </g>
+
+  <!-- ============ DESK LAMP ============ -->
+  <g>
+    <!-- Lamp glow effect (behind lamp) -->
+    <ellipse cx="820" cy="380" rx="180" ry="150" fill="url(#lampGlow)"/>
+
+    <!-- Lamp base -->
+    <ellipse cx="830" cy="446" rx="30" ry="8" fill="#5a4a30"/>
+    <ellipse cx="830" cy="444" rx="28" ry="7" fill="#6a5a3a"/>
+
+    <!-- Lamp stem -->
+    <rect x="826" y="360" width="8" height="84" fill="#6a5a3a"/>
+    <rect x="828" y="360" width="4" height="84" fill="#7a6a4a"/>
+
+    <!-- Lamp arm -->
+    <line x1="830" y1="365" x2="810" y2="340" stroke="#6a5a3a" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Lamp shade -->
+    <path d="M780,310 Q795,300 810,340 L810,345 Q795,305 780,315 Z" fill="url(#shadeGlow)" opacity="0"/>
+    <path d="M785,340 L835,340 L845,310 L775,310 Z" fill="url(#shadeGlow)" stroke="#8a7a50" stroke-width="1"/>
+
+    <!-- Light cone from shade -->
+    <path d="M785,340 L730,445 L900,445 L845,340 Z" fill="#ffee88" opacity="0.06"/>
+
+    <!-- Bulb glow -->
+    <circle cx="810" cy="338" r="6" fill="#fff8dd" opacity="0.8"/>
+    <circle cx="810" cy="338" r="3" fill="#fffef0" opacity="0.9"/>
+  </g>
+
+  <!-- ============ PEN HOLDER ON DESK ============ -->
+  <g>
+    <rect x="480" y="412" width="24" height="30" rx="3" fill="#4a3a2a" stroke="#3a2a1a" stroke-width="1"/>
+    <line x1="488" y1="398" x2="486" y2="412" stroke="#222" stroke-width="2"/>
+    <line x1="494" y1="395" x2="496" y2="412" stroke="#1a1a8a" stroke-width="2"/>
+    <line x1="500" y1="400" x2="498" y2="412" stroke="#8a1a1a" stroke-width="1.5"/>
+  </g>
+
+  <!-- ============ SMALL BOOK ON DESK ============ -->
+  <g transform="translate(750, 420) rotate(12)">
+    <rect x="0" y="0" width="50" height="35" rx="2" fill="#5a2020"/>
+    <rect x="3" y="2" width="44" height="31" fill="#4a1818" rx="1"/>
+    <text x="10" y="20" font-family="serif" font-size="7" fill="#cc9966" opacity="0.6">NOTES</text>
+  </g>
+
+  <!-- ============ AMBIENT LIGHT EFFECTS ============ -->
+  <!-- Warm light pool on desk from lamp -->
+  <ellipse cx="750" cy="440" rx="200" ry="30" fill="#ffdd88" opacity="0.08"/>
+
+  <!-- ============ VIGNETTE OVERLAY ============ -->
+  <rect width="1280" height="720" fill="url(#vignette)"/>
+
+  <!-- Subtle top darkness -->
+  <rect x="0" y="0" width="1280" height="60" fill="black" opacity="0.15"/>
+</svg>
