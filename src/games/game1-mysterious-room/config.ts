@@ -114,9 +114,9 @@ const config: GameConfig = {
           label: '잠긴 캐비닛',
           action: {
             type: 'examine',
-            text: '단단히 잠겨 있다.\n문제를 더 풀어야 열 수 있을 것 같다.',
+            text: '단단히 잠겨 있다.\n자물쇠에 "LOCK-7"이라는 제품 각인이 보인다.\n문제를 더 풀어야 열 수 있을 것 같다.',
           },
-          activeWhen: { type: 'not-flag', flagId: 'quiz2-solved', value: true },
+          activeWhen: { type: 'not-flag', flagId: 'quiz3-solved', value: true },
           failMessage: '아직 잠겨 있다. 다른 단서를 먼저 찾아보자.',
         },
         {
@@ -124,7 +124,7 @@ const config: GameConfig = {
           area: [50, 8, 30, 65],
           label: '캐비닛 (뭔가 반응한다...)',
           action: { type: 'puzzle', puzzleId: 'quiz4-ink' },
-          visibleWhen: { type: 'flag', flagId: 'quiz2-solved', value: true },
+          visibleWhen: { type: 'flag', flagId: 'quiz3-solved', value: true },
           activeWhen: { type: 'not-flag', flagId: 'quiz4-solved', value: true },
         },
         {
@@ -164,7 +164,7 @@ const config: GameConfig = {
       hotspots: [
         {
           id: 'fireplace',
-          area: [2, 8, 32, 62],
+          area: [2, 30, 32, 45],
           label: '벽난로',
           action: {
             type: 'examine',
@@ -173,12 +173,30 @@ const config: GameConfig = {
           activeWhen: { type: 'not-flag', flagId: 'quiz4-solved', value: true },
         },
         {
+          id: 'mantel-puzzle',
+          area: [2, 5, 32, 22],
+          label: '벽난로 위 선반 (뭔가 적혀 있다)',
+          action: { type: 'puzzle', puzzleId: 'quiz6-gray' },
+          visibleWhen: {
+            type: 'and',
+            conditions: [
+              { type: 'flag', flagId: 'quiz3-solved', value: true },
+              { type: 'not-flag', flagId: 'quiz6-solved', value: true },
+            ],
+          },
+        },
+        {
           id: 'fireplace-puzzle',
-          area: [2, 8, 32, 62],
+          area: [2, 30, 32, 45],
           label: '벽난로 (타다 남은 노트)',
           action: { type: 'puzzle', puzzleId: 'quiz5-ifthen' },
-          visibleWhen: { type: 'flag', flagId: 'quiz4-solved', value: true },
-          activeWhen: { type: 'not-flag', flagId: 'quiz5-solved', value: true },
+          visibleWhen: {
+            type: 'and',
+            conditions: [
+              { type: 'flag', flagId: 'quiz6-solved', value: true },
+              { type: 'not-flag', flagId: 'quiz5-solved', value: true },
+            ],
+          },
         },
         {
           id: 'door-locked',
@@ -225,8 +243,27 @@ const config: GameConfig = {
           label: '소파',
           action: {
             type: 'examine',
-            text: '낡은 가죽 소파. 교수가 자주 여기 앉아 사색에 빠졌다고 한다.\n쿠션 아래에는 아무것도 없다.',
+            text: '낡은 가죽 소파. 교수가 자주 여기 앉아 사색에 빠졌다고 한다.\n쿠션 아래에는... 접힌 종이가 있다!',
           },
+          activeWhen: { type: 'not-flag', flagId: 'quiz2-solved', value: true },
+        },
+        {
+          id: 'sofa-puzzle',
+          area: [3, 35, 32, 30],
+          label: '소파 쿠션 아래 종이',
+          action: { type: 'puzzle', puzzleId: 'quiz3-flipped' },
+          visibleWhen: { type: 'flag', flagId: 'quiz2-solved', value: true },
+          activeWhen: { type: 'not-flag', flagId: 'quiz3-solved', value: true },
+        },
+        {
+          id: 'sofa-done',
+          area: [3, 35, 32, 30],
+          label: '소파',
+          action: {
+            type: 'examine',
+            text: '낡은 가죽 소파. 쿠션 아래의 종이는 이미 확인했다.',
+          },
+          visibleWhen: { type: 'flag', flagId: 'quiz3-solved', value: true },
         },
         {
           id: 'painting-wall',
@@ -327,7 +364,7 @@ const config: GameConfig = {
       id: 'quiz2-shapes',
       type: 'text-input',
       title: '교수의 두 번째 수수께끼',
-      prompt: `도형이 숫자를 의미한다면...\n\n△ UNCLE\n□ TREATS\n⬠ BEAUTY\n\n세 도형이 가리키는 글자를 모으면?\n<small>(영어 3글자)</small>`,
+      prompt: `낡은 종이에 교수의 필체로 적혀 있다.\n\n△ UNCLE\n□ TREATS\n⬠ BEAUTY\n\n<small>(영어 3글자)</small>`,
       answer: 'CAT',
       placeholder: '영어로 입력하세요',
       solvedFlag: 'quiz2-solved',
@@ -335,9 +372,27 @@ const config: GameConfig = {
         type: 'flag',
         flagId: 'quiz2-solved',
         flagValue: true,
-        text: '삼각형(3)→C, 사각형(4)→A, 오각형(5)→T\n→ CAT!\n\n종이 아래에 메모: "캐비닛 잠금 장치를 확인해라."',
+        text: '삼각형(3)→C, 사각형(4)→A, 오각형(5)→T\n→ CAT!\n\n종이 아래에 메모: "소파 쪽을 확인해라. 쿠션 아래를 뒤져봐."',
       },
     },
+    // 문제 3: 뒤집어진 글자 (SELF_QUIZ_BANK #3)
+    {
+      id: 'quiz3-flipped',
+      type: 'text-input',
+      title: '교수의 세 번째 수수께끼',
+      prompt: `소파 쿠션 아래서 찾은 접힌 종이.\n교수의 필체로 쓰여 있다:\n\n<pre style="font-size:1.2em; letter-spacing:2px">A - L\nL - ∋</pre>\n\n<small>정답은 한글로 입력하시오.</small>`,
+      answer: '특급',
+      placeholder: '한글로 입력하세요',
+      isKorean: true,
+      solvedFlag: 'quiz3-solved',
+      reward: {
+        type: 'flag',
+        flagId: 'quiz3-solved',
+        flagValue: true,
+        text: '∋를 뒤집으면 ㅌ, L을 뒤집으면 ㄱ → 특\nL을 뒤집으면 ㄱ, A를 뒤집으면 ㅂ → 급\n→ 특급!\n\n종이 뒷면: "캐비닛의 자물쇠를 확인해라."',
+      },
+    },
+    // 문제 4: 잉크에 피를 찍으면 (SELF_QUIZ_BANK #4)
     {
       id: 'quiz4-ink',
       type: 'text-input',
@@ -350,9 +405,26 @@ const config: GameConfig = {
         type: 'flag',
         flagId: 'quiz4-solved',
         flagValue: true,
-        text: 'ink + P = Pink\nlock + B = Block!\n\n찰칵! 캐비닛이 열렸다!',
+        text: 'ink + P = Pink\nlock + B = Block!\n\n찰칵! 캐비닛이 열렸다!\n캐비닛 안을 살펴보자.',
       },
     },
+    // 문제 6: 회색 숫자의 비밀 (SELF_QUIZ_BANK #6)
+    {
+      id: 'quiz6-gray',
+      type: 'text-input',
+      title: '벽난로 위의 수수께끼',
+      prompt: `벽난로 선반 위에 교수가 새겨놓은 문구:\n\n<pre style="font-size:1.1em">F <span style="color:#999">4</span> E = 5\nS <span style="color:#999">9</span> = 6\nTA <span style="color:#999">10</span> = ???</pre>\n\n<small>(회색 숫자에 주목. 영어로 입력)</small>`,
+      answer: 'TAX',
+      placeholder: '영어로 입력하세요',
+      solvedFlag: 'quiz6-solved',
+      reward: {
+        type: 'flag',
+        flagId: 'quiz6-solved',
+        flagValue: true,
+        text: '회색 숫자를 로마 숫자로!\nF + IV + E = FIVE (5) ✓\nS + IX = SIX (6) ✓\nTA + X = TAX!\n\n벽난로 속 탄 종이가 이제 읽힐 것 같다...',
+      },
+    },
+    // 문제 5: IF... THEN... (SELF_QUIZ_BANK #5) - 최종
     {
       id: 'quiz5-ifthen',
       type: 'text-input',
@@ -398,17 +470,47 @@ const config: GameConfig = {
       },
     },
     {
-      forPuzzle: 'quiz4-ink',
+      forPuzzle: 'quiz3-flipped',
       steps: [
-        'ink에 "피"를 넣으면 Pink... 어디에 넣었을까요?',
-        'ink 앞에 P를 붙이면 Pink! 같은 규칙으로...',
-        'lock 앞에 B를 붙이면? B + lock = ?',
+        '글자들을 위아래로 뒤집어서 보세요.',
+        '∋를 뒤집으면 한글 자음이 됩니다.',
+        'ㅌ ㅡ ㄱ = 특, ㄱ ㅡ ㅂ = 급',
       ],
       visibleWhen: {
         type: 'and',
         conditions: [
           { type: 'flag', flagId: 'quiz2-solved', value: true },
+          { type: 'not-flag', flagId: 'quiz3-solved', value: true },
+        ],
+      },
+    },
+    {
+      forPuzzle: 'quiz4-ink',
+      steps: [
+        'ink에 "피"를 넣으면 Pink... 어디에 넣었을까요?',
+        'ink 앞에 P를 붙이면 Pink! 같은 규칙으로...',
+        '캐비닛 자물쇠에 LOCK이라고 적혀 있었죠? B + lock = ?',
+      ],
+      visibleWhen: {
+        type: 'and',
+        conditions: [
+          { type: 'flag', flagId: 'quiz3-solved', value: true },
           { type: 'not-flag', flagId: 'quiz4-solved', value: true },
+        ],
+      },
+    },
+    {
+      forPuzzle: 'quiz6-gray',
+      steps: [
+        '회색 숫자에 주목하세요. 4, 9, 10...',
+        '이 숫자들을 로마 숫자로 바꿔보세요. 4=IV, 9=IX, 10=X',
+        'F + IV + E = FIVE(5)! S + IX = SIX(6)! TA + X = ?',
+      ],
+      visibleWhen: {
+        type: 'and',
+        conditions: [
+          { type: 'flag', flagId: 'quiz3-solved', value: true },
+          { type: 'not-flag', flagId: 'quiz6-solved', value: true },
         ],
       },
     },
@@ -422,7 +524,7 @@ const config: GameConfig = {
       visibleWhen: {
         type: 'and',
         conditions: [
-          { type: 'flag', flagId: 'quiz4-solved', value: true },
+          { type: 'flag', flagId: 'quiz6-solved', value: true },
           { type: 'not-flag', flagId: 'quiz5-solved', value: true },
         ],
       },
