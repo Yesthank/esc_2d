@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { Room as RoomType, GameState, Condition, HotspotAction } from '../types';
 import { checkCondition } from '../hooks/useGameState';
+import { assetUrl } from '../utils';
 import './Room.css';
 
 interface Props {
@@ -21,16 +22,16 @@ export function Room({ room, state, onHotspotClick, onShowMessage, onNavigate, o
     return checkCondition(condition, state);
   };
 
-  // 현재 조건에 맞는 배경 선택
+  // 현재 조건에 맞는 배경 선택 (base URL 자동 적용)
   const currentBg = (() => {
     if (room.backgroundVariants) {
       for (const variant of room.backgroundVariants) {
         if (checkCondition(variant.when, state)) {
-          return variant.background;
+          return assetUrl(variant.background);
         }
       }
     }
-    return room.background;
+    return assetUrl(room.background);
   })();
 
   useEffect(() => {
