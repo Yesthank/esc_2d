@@ -35,10 +35,9 @@
   border-radius: 4px;
 }
 
-/* 기본 상태에서도 미세한 윤곽선 표시 - 클릭 가능한 곳임을 암시 */
+/* 기본 상태: 윤곽선 없음. 반짝이(✦)만으로 힌트 */
 .room__hotspot--active {
-  border: 1.5px solid rgba(255, 215, 0, 0.12);
-  animation: hotspotPulse 3s ease-in-out infinite;
+  border: none;
 }
 
 /* 반짝이는 힌트 이펙트 - 주기적으로 빛남 */
@@ -196,7 +195,3 @@
   50% { opacity: 1; transform: scale(1.2); }
 }
 
-@keyframes hotspotPulse {
-  0%, 100% { border-color: rgba(255, 215, 0, 0.08); box-shadow: none; }
-  50% { border-color: rgba(255, 215, 0, 0.2); box-shadow: 0 0 8px rgba(255, 215, 0, 0.08); }
-}

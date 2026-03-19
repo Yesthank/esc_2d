@@ -45,13 +45,13 @@ const config: GameConfig = {
       hotspots: [
         {
           id: 'desk-note',
-          area: [22, 40, 10, 12],
+          area: [48, 52, 22, 18],
           label: '수상한 쪽지',
           action: { type: 'puzzle', puzzleId: 'quiz1-introvert' },
         },
         {
           id: 'desk-drawer',
-          area: [30, 55, 10, 6],
+          area: [48, 82, 20, 7],
           label: '책상 서랍',
           action: {
             type: 'examine',
@@ -60,7 +60,7 @@ const config: GameConfig = {
         },
         {
           id: 'bookshelf',
-          area: [3, 10, 18, 55],
+          area: [0, 0, 26, 90],
           label: '책장',
           action: {
             type: 'examine',
@@ -69,14 +69,14 @@ const config: GameConfig = {
         },
         {
           id: 'bookshelf-note',
-          area: [8, 35, 8, 8],
+          area: [12, 33, 10, 10],
           label: '책 사이에 낀 종이!',
           action: { type: 'puzzle', puzzleId: 'quiz2-shapes' },
           visibleWhen: { type: 'flag', flagId: 'quiz1-solved', value: true },
         },
         {
           id: 'lamp',
-          area: [36, 36, 7, 16],
+          area: [72, 28, 14, 28],
           label: '책상 램프',
           action: {
             type: 'examine',
@@ -101,7 +101,7 @@ const config: GameConfig = {
       hotspots: [
         {
           id: 'window',
-          area: [15, 5, 25, 40],
+          area: [8, 5, 35, 52],
           label: '창문',
           action: {
             type: 'examine',
@@ -110,7 +110,7 @@ const config: GameConfig = {
         },
         {
           id: 'cabinet',
-          area: [55, 15, 25, 55],
+          area: [50, 8, 30, 65],
           label: '잠긴 캐비닛',
           action: {
             type: 'examine',
@@ -121,7 +121,7 @@ const config: GameConfig = {
         },
         {
           id: 'cabinet-puzzle',
-          area: [55, 15, 25, 55],
+          area: [50, 8, 30, 65],
           label: '캐비닛 (뭔가 반응한다...)',
           action: { type: 'puzzle', puzzleId: 'quiz4-ink' },
           visibleWhen: { type: 'flag', flagId: 'quiz2-solved', value: true },
@@ -129,7 +129,7 @@ const config: GameConfig = {
         },
         {
           id: 'cabinet-open',
-          area: [55, 15, 25, 55],
+          area: [50, 8, 30, 65],
           label: '열린 캐비닛',
           action: {
             type: 'dialog',
@@ -164,7 +164,7 @@ const config: GameConfig = {
       hotspots: [
         {
           id: 'fireplace',
-          area: [10, 15, 30, 50],
+          area: [2, 8, 32, 62],
           label: '벽난로',
           action: {
             type: 'examine',
@@ -174,7 +174,7 @@ const config: GameConfig = {
         },
         {
           id: 'fireplace-puzzle',
-          area: [10, 15, 30, 50],
+          area: [2, 8, 32, 62],
           label: '벽난로 (타다 남은 노트)',
           action: { type: 'puzzle', puzzleId: 'quiz5-ifthen' },
           visibleWhen: { type: 'flag', flagId: 'quiz4-solved', value: true },
@@ -182,7 +182,7 @@ const config: GameConfig = {
         },
         {
           id: 'door-locked',
-          area: [55, 5, 22, 68],
+          area: [40, 3, 28, 72],
           label: '출구 문',
           action: {
             type: 'examine',
@@ -192,7 +192,7 @@ const config: GameConfig = {
         },
         {
           id: 'door-unlocked',
-          area: [55, 5, 22, 68],
+          area: [40, 3, 28, 72],
           label: '출구 문 (자물쇠가 풀렸다!)',
           action: {
             type: 'dialog',
@@ -202,7 +202,7 @@ const config: GameConfig = {
         },
         {
           id: 'coat-rack',
-          area: [82, 10, 10, 50],
+          area: [34, 8, 10, 55],
           label: '코트걸이',
           action: {
             type: 'examine',
@@ -221,7 +221,7 @@ const config: GameConfig = {
       hotspots: [
         {
           id: 'sofa',
-          area: [15, 45, 30, 25],
+          area: [3, 35, 32, 30],
           label: '소파',
           action: {
             type: 'examine',
@@ -230,7 +230,7 @@ const config: GameConfig = {
         },
         {
           id: 'painting-wall',
-          area: [20, 8, 25, 30],
+          area: [28, 10, 30, 28],
           label: '벽에 걸린 사진들',
           action: {
             type: 'examine',
@@ -239,7 +239,7 @@ const config: GameConfig = {
         },
         {
           id: 'clock',
-          area: [55, 5, 12, 20],
+          area: [56, 8, 12, 20],
           label: '벽시계',
           action: {
             type: 'examine',
@@ -248,7 +248,7 @@ const config: GameConfig = {
         },
         {
           id: 'side-table',
-          area: [55, 45, 15, 15],
+          area: [42, 48, 14, 18],
           label: '사이드 테이블',
           action: {
             type: 'examine',
@@ -257,7 +257,7 @@ const config: GameConfig = {
         },
         {
           id: 'rug',
-          area: [20, 72, 40, 10],
+          area: [10, 78, 55, 10],
           label: '페르시아 러그',
           action: {
             type: 'examine',
