@@ -6,8 +6,12 @@
  *   node scripts/extract-hotspots.js public/rooms/north.svg
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // SVG 파일 경로
 const svgPath = process.argv[2];
@@ -32,7 +36,9 @@ if (!viewBoxMatch) {
   process.exit(1);
 }
 
-const [, , , viewWidth, viewHeight] = viewBoxMatch[1].split(/\s+/).map(Number);
+const viewBoxParts = viewBoxMatch[1].trim().split(/\s+/).map(Number);
+const viewWidth = viewBoxParts[2];
+const viewHeight = viewBoxParts[3];
 console.log(`📐 SVG viewBox: ${viewWidth} x ${viewHeight}\n`);
 
 // rect 요소 추출 (data-hotspot 속성이 있는 것)

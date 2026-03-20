@@ -6,8 +6,12 @@
  *   node scripts/validate-hotspots.js src/games/game1-mysterious-room/config.ts public/rooms/north.svg
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const configPath = process.argv[2];
 const svgPath = process.argv[3];
@@ -28,7 +32,9 @@ if (!viewBoxMatch) {
   process.exit(1);
 }
 
-const [, , , viewWidth, viewHeight] = viewBoxMatch[1].split(/\s+/).map(Number);
+const viewBoxParts = viewBoxMatch[1].trim().split(/\s+/).map(Number);
+const viewWidth = viewBoxParts[2];
+const viewHeight = viewBoxParts[3];
 
 // SVG에서 data-hotspot 요소 추출
 const svgRectRegex = /<rect[^>]*data-hotspot="([^"]*)"[^>]*x="([^"]*)"[^>]*y="([^"]*)"[^>]*width="([^"]*)"[^>]*height="([^"]*)"[^>]*>/g;
