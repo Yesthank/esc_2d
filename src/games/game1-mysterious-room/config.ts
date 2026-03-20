@@ -180,7 +180,7 @@ const config: GameConfig = {
           visibleWhen: {
             type: 'and',
             conditions: [
-              { type: 'flag', flagId: 'quiz3-solved', value: true },
+              { type: 'flag', flagId: 'quiz4-solved', value: true },
               { type: 'not-flag', flagId: 'quiz6-solved', value: true },
             ],
           },
