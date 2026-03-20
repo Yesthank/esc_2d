@@ -357,7 +357,7 @@ const config: GameConfig = {
         type: 'flag',
         flagId: 'quiz1-solved',
         flagValue: true,
-        text: '핀(PIN)의 I를 E로 바꾸면 펜(PEN)...\n언덕(HILL)의 I를 E로 바꾸면 지옥(HELL)!\n\n쪽지 뒷면에 뭔가 더 쓰여 있는 것 같은데...\n더 깊은 비밀이 남아 있는 걸까?',
+        text: '핀(PIN)의 I를 E로 바꾸면 펜(PEN)...\n언덕(HILL)의 I를 E로 바꾸면 지옥(HELL)!\n\n쪽지 뒷면: "책장에 뭔가 숨겨놓았다."',
       },
     },
     {
@@ -372,7 +372,7 @@ const config: GameConfig = {
         type: 'flag',
         flagId: 'quiz2-solved',
         flagValue: true,
-        text: '삼각형(3)→C, 사각형(4)→A, 오각형(5)→T\n→ CAT!\n\n종이 아래에는 또 다른 암호가 기다리고 있는 걸까?\n이 방을 더 자세히 살펴봐야 할 것 같다...',
+        text: '삼각형(3)→C, 사각형(4)→A, 오각형(5)→T\n→ CAT!\n\n종이 아래에 적혀 있다: "소파쪽에 단서를 숨겨놓았다."',
       },
     },
     // 문제 3: 뒤집어진 글자 (SELF_QUIZ_BANK #3)
@@ -389,7 +389,7 @@ const config: GameConfig = {
         type: 'flag',
         flagId: 'quiz3-solved',
         flagValue: true,
-        text: '∋를 뒤집으면 ㅌ, L을 뒤집으면 ㄱ → 특\nL을 뒤집으면 ㄱ, A를 뒤집으면 ㅂ → 급\n→ 특급!\n\n종이 뒷면에 작은 글자가 보인다.\n"다음 단서는... 자물쇠의 비밀을 푸는 것"',
+        text: '∋를 뒤집으면 ㅌ, L을 뒤집으면 ㄱ → 특\nL을 뒤집으면 ㄱ, A를 뒤집으면 ㅂ → 급\n→ 특급!\n\n종이 뒷면에 적혀 있다: "창가의 캐비닛... 자물쇠가 기다리고 있다."',
       },
     },
     // 문제 4: 잉크에 피를 찍으면 (SELF_QUIZ_BANK #4)
@@ -405,7 +405,7 @@ const config: GameConfig = {
         type: 'flag',
         flagId: 'quiz4-solved',
         flagValue: true,
-        text: 'ink + P = Pink\nlock + B = Block!\n\n찰칵! 캐비닛이 열렸다!\n\n안에는... 뭔가 있었던 흔적이 보인다.\n뭔가 더 있을 것 같은데...',
+        text: 'ink + P = Pink\nlock + B = Block!\n\n찰칵! 캐비닛이 열렸다!\n\n안에는... 반쯤 탄 노트가 보인다.\n벽난로 쪽에서 소리가 들리는 것 같다.',
       },
     },
     // 문제 6: 회색 숫자의 비밀 (SELF_QUIZ_BANK #6)
@@ -421,7 +421,7 @@ const config: GameConfig = {
         type: 'flag',
         flagId: 'quiz6-solved',
         flagValue: true,
-        text: '회색 숫자를 로마 숫자로!\nF + IV + E = FIVE (5) ✓\nS + IX = SIX (6) ✓\nTA + X = TAX!\n\n벽난로 속에서 무언가 드러난다...\n탄 종이 조각들이 서서히 모양을 찾기 시작한다.',
+        text: '회색 숫자를 로마 숫자로!\nF + IV + E = FIVE (5) ✓\nS + IX = SIX (6) ✓\nTA + X = TAX!\n\n벽난로 속에서 탄 종이가 떨어진다.\n교수의 마지막 메시지... 그것이 여기 있었다.',
       },
     },
     // 문제 5: IF... THEN... (SELF_QUIZ_BANK #5) - 최종
