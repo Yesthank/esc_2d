@@ -69,7 +69,7 @@ const config: GameConfig = {
         },
         {
           id: 'bookshelf-note',
-          area: [7, 38, 18, 8],
+          area: [4, 22, 36, 51],
           label: '책 사이에 낀 종이!',
           action: { type: 'puzzle', puzzleId: 'quiz2-shapes' },
           visibleWhen: { type: 'flag', flagId: 'quiz1-solved', value: true },
