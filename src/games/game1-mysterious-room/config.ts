@@ -380,7 +380,7 @@ const config: GameConfig = {
       id: 'quiz3-flipped',
       type: 'text-input',
       title: '교수의 세 번째 수수께끼',
-      prompt: `소파 쿠션 아래서 찾은 접힌 종이.\n\n교수의 필체로 쓰여 있다:\n<pre style="font-size:1.2em; letter-spacing:2px">A - L\nL - ∋</pre>\n\n<small>정답은 한글로 입력하시오.</small>`,
+      prompt: `소파 쿠션 아래서 찾은 접힌 종이.\n\n교수의 필체로 쓰여 있다:\n<div style="transform: rotate(180deg); display: inline-block; margin: 15px 0; background: rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 4px;"><pre style="font-size:1.4em; letter-spacing:3px; margin: 0; font-weight: bold;">A - L\nL - ∋</pre></div>\n\n<small>정답은 한글로 입력하시오.</small>`,
       answer: '특급',
       placeholder: '한글로 입력하세요',
       isKorean: true,
