@@ -380,7 +380,7 @@ const config: GameConfig = {
       id: 'quiz3-flipped',
       type: 'text-input',
       title: '교수의 세 번째 수수께끼',
-      prompt: `소파 쿠션 아래서 찾은 접힌 종이.\n\n교수의 필체로 쓰여 있다:\n<div style="transform: rotate(180deg); display: inline-block; margin: 15px 0; background: rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 4px;"><pre style="font-size:1.4em; letter-spacing:3px; margin: 0; font-weight: bold;">A - L\nL - ∋</pre></div>\n\n<small>정답은 한글로 입력하시오.</small>`,
+      prompt: `소파 쿠션 아래서 찾은 접힌 종이.\n종이가 완전히 뒤집혀 있었다. 조심스레 펼쳐본다...\n\n교수의 필체로 쓰여 있다:\n<div style="transform: rotate(180deg); display: inline-block; margin: 15px 0; background: rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 4px;"><pre style="font-size:1.4em; letter-spacing:3px; margin: 0; font-weight: bold;">A - L\nL - ∋</pre></div>\n\n손가락으로 따라가며 읽어보니... 이 글자들이 변환되면 뭔가 의미가 생길 것 같다.\n거꾸로 된 이 기호들은 뭘 나타내는 걸까?\n\n<small>정답은 한글로 입력하세요. (4글자)</small>`,
       answer: '특급',
       placeholder: '한글로 입력하세요',
       isKorean: true,
