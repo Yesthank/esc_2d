@@ -45,7 +45,7 @@ const config: GameConfig = {
       hotspots: [
         {
           id: 'desk-note',
-          area: [30, 65, 28, 10],
+          area: [31, 63, 28, 9],
           label: '수상한 쪽지',
           action: { type: 'puzzle', puzzleId: 'quiz1-introvert' },
         },
