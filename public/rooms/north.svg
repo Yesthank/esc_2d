@@ -351,8 +351,8 @@
   <rect width="720" height="100" fill="url(#nightSky)" opacity="0.15"/>
 
   <!-- ===== HOTSPOT MARKERS (for coordinate extraction) ===== -->
-  <!-- desk-note: [39, 59, 48, 17] - 책장 제외 책상 대부분 -->
-  <rect data-hotspot="desk-note" x="281" y="755" width="346" height="218" fill="none" style="pointer-events: auto; cursor: pointer"/>
+  <!-- desk-note: [31, 63, 28, 9] -->
+  <rect data-hotspot="desk-note" x="223" y="806" width="201" height="115" fill="none" style="pointer-events: auto; cursor: pointer"/>
 
   <!-- desk-drawer: [36, 76, 28, 6] -->
   <rect data-hotspot="desk-drawer" x="259" y="973" width="201" height="77" fill="none" style="pointer-events: auto; cursor: pointer"/>

@@ -45,7 +45,7 @@ const config: GameConfig = {
       hotspots: [
         {
           id: 'desk-note',
-          area: [39, 59, 48, 17],
+          area: [31, 63, 28, 9],
           label: '수상한 쪽지',
           action: { type: 'puzzle', puzzleId: 'quiz1-introvert' },
         },
@@ -69,7 +69,7 @@ const config: GameConfig = {
         },
         {
           id: 'bookshelf-note',
-          area: [7, 38, 18, 8],
+          area: [4, 22, 36, 51],
           label: '책 사이에 낀 종이!',
           action: { type: 'puzzle', puzzleId: 'quiz2-shapes' },
           visibleWhen: { type: 'flag', flagId: 'quiz1-solved', value: true },
