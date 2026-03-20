@@ -79,6 +79,7 @@ function KeypadUI({ puzzle, onSolve }: { puzzle: Extract<Puzzle, { type: 'keypad
 function TextInputUI({ puzzle, onSolve }: { puzzle: Extract<Puzzle, { type: 'text-input' }>; onSolve: () => void }) {
   const [input, setInput] = useState('');
   const [shake, setShake] = useState(false);
+  const isFlipped = puzzle.id === 'quiz3-flipped';
 
   const handleSubmit = () => {
     const normalized = input.trim().toLowerCase();
@@ -94,7 +95,7 @@ function TextInputUI({ puzzle, onSolve }: { puzzle: Extract<Puzzle, { type: 'tex
   return (
     <div className="text-input-puzzle">
       {puzzle.image && <img src={puzzle.image} alt="" className="text-input-puzzle__image" />}
-      <div className="text-input-puzzle__prompt" dangerouslySetInnerHTML={{ __html: puzzle.prompt }} />
+      <div className={`text-input-puzzle__prompt ${isFlipped ? 'text-input-puzzle__prompt--flipped' : ''}`} dangerouslySetInnerHTML={{ __html: puzzle.prompt }} />
       <div className={`text-input-puzzle__field ${shake ? 'text-input-puzzle__field--shake' : ''}`}>
         <input
           type="text"

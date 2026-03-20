@@ -134,6 +134,28 @@
   color: #b8860b;
 }
 
+/* 뒤집혀진 종이 스타일 */
+.text-input-puzzle__prompt--flipped {
+  background: #e8dcc4;
+  border: 2px solid #b8a080;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 -2px 4px rgba(255, 255, 255, 0.3);
+  transform: perspective(600px) rotateY(2deg) rotateX(1deg);
+  position: relative;
+}
+
+.text-input-puzzle__prompt--flipped::before {
+  content: '📝 종이가 뒤집혀 있다...';
+  position: absolute;
+  top: -28px;
+  left: 0;
+  font-size: 0.75rem;
+  color: #8b7355;
+  font-style: italic;
+  opacity: 0.7;
+}
+
 .text-input-puzzle__field {
   display: flex;
   gap: 8px;
