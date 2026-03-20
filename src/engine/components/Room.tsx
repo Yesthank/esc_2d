@@ -22,6 +22,7 @@ export function Room({ room, state, onHotspotClick, onShowMessage, onNavigate, o
   void _selectedItem; // 향후 아이템 사용 기능에서 활용
   const shownEntryRef = useRef<Set<string>>(new Set());
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const debugMode = typeof window !== 'undefined' && localStorage.getItem('DEBUG_HOTSPOTS') === 'true';
 
   const isVisible = (condition?: Condition) => {
     if (!condition) return true;
@@ -139,6 +140,32 @@ export function Room({ room, state, onHotspotClick, onShowMessage, onNavigate, o
                       fontFamily="'Noto Serif KR', serif"
                     >
                       {hotspot.label}
+                    </text>
+                  </g>
+                )}
+
+                {/* 디버그 모드: 좌표 & ID 표시 */}
+                {debugMode && (
+                  <g style={{ pointerEvents: 'none' }}>
+                    <text
+                      x={x + w / 2}
+                      y={y + h / 2}
+                      textAnchor="middle"
+                      fontSize="10"
+                      fill="rgba(255, 0, 0, 0.8)"
+                      fontFamily="monospace"
+                    >
+                      {hotspot.id}
+                    </text>
+                    <text
+                      x={x + w / 2}
+                      y={y + h / 2 + 14}
+                      textAnchor="middle"
+                      fontSize="8"
+                      fill="rgba(255, 0, 0, 0.6)"
+                      fontFamily="monospace"
+                    >
+                      [{Math.round(xPct)}, {Math.round(yPct)}, {Math.round(wPct)}, {Math.round(hPct)}]
                     </text>
                   </g>
                 )}
