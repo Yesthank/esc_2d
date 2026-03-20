@@ -628,4 +628,29 @@
 
   <!-- Subtle warm color grading overlay -->
   <rect x="0" y="0" width="720" height="1280" fill="#1A0E06" opacity="0.12"/>
+
+  <!-- ===== HOTSPOT MARKERS (for coordinate extraction) ===== -->
+  <!-- coat-rack: [77, 52, 14, 35] -->
+  <rect data-hotspot="coat-rack" x="554" y="666" width="101" height="448" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- sofa: [2, 40, 72, 20] -->
+  <rect data-hotspot="sofa" x="14" y="512" width="518" height="256" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- sofa-puzzle: [2, 40, 72, 20] -->
+  <rect data-hotspot="sofa-puzzle" x="14" y="512" width="518" height="256" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- sofa-done: [2, 40, 72, 20] -->
+  <rect data-hotspot="sofa-done" x="14" y="512" width="518" height="256" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- painting-wall: [5, 11, 86, 11] -->
+  <rect data-hotspot="painting-wall" x="36" y="141" width="619" height="141" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- clock: [70, 20, 22, 12] -->
+  <rect data-hotspot="clock" x="504" y="256" width="158" height="154" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- side-table: [80, 58, 15, 15] -->
+  <rect data-hotspot="side-table" x="576" y="742" width="108" height="192" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- rug: [8, 78, 70, 18] -->
+  <rect data-hotspot="rug" x="58" y="998" width="504" height="230" fill="none" style="pointer-events: auto; cursor: pointer"/>
 </svg>

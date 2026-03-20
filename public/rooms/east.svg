@@ -401,4 +401,20 @@
 
   <!-- Subtle vignette -->
   <rect x="0" y="0" width="720" height="1280" fill="none" stroke="#000000" stroke-width="80" opacity="0.15"/>
+
+  <!-- ===== HOTSPOT MARKERS (for coordinate extraction) ===== -->
+  <!-- window: [22, 3, 56, 34] -->
+  <rect data-hotspot="window" x="158" y="38" width="403" height="435" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- cabinet: [23, 41, 54, 35] -->
+  <rect data-hotspot="cabinet" x="166" y="525" width="389" height="448" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- cabinet-puzzle: [23, 41, 54, 35] -->
+  <rect data-hotspot="cabinet-puzzle" x="166" y="525" width="389" height="448" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- cabinet-open: [23, 41, 54, 35] -->
+  <rect data-hotspot="cabinet-open" x="166" y="525" width="389" height="448" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- curtain: [14, 3, 5, 35] -->
+  <rect data-hotspot="curtain" x="101" y="38" width="36" height="448" fill="none" style="pointer-events: auto; cursor: pointer"/>
 </svg>

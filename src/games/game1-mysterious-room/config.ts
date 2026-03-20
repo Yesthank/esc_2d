@@ -55,7 +55,7 @@ const config: GameConfig = {
           label: '책상 서랍',
           action: {
             type: 'examine',
-            text: '서랍 안에 교수의 메모가 있다.\n"내가 사라지면, 이 방에서 답을 찾아라.\n모든 답은 글자 속에 숨어 있다."',
+            text: '서랍 안에 교수의 메모가 있다.\n"내가 사라지면, 이 방에서 답을 찾아라.\n모든 답은 글자 속에 숨어 있다.\n때로는 글자를 변환하면 답이 보인다.\n룸 곳곳의 물건들을 꼼꼼히 살펴보라."',
           },
         },
         {
@@ -69,7 +69,7 @@ const config: GameConfig = {
         },
         {
           id: 'bookshelf-note',
-          area: [7, 42, 18, 6],
+          area: [7, 38, 18, 8],
           label: '책 사이에 낀 종이!',
           action: { type: 'puzzle', puzzleId: 'quiz2-shapes' },
           visibleWhen: { type: 'flag', flagId: 'quiz1-solved', value: true },
@@ -380,7 +380,7 @@ const config: GameConfig = {
       id: 'quiz3-flipped',
       type: 'text-input',
       title: '교수의 세 번째 수수께끼',
-      prompt: `소파 쿠션 아래서 찾은 접힌 종이.\n교수의 필체로 쓰여 있다:\n\n<pre style="font-size:1.2em; letter-spacing:2px">A - L\nL - ∋</pre>\n\n<small>정답은 한글로 입력하시오.</small>`,
+      prompt: `소파 쿠션 아래서 찾은 접힌 종이.\n종이가 뒤집혀 있다... 거꾸로 봐야 한다.\n\n교수의 필체로 쓰여 있다:\n<pre style="font-size:1.2em; letter-spacing:2px">A - L\nL - ∋</pre>\n\n<small style="color:#a67c00; font-weight:bold;">💡 힌트: 글자를 거꾸로 뒤집어서 한글로 읽어보세요.</small>\n<small>정답은 한글로 입력하시오.</small>`,
       answer: '특급',
       placeholder: '한글로 입력하세요',
       isKorean: true,

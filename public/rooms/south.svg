@@ -359,4 +359,20 @@
   <!-- ======= AMBIENT OVERLAY ======= -->
   <rect width="720" height="1280" fill="url(#ambientShadow)"/>
   <rect width="720" height="1280" fill="none" stroke="#000" stroke-width="80" opacity="0.12" rx="20"/>
+
+  <!-- ===== HOTSPOT MARKERS (for coordinate extraction) ===== -->
+  <!-- fireplace: [21, 12, 58, 32] -->
+  <rect data-hotspot="fireplace" x="151" y="154" width="418" height="410" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- mantel-puzzle: [17, 7, 66, 7] -->
+  <rect data-hotspot="mantel-puzzle" x="122" y="90" width="475" height="90" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- fireplace-puzzle: [28, 24, 43, 20] -->
+  <rect data-hotspot="fireplace-puzzle" x="202" y="307" width="310" height="256" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- door-locked: [16, 48, 44, 40] -->
+  <rect data-hotspot="door-locked" x="115" y="614" width="317" height="512" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- door-unlocked: [16, 48, 44, 40] -->
+  <rect data-hotspot="door-unlocked" x="115" y="614" width="317" height="512" fill="none" style="pointer-events: auto; cursor: pointer"/>
 </svg>

@@ -349,4 +349,20 @@
   <!-- ===== VIGNETTE ===== -->
   <rect width="720" height="1280" fill="url(#vignette)"/>
   <rect width="720" height="100" fill="url(#nightSky)" opacity="0.15"/>
+
+  <!-- ===== HOTSPOT MARKERS (for coordinate extraction) ===== -->
+  <!-- desk-note: [30, 63, 28, 10] -->
+  <rect data-hotspot="desk-note" x="216" y="806" width="201" height="128" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- desk-drawer: [36, 76, 28, 6] -->
+  <rect data-hotspot="desk-drawer" x="259" y="973" width="201" height="77" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- bookshelf: [4, 22, 36, 51] -->
+  <rect data-hotspot="bookshelf" x="29" y="282" width="259" height="651" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- bookshelf-note: [7, 38, 18, 8] -->
+  <rect data-hotspot="bookshelf-note" x="50" y="486" width="130" height="102" fill="none" style="pointer-events: auto; cursor: pointer"/>
+
+  <!-- lamp: [64, 50, 17, 13] -->
+  <rect data-hotspot="lamp" x="461" y="640" width="122" height="166" fill="none" style="pointer-events: auto; cursor: pointer"/>
 </svg>
